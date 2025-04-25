@@ -1,0 +1,131 @@
+#about-ide,
+.code-container {
+  padding: 1rem 1rem;
+  margin: 1rem 1rem;
+  width: 95vw;
+  display: flex;
+  justify-content: center;
+}
+
+.code-editor {
+  width: 95vw;
+  max-width: 95vw;
+  width: 95%;
+  background: #1e1e1e;
+  border-radius: 0px;
+  overflow: hidden;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Fira Code', monospace;
+}
+
+.code-chrome {
+  background: #2b2b2b;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid #333;
+}
+
+.code-chrome .dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+.code-chrome .red    { background: #ff5f56; }
+.code-chrome .yellow { background: #ffbd2e; }
+.code-chrome .green  { background: #27c93f; }
+
+.code-tabs {
+  background: #1e1e1e;
+  padding: 0 1rem;
+  border-bottom: 1px solid #2a2a2a;
+  display: flex;
+}
+
+.code-tab {
+  padding: 0.6rem 1rem;
+  font-size: 0.8rem;
+  color: #aaa;
+  background: none;
+  border: none;
+  border-right: 1px solid #333;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.code-tab.active {
+  color: #fff;
+  background: #2b2b2b;
+  border-bottom: 2px solid #42b983;
+}
+
+.code-panels {
+  padding: 1rem 1.5rem;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  overflow-x: auto;
+  background: #1e1e1e;
+}
+
+.code-panel pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #ccc;
+}
+
+.code-actions {
+  background: #1e1e1e;
+  padding: 0.5rem 1.2rem;
+  border-top: 1px solid #2a2a2a;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.run-button {
+  background: #42b983;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+  color: black;
+  font-weight: bold;
+  font-family: 'Fira Code', monospace;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.run-button:hover {
+  background: #36a373;
+}
+
+.terminal {
+  background: #101010;
+  border-top: 1px solid #333;
+  overflow-y: auto;
+  font-family: 'Fira Code', monospace;
+  color: #ccc;
+}
+
+.terminal-header {
+  background: #222;
+  padding: 0.5rem 1rem;
+  font-size: 0.75rem;
+  color: #aaa;
+  border-bottom: 1px solid #333;
+}
+
+.terminal-body {
+  padding: 1rem 1.5rem;
+  font-size: 0.75rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #ccc;
+  max-height: 30vh;
+  overflow-y: auto;
+}
+
+.gray {
+  color: #777;
+}

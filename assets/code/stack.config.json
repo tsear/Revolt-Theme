@@ -1,0 +1,16 @@
+{
+    "platform": "WordPress",
+    "hosting": "client-owned",
+    "designPhilosophy": "function-first",
+    "approach": "low-tech realism",
+    "support": ["human", "asynchronous", "long-term"],
+    "clientType": [
+      "outsiders",
+      "writers",
+      "weirdos",
+      "early-stage",
+      "burnt by agencies"
+    ],
+    "buildPurpose": "voice amplification",
+    "subscriptionModel": false
+  }

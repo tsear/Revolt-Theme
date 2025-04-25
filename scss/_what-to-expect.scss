@@ -1,0 +1,60 @@
+#what-to-expect {
+  width: 85vw;
+  margin: 0 auto;
+  padding: 6rem 0;
+  font-family: 'Fira Code', monospace;
+  color: #000;
+
+  .expect-intro {
+    font-size: 0.9rem;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 auto 3rem;
+    padding-left: 2rem;
+    max-width: 1000px;
+  }
+
+  .expect-group {
+    background: #f8f8f8;
+    max-width: 1000px;
+    margin: 1.5rem auto;
+    padding: 1.5rem 2rem;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 4px;
+      background-color: #eee;
+      transition: background-color 0.3s ease;
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+
+    &:hover::before,
+    &:hover::after {
+      background-color: #FCB900;
+    }
+
+    .expect-label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #111;
+    }
+
+    .expect-detail {
+      color: #333;
+      line-height: 1.6;
+    }
+  }
+}

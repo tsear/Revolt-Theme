@@ -1,0 +1,60 @@
+/* Viewport & resets */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  background-color: #fff;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.page-wrapper {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+/* Global section/container spacing */
+.page-wrapper > section,
+.page-wrapper > .container {
+  padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+  .page-wrapper > section,
+  .page-wrapper > .container {
+    padding: 2rem 1rem;
+  }
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 95%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}

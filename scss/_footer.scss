@@ -1,0 +1,140 @@
+/* _footer.scss */
+
+.terminal-footer {
+  background: #fff;
+  color: #000;
+  font-family: 'Fira Code', monospace;
+  padding: 2rem 5vw;
+  text-align: center;
+}
+
+.terminal-footer .terminal-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.terminal-footer .ascii-banner {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  margin: 0 auto 1.5rem;
+  overflow-x: hidden;
+}
+
+.terminal-footer .terminal-nav {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.terminal-footer .terminal-nav li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.terminal-footer .terminal-nav li a:hover {
+  color: #FCB900;
+}
+
+.terminal-footer .terminal-newsletter {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.terminal-footer .terminal-newsletter .label {
+  font-weight: bold;
+}
+
+.terminal-footer .terminal-newsletter input {
+  padding: 0.5rem;
+  font-size: 1rem;
+  width: 300px;
+  border: 2px solid #000;
+  background: #fff;
+  color: #000;
+}
+
+.terminal-footer .terminal-newsletter button {
+  background: #FCB900;
+  color: #000;
+  padding: 0.6rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.terminal-footer .terminal-newsletter button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.terminal-footer .terminal-logo img {
+  height: 60px;
+  margin-top: 2rem;
+}
+
+.terminal-footer .terminal-credit {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .terminal-footer {
+    padding: 1.5rem 5vw;
+  }
+
+  .terminal-footer .ascii-banner {
+    display: block;
+    font-size: 0.3rem;
+    line-height: 1;
+    white-space: pre;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 0.5rem 0;
+    margin-bottom: 1rem;
+  }
+
+  .terminal-footer .terminal-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .terminal-footer .terminal-nav li a {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    white-space: normal;
+  }
+
+  .terminal-footer .terminal-newsletter {
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .terminal-footer .terminal-newsletter input {
+    width: 100%;
+    max-width: none;
+  }
+
+  .terminal-footer .terminal-logo img {
+    height: 40px;
+    margin-top: 1rem;
+  }
+
+  .terminal-footer .terminal-credit {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+}

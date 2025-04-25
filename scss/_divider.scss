@@ -1,0 +1,11 @@
+.barbed-wire-divider {
+  width: 100%;
+  height: 100px;
+  background-image: url('/wp-content/themes/custom-theme copy/assets/images/barbed-wire.png'); // direct path, no PHP
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
