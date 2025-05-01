@@ -114,7 +114,7 @@
   overflow-y: auto;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  min-height: 180px;
+  min-height: 42vh;
   max-height: 42vh;
 }
 .code-panel {
@@ -156,7 +156,7 @@
 .terminal {
   background: #101010;
   border-top: 1px solid #333;
-  max-height: 30vh;
+  max-height: 350px;
   overflow-y: auto;
   flex-shrink: 0;
 }
@@ -175,8 +175,8 @@
   color: #ccc;
   overflow-x: auto;
   white-space: pre;
-  min-height: 180px;
-  max-height: 180px;
+  min-height: 350px;
+  max-height: 350px;
 }
 
 /* === Mobile Overrides (≤768px) === */

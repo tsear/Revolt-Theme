@@ -39,11 +39,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const sentenceInterval = setInterval(renderSentence, 7000);
 
   const diag = [
-    "// decoding: sentence.entity[revolt]",
+    "// decoding: Marketers are attacking us!",
     "// Agency corruption spreading...",
     "// corrupted: the Marketers are trying to hack our message...",
     "// attempting semantic realignment...",
-    "// fracture.mind(letters[]) returned null"
+    "// fracture.mind(letters[]) SITES CANT BE THIS EASY! :("
   ];
 
   function updateLog() {

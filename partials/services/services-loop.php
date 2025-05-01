@@ -5,33 +5,33 @@
 
   <div class="services-loop__overlay">
     <div class="services-loop__zone zone--handlebars" data-zone="handlebars">
-      <span class="zone__label">Handlebars</span>
-      <span class="zone__data">Direction, control</span>
-      <span class="zone__system">Made for YOU by US</span>
+      <span class="zone__label">Web Developement</span>
+      <span class="zone__data">Made for YOU by US</span>
+      <span class="zone__system">Handlebars</span>
     </div>
 
     <div class="services-loop__zone zone--rear-axle" data-zone="rear">
-      <span class="zone__label">Rear Axle</span>
+      <span class="zone__label">Social Content</span>
       <span class="zone__data">Grip, grounded to audience</span>
-      <span class="zone__system">Content</span>
+      <span class="zone__system">Rear Axle</span>
     </div>
 
     <div class="services-loop__zone zone--front-axle" data-zone="front">
-      <span class="zone__label">Front Axle</span>
-      <span class="zone__data">Grip, steering, front brakes</span>
-      <span class="zone__system">CMS</span>
+      <span class="zone__label">Hosting</span>
+      <span class="zone__data">Keep your site on the Road</span>
+      <span class="zone__system">Front Axle</span>
     </div>
 
     <div class="services-loop__zone zone--engine" data-zone="engine">
-      <span class="zone__label">Engine Bay</span>
+      <span class="zone__label">Managed or DIY</span>
       <span class="zone__data">Power, transmission, torque</span>
-      <span class="zone__system">Web Development</span>
+      <span class="zone__system">Engine Bay</span>
     </div>
 
     <div class="services-loop__zone zone--exhaust" data-zone="exhaust">
-      <span class="zone__label">Exhaust</span>
-      <span class="zone__data">Fumes, sexy noises</span>
-      <span class="zone__system">Social Media</span>
+      <span class="zone__label">SEO</span>
+      <span class="zone__data">Sexy noises to attract others</span>
+      <span class="zone__system">Exhaust</span>
     </div>
   </div>
 </section>
@@ -39,33 +39,33 @@
 <section class="services-dashboard">
   <div class="dashboard-grid">
     <div class="dashboard-tile" data-zone="handlebars">
-      <h3>Handlebars</h3>
+      <h3>Web Development</h3>
       <div class="dashboard-content">
-        <p>Direction, control.<br>Made for YOU by US.</p>
+        <p>We work in Wordpress & develop highly functional, beautiful sites that work on all devices. Custom themes, plugins, headless sites, child themes, etc...</p>
       </div>
     </div>
     <div class="dashboard-tile" data-zone="rear">
-      <h3>Rear Axle</h3>
+      <h3>Social Content</h3>
       <div class="dashboard-content">
-        <p>Grip, grounded to audience.<br>Content strategy & storytelling.</p>
+        <p>We can help you stay grounded to audience. We have strategic relationships with the best deisgners in NYC ***we're cool like that***</p>
       </div>
     </div>
     <div class="dashboard-tile" data-zone="front">
-      <h3>Front Axle</h3>
+      <h3>Hosting</h3>
       <div class="dashboard-content">
-        <p>Grip, steering, front brakes.<br>Your CMS, dialed & customized.</p>
+        <p>We provide hosting to our clients at the lowest possible prices. Hosting with us give you direct file access to make quick & easy updates to your site + its 99.999% secure</p>
       </div>
     </div>
     <div class="dashboard-tile" data-zone="engine">
-      <h3>Engine Bay</h3>
+      <h3>Managed or DIY</h3>
       <div class="dashboard-content">
-        <p>Power, transmission, torque.<br>Custom web dev built to run hot.</p>
+        <p>Once we build your site, we can stay on to manage security, updates, & content posting -- or, leave that to you!</p>
       </div>
     </div>
     <div class="dashboard-tile" data-zone="exhaust">
-      <h3>Exhaust</h3>
+      <h3>SEO</h3>
       <div class="dashboard-content">
-        <p>Fumes, sexy noises.<br>Organic social that actually sounds like you.</p>
+        <p>Our sites come out of the box following SEO best practices -- Paired with high level keyword research & you will be ranking higher than you thought possible!</p>
       </div>
     </div>
   </div>

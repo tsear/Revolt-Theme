@@ -1,4 +1,16 @@
 {
+  // Watch your root style.scss (which imports all partials)
+  "liveSassCompile.settings.includeItems": [
+    "/style.scss"
+  ],
+
+  // Don’t compile these folders
+  "liveSassCompile.settings.excludeList": [
+    "/node_modules/**",
+    "/.vscode/**"
+  ],
+
+  // Output compiled CSS (and map) into the theme root
   "liveSassCompile.settings.formats": [
     {
       "format": "expanded",
@@ -6,9 +18,11 @@
       "savePath": "/"
     }
   ],
-  "liveSassCompile.settings.excludeList": [
-    "**/node_modules/**",
-    ".vscode/**"
-  ],
-  "liveSassCompile.settings.generateMap": false
+
+  // Turn maps back on
+  "liveSassCompile.settings.generateMap": true,
+
+  // Always compile on start & save
+  "liveSassCompile.settings.compileOnStart": true,
+  "liveSassCompile.settings.compileOnSave": true
 }
