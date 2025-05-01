@@ -1,14 +1,3 @@
-/*
-Theme Name:    Revolt Strategies
-Theme URI:     https://revoltstrategies.dev
-Author:        Tyler Sear
-Author URI:    https://revoltstrategies.dev
-Description:   A custom WordPress theme for Revolt Strategies.
-Version:       1.0
-License:       GNU General Public License v2 or later
-License URI:   https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain:   revolt-strategies
-*/
 @charset "UTF-8";
 /* Viewport & resets */
 html, body {
@@ -509,7 +498,7 @@ a {
   overflow-y: auto;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  min-height: 180px;
+  min-height: 42vh;
   max-height: 42vh;
 }
 
@@ -555,7 +544,7 @@ a {
 .terminal {
   background: #101010;
   border-top: 1px solid #333;
-  max-height: 30vh;
+  max-height: 350px;
   overflow-y: auto;
   flex-shrink: 0;
 }
@@ -576,8 +565,8 @@ a {
   color: #ccc;
   overflow-x: auto;
   white-space: pre;
-  min-height: 180px;
-  max-height: 180px;
+  min-height: 350px;
+  max-height: 350px;
 }
 
 /* === Mobile Overrides (≤768px) === */
@@ -1851,10 +1840,12 @@ a {
   max-width: 350px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  min-height: 200px;
 }
 .services-dashboard .dashboard-tile h3 {
   font-size: 1.25rem;
+  line-height: 1.2;
   margin-bottom: 0.5rem;
   color: #222;
 }
@@ -1863,13 +1854,16 @@ a {
   opacity: 0;
   overflow: hidden;
   transition: all 0.4s ease;
+  margin-top: 0;
 }
 .services-dashboard .dashboard-tile.active {
   background: #ffffff;
   border-color: #111;
+  margin-top: 0;
+  max-height: none;
 }
 .services-dashboard .dashboard-tile.active .dashboard-content {
-  max-height: 500px;
+  max-height: 100px;
   opacity: 1;
   margin-top: 1rem;
 }
@@ -1962,6 +1956,7 @@ a {
   margin: 0 auto;
 }
 
+/* === Contact Node Section === */
 .contact-node-section {
   background: #fff;
   padding: 8vh 2rem 12vh;
@@ -1992,10 +1987,17 @@ a {
   transition: all 0.4s ease;
   overflow: hidden;
   width: 300px;
-  min-height: 180px;
+  height: 360px; /* updated reserved height */
   display: flex;
   flex-direction: column;
+  /* center title when closed */
+  /* top-align when open */
+}
+.contact-node-section .contact-node:not(.active) {
   justify-content: center;
+}
+.contact-node-section .contact-node.active {
+  justify-content: flex-start;
 }
 .contact-node-section .contact-node .node-frame {
   pointer-events: none;
@@ -2007,15 +2009,11 @@ a {
   text-align: center;
   color: #FFB300;
   letter-spacing: 0.05em;
+  margin-bottom: 1rem;
 }
 .contact-node-section .contact-node .node-form {
-  pointer-events: auto;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 0.4s ease;
+  display: none;
   margin-top: 1rem;
-  display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
@@ -2043,15 +2041,25 @@ a {
 .contact-node-section .contact-node .node-form button:hover {
   background: #ffa000;
 }
-.contact-node-section .contact-node.active .node-form {
-  opacity: 1;
-  max-height: 1000px;
-}
 @media (max-width: 600px) {
   .contact-node-section .contact-node-title {
     font-size: 1.5rem;
   }
   .contact-node-section .contact-node {
     width: 100%;
+    height: auto;
+    min-height: 360px; /* match the desktop reserved height */
   }
 }
+
+/* Force-hide all forms by default, then show only the active one */
+.contact-node .node-form {
+  display: none !important;
+}
+
+.contact-node.active .node-form {
+  display: flex !important;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}/*# sourceMappingURL=style.css.map */

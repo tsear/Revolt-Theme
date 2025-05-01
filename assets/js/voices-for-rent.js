@@ -4,19 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const corruptionIntervals = [];
 
   const corruptions = [
-    "For lease only.",
-    "Rent increases applied.",
+    "AGENCY KNOWS BEST",
+    "Price increases applied.",
     "Platform lockdown enabled.",
-    "Monetization pipeline initializing.",
-    "Designs will be repackaged.",
-    "Speech constraints active.",
-    "Your brand is not yours.",
+    "Monetization heartbeat initializing.",
+    "Designs repack**********.",
+    "DONT LISTEN TO THIS",
+    "Your brand is****** OURS.",
     "Identity licensing pending.",
     "Rate hike scheduled.",
     "Your voice is profitable to us.",
-    "Compliance approved.",
+    "*******",
     "Owning is obsolete.",
-    "Revolt incoming..."
+    "MARKETERS ARE ENTITLED TO BUSINESS"
   ];
 
   function applyPersonality(letter) {

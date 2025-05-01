@@ -1,3 +1,4 @@
+/* === Contact Node Section === */
 .contact-node-section {
   background: #fff;
   padding: 8vh 2rem 12vh;
@@ -30,10 +31,19 @@
     transition: all 0.4s ease;
     overflow: hidden;
     width: 300px;
-    min-height: 180px;
+    height: 360px;           /* updated reserved height */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+
+    /* center title when closed */
+    &:not(.active) {
+      justify-content: center;
+    }
+
+    /* top-align when open */
+    &.active {
+      justify-content: flex-start;
+    }
 
     .node-frame {
       pointer-events: none;
@@ -45,17 +55,13 @@
         text-align: center;
         color: #FFB300;
         letter-spacing: 0.05em;
+        margin-bottom: 1rem;
       }
     }
 
     .node-form {
-      pointer-events: auto;
-      opacity: 0;
-      max-height: 0;
-      overflow: hidden;
-      transition: all 0.4s ease;
+      display: none;
       margin-top: 1rem;
-      display: flex;
       flex-direction: column;
       gap: 0.75rem;
 
@@ -86,13 +92,6 @@
         }
       }
     }
-
-    &.active {
-      .node-form {
-        opacity: 1;
-        max-height: 1000px;
-      }
-    }
   }
 
   @media (max-width: 600px) {
@@ -102,6 +101,20 @@
 
     .contact-node {
       width: 100%;
+      height: auto;
+      min-height: 360px;     /* match the desktop reserved height */
     }
   }
+}
+
+/* Force-hide all forms by default, then show only the active one */
+.contact-node .node-form {
+  display: none !important;
+}
+
+.contact-node.active .node-form {
+  display: flex !important;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }

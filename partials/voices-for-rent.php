@@ -58,7 +58,7 @@
     </div>
 
     <div class="vfr-footer">
-      <a href="#contact" class="btn" data-repair>Take back the signal</a>
+      <a href="#contact" class="btn" data-repair>Stop the Marketers from HACKING US!</a>
     </div>
   </div>
 </section>
