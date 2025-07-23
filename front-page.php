@@ -16,25 +16,8 @@
       </div>
     </section>
 
-    <section id="code-intro" class="code-intro">
-      <div class="container">
-        <p class="ethos-label">// Our Ethos.</p>
-      </div>
-    </section>
-
-    <?php get_template_part('partials/code-showcase'); ?>
     <?php get_template_part('partials/divider-horizontal'); ?>
     <?php get_template_part('partials/what-to-expect'); ?>
-    <?php get_template_part('partials/divider-two'); ?>
-
-    <!-- Hide these two on mobile -->
-    <div class="hide-on-mobile">
-      <?php get_template_part('partials/revolt-revolution'); ?>
-    </div>
-    <div class="hide-on-mobile">
-      <?php get_template_part('partials/voices-for-rent'); ?>
-    </div>
-
     <?php get_template_part('partials/divider-two'); ?>
     <?php get_template_part('partials/start-here'); ?>
 
