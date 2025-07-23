@@ -2062,4 +2062,547 @@ a {
   flex-direction: column;
   gap: 0.75rem;
   margin-top: 1rem;
-}/*# sourceMappingURL=style.css.map */
+}
+
+.wordpress-development-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+.wordpress-development-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.wordpress-development-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.wordpress-development-content {
+  padding: 4rem 0;
+}
+.wordpress-development-content .content-grid {
+  display: grid;
+  gap: 3rem;
+}
+.wordpress-development-content .service-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.wordpress-development-content .service-intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.wordpress-development-content .service-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+.wordpress-development-content .services-list {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+}
+.wordpress-development-content .services-list h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+.wordpress-development-content .services-list .feature-list {
+  list-style: none;
+  padding: 0;
+}
+.wordpress-development-content .services-list .feature-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 1rem;
+}
+.wordpress-development-content .services-list .feature-list li:last-child {
+  border-bottom: none;
+}
+.wordpress-development-content .services-list .feature-list li strong {
+  color: #667eea;
+}
+.wordpress-development-content .wordpress-benefits .benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.wordpress-development-content .wordpress-benefits .benefit {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.wordpress-development-content .wordpress-benefits .benefit h4 {
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+.wordpress-development-content .wordpress-benefits .benefit p {
+  color: #666;
+  line-height: 1.5;
+}
+.wordpress-development-content .wordpress-process .process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.wordpress-development-content .wordpress-process .step {
+  text-align: center;
+}
+.wordpress-development-content .wordpress-process .step .step-number {
+  width: 50px;
+  height: 50px;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0 auto 1rem;
+}
+.wordpress-development-content .wordpress-process .step h4 {
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+.wordpress-development-content .wordpress-process .step p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.wordpress-cta {
+  background: #333;
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+.wordpress-cta h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+.wordpress-cta .btn {
+  background: #667eea;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+.wordpress-cta .btn:hover {
+  background: #5a6fd8;
+}
+
+.web-design-hero {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+.web-design-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.web-design-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.web-design-content {
+  padding: 4rem 0;
+}
+.web-design-content .content-grid {
+  display: grid;
+  gap: 3rem;
+}
+.web-design-content .service-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.web-design-content .service-intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.web-design-content .service-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+.web-design-content .design-services .services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.web-design-content .design-services .service {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.web-design-content .design-services .service:hover {
+  transform: translateY(-5px);
+}
+.web-design-content .design-services .service h4 {
+  color: #ff6b6b;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.web-design-content .design-services .service p {
+  color: #666;
+  line-height: 1.5;
+}
+.web-design-content .design-approach {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+}
+.web-design-content .design-approach h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+.web-design-content .design-approach .approach-list {
+  list-style: none;
+  padding: 0;
+}
+.web-design-content .design-approach .approach-list li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e9ecef;
+  font-size: 1rem;
+  position: relative;
+  padding-left: 2rem;
+}
+.web-design-content .design-approach .approach-list li:last-child {
+  border-bottom: none;
+}
+.web-design-content .design-approach .approach-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #ff6b6b;
+  font-weight: bold;
+}
+.web-design-content .design-approach .approach-list li strong {
+  color: #ff6b6b;
+}
+.web-design-content .design-technologies .tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.web-design-content .design-technologies .tech {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-left: 4px solid #ff6b6b;
+}
+.web-design-content .design-technologies .tech h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+.web-design-content .design-technologies .tech p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.design-cta {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+.design-cta h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+.design-cta .btn {
+  background: white;
+  color: #ff6b6b;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.design-cta .btn:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+.seo-hero {
+  background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+.seo-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.seo-hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.seo-optimization-content {
+  padding: 4rem 0;
+}
+.seo-optimization-content .content-grid {
+  display: grid;
+  gap: 3rem;
+}
+.seo-optimization-content .service-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.seo-optimization-content .service-intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.seo-optimization-content .service-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+.seo-optimization-content .seo-services .seo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.seo-optimization-content .seo-services .seo-service {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #00b894;
+}
+.seo-optimization-content .seo-services .seo-service h4 {
+  color: #00b894;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.seo-optimization-content .seo-services .seo-service ul {
+  list-style: none;
+  padding: 0;
+}
+.seo-optimization-content .seo-services .seo-service ul li {
+  padding: 0.5rem 0;
+  position: relative;
+  padding-left: 1.5rem;
+  color: #666;
+}
+.seo-optimization-content .seo-services .seo-service ul li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: #00b894;
+  font-weight: bold;
+}
+.seo-optimization-content .seo-benefits {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+}
+.seo-optimization-content .seo-benefits .benefits-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+.seo-optimization-content .seo-benefits .benefit {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+}
+.seo-optimization-content .seo-benefits .benefit h4 {
+  color: #00b894;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+.seo-optimization-content .seo-benefits .benefit p {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+.seo-optimization-content .seo-process .process-timeline {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.seo-optimization-content .seo-process .process-step {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 5px solid #00b894;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+.seo-optimization-content .seo-process .process-step h4 {
+  color: #00b894;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+.seo-optimization-content .seo-process .process-step p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.seo-cta {
+  background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+.seo-cta h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+.seo-cta .btn {
+  background: white;
+  color: #00b894;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.seo-cta .btn:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+.keyword-page-content .container, .keyword-page-content #site-header .header-inner, #site-header .keyword-page-content .header-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+.keyword-page-content .page-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+.keyword-page-content .page-header h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+@media (max-width: 768px) {
+  .keyword-page-content .page-header h1 {
+    font-size: 2rem;
+  }
+}
+.keyword-page-content .page-header .page-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.keyword-page-content .content-body {
+  line-height: 1.7;
+  font-size: 1.1rem;
+  color: #444;
+}
+.keyword-page-content .content-body section {
+  margin-bottom: 3rem;
+}
+.keyword-page-content .content-body h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  border-bottom: 3px solid #a29bfe;
+  padding-bottom: 0.5rem;
+}
+.keyword-page-content .content-body h3 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+.keyword-page-content .content-body p {
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+.keyword-page-content .content-body p:last-child {
+  margin-bottom: 0;
+}
+.keyword-page-content .content-body strong {
+  color: #333;
+  font-weight: 600;
+}
+.keyword-page-content .content-body a {
+  color: #a29bfe;
+  text-decoration: underline;
+}
+.keyword-page-content .content-body a:hover {
+  color: #6c5ce7;
+}
+
+.ecommerce-cta {
+  background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+  margin-top: 3rem;
+}
+.ecommerce-cta .container, .ecommerce-cta #site-header .header-inner, #site-header .ecommerce-cta .header-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.ecommerce-cta h2 {
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+}
+@media (max-width: 768px) {
+  .ecommerce-cta h2 {
+    font-size: 1.8rem;
+  }
+}
+.ecommerce-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+.ecommerce-cta .btn {
+  background: white;
+  color: #a29bfe;
+  padding: 1.2rem 2.5rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.ecommerce-cta .btn:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/*# sourceMappingURL=style.css.map */

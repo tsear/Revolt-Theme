@@ -1,0 +1,167 @@
+// WordPress Development Page Styles
+
+.wordpress-development-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+  }
+}
+
+.wordpress-development-content {
+  padding: 4rem 0;
+  
+  .content-grid {
+    display: grid;
+    gap: 3rem;
+  }
+  
+  .service-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #666;
+    }
+  }
+  
+  .services-list {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+    
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #e9ecef;
+        font-size: 1rem;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        strong {
+          color: #667eea;
+        }
+      }
+    }
+  }
+  
+  .wordpress-benefits {
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    
+    .benefit {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      
+      h4 {
+        color: #667eea;
+        margin-bottom: 0.5rem;
+      }
+      
+      p {
+        color: #666;
+        line-height: 1.5;
+      }
+    }
+  }
+  
+  .wordpress-process {
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    
+    .step {
+      text-align: center;
+      
+      .step-number {
+        width: 50px;
+        height: 50px;
+        background: #667eea;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        margin: 0 auto 1rem;
+      }
+      
+      h4 {
+        margin-bottom: 0.5rem;
+        color: #333;
+      }
+      
+      p {
+        color: #666;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+    }
+  }
+}
+
+.wordpress-cta {
+  background: #333;
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+  }
+  
+  .btn {
+    background: #667eea;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    
+    &:hover {
+      background: #5a6fd8;
+    }
+  }
+}

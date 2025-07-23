@@ -1,0 +1,133 @@
+// E-commerce Solutions Keyword Page Styles
+
+.keyword-page-content {
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+  }
+  
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid #f0f0f0;
+    
+    h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+    
+    .page-subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+  }
+  
+  .content-body {
+    line-height: 1.7;
+    font-size: 1.1rem;
+    color: #444;
+    
+    section {
+      margin-bottom: 3rem;
+    }
+    
+    h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+      margin-top: 2rem;
+      border-bottom: 3px solid #a29bfe;
+      padding-bottom: 0.5rem;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      color: #444;
+      margin-bottom: 1rem;
+      margin-top: 2rem;
+    }
+    
+    p {
+      margin-bottom: 1.5rem;
+      text-align: justify;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    // Enhanced readability
+    strong {
+      color: #333;
+      font-weight: 600;
+    }
+    
+    // Link styling within content
+    a {
+      color: #a29bfe;
+      text-decoration: underline;
+      
+      &:hover {
+        color: #6c5ce7;
+      }
+    }
+  }
+}
+
+.ecommerce-cta {
+  background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+  margin-top: 3rem;
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    
+    @media (max-width: 768px) {
+      font-size: 1.8rem;
+    }
+  }
+  
+  p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+  
+  .btn {
+    background: white;
+    color: #a29bfe;
+    padding: 1.2rem 2.5rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+    
+    &:hover {
+      background: #f8f9fa;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
