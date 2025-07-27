@@ -2064,18 +2064,18 @@ a {
   margin-top: 1rem;
 }
 
-.wordpress-development-hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+.wordpress-hero {
+  background: linear-gradient(135deg, #FCB900 0%, #FFB300 100%);
   color: white;
   padding: 4rem 0;
   text-align: center;
 }
-.wordpress-development-hero h1 {
+.wordpress-hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
   font-weight: 700;
 }
-.wordpress-development-hero p {
+.wordpress-hero p {
   font-size: 1.2rem;
   opacity: 0.9;
 }
@@ -2125,7 +2125,7 @@ a {
   border-bottom: none;
 }
 .wordpress-development-content .services-list .feature-list li strong {
-  color: #667eea;
+  color: #FCB900;
 }
 .wordpress-development-content .wordpress-benefits .benefits-grid {
   display: grid;
@@ -2140,7 +2140,7 @@ a {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 .wordpress-development-content .wordpress-benefits .benefit h4 {
-  color: #667eea;
+  color: #FCB900;
   margin-bottom: 0.5rem;
 }
 .wordpress-development-content .wordpress-benefits .benefit p {
@@ -2159,7 +2159,7 @@ a {
 .wordpress-development-content .wordpress-process .step .step-number {
   width: 50px;
   height: 50px;
-  background: #667eea;
+  background: #FCB900;
   color: white;
   border-radius: 50%;
   display: flex;
@@ -2190,7 +2190,7 @@ a {
   font-size: 2rem;
 }
 .wordpress-cta .btn {
-  background: #667eea;
+  background: #FCB900;
   color: white;
   padding: 1rem 2rem;
   text-decoration: none;
@@ -2199,11 +2199,11 @@ a {
   transition: background 0.3s ease;
 }
 .wordpress-cta .btn:hover {
-  background: #5a6fd8;
+  background: #FFB300;
 }
 
 .web-design-hero {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  background: linear-gradient(135deg, #FCB900 0%, #FFB300 100%);
   color: white;
   padding: 4rem 0;
   text-align: center;
@@ -2258,7 +2258,7 @@ a {
   transform: translateY(-5px);
 }
 .web-design-content .design-services .service h4 {
-  color: #ff6b6b;
+  color: #FCB900;
   margin-bottom: 1rem;
   font-size: 1.3rem;
 }
@@ -2294,11 +2294,11 @@ a {
   content: "✓";
   position: absolute;
   left: 0;
-  color: #ff6b6b;
+  color: #FCB900;
   font-weight: bold;
 }
 .web-design-content .design-approach .approach-list li strong {
-  color: #ff6b6b;
+  color: #FCB900;
 }
 .web-design-content .design-technologies .tech-grid {
   display: grid;
@@ -2310,7 +2310,7 @@ a {
   background: white;
   padding: 1.5rem;
   border-radius: 8px;
-  border-left: 4px solid #ff6b6b;
+  border-left: 4px solid #FCB900;
 }
 .web-design-content .design-technologies .tech h4 {
   color: #333;
@@ -2323,7 +2323,7 @@ a {
 }
 
 .design-cta {
-  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  background: linear-gradient(135deg, #FCB900 0%, #FFB300 100%);
   color: white;
   padding: 3rem 0;
   text-align: center;
@@ -2334,7 +2334,7 @@ a {
 }
 .design-cta .btn {
   background: white;
-  color: #ff6b6b;
+  color: #FCB900;
   padding: 1rem 2rem;
   text-decoration: none;
   border-radius: 5px;
@@ -2347,7 +2347,7 @@ a {
 }
 
 .seo-hero {
-  background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+  background: linear-gradient(135deg, #FCB900 0%, #FFB300 100%);
   color: white;
   padding: 4rem 0;
   text-align: center;
@@ -2395,10 +2395,10 @@ a {
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  border-top: 4px solid #00b894;
+  border-top: 4px solid #FCB900;
 }
 .seo-optimization-content .seo-services .seo-service h4 {
-  color: #00b894;
+  color: #FCB900;
   margin-bottom: 1rem;
   font-size: 1.3rem;
 }
@@ -2416,7 +2416,7 @@ a {
   content: "→";
   position: absolute;
   left: 0;
-  color: #00b894;
+  color: #FCB900;
   font-weight: bold;
 }
 .seo-optimization-content .seo-benefits {
@@ -2437,7 +2437,7 @@ a {
   text-align: center;
 }
 .seo-optimization-content .seo-benefits .benefit h4 {
-  color: #00b894;
+  color: #FCB900;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
 }
@@ -2455,11 +2455,11 @@ a {
   background: white;
   padding: 2rem;
   border-radius: 8px;
-  border-left: 5px solid #00b894;
+  border-left: 5px solid #FCB900;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 .seo-optimization-content .seo-process .process-step h4 {
-  color: #00b894;
+  color: #FCB900;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
 }
@@ -2469,7 +2469,7 @@ a {
 }
 
 .seo-cta {
-  background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+  background: linear-gradient(135deg, #FCB900 0%, #FFB300 100%);
   color: white;
   padding: 3rem 0;
   text-align: center;
@@ -2480,7 +2480,7 @@ a {
 }
 .seo-cta .btn {
   background: white;
-  color: #00b894;
+  color: #FCB900;
   padding: 1rem 2rem;
   text-decoration: none;
   border-radius: 5px;
@@ -2534,7 +2534,7 @@ a {
   color: #333;
   margin-bottom: 1.5rem;
   margin-top: 2rem;
-  border-bottom: 3px solid #a29bfe;
+  border-bottom: 3px solid #FCB900;
   padding-bottom: 0.5rem;
 }
 .keyword-page-content .content-body h3 {
@@ -2555,15 +2555,15 @@ a {
   font-weight: 600;
 }
 .keyword-page-content .content-body a {
-  color: #a29bfe;
+  color: #FCB900;
   text-decoration: underline;
 }
 .keyword-page-content .content-body a:hover {
-  color: #6c5ce7;
+  color: #FFB300;
 }
 
 .ecommerce-cta {
-  background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+  background: linear-gradient(135deg, #FCB900 0%, #FFB300 100%);
   color: white;
   padding: 4rem 0;
   text-align: center;
@@ -2590,7 +2590,7 @@ a {
 }
 .ecommerce-cta .btn {
   background: white;
-  color: #a29bfe;
+  color: #FCB900;
   padding: 1.2rem 2.5rem;
   text-decoration: none;
   border-radius: 8px;
