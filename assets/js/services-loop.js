@@ -81,21 +81,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // === Dashboard tile self-toggle ===
+  // === Dashboard tile self-toggle with mobile redirect handling ===
   tiles.forEach((tile) => {
     tile.addEventListener('click', () => {
       const isActive = tile.classList.contains('active');
-      tiles.forEach((t) => t.classList.remove('active'));
-
-      if (!isActive) {
-        tile.classList.add('active');
-
-        const tileTop = tile.getBoundingClientRect().top + window.pageYOffset;
-        const offset  = window.innerHeight * 0.5;
-        window.scrollTo({
-          top: tileTop - offset,
-          behavior: 'smooth'
-        });
+      const redirectUrl = tile.getAttribute('data-redirect');
+      const isMobile = window.innerWidth <= 768; // Mobile detection
+      
+      // On mobile: first click activates, second click redirects
+      if (isMobile) {
+        if (isActive && redirectUrl) {
+          // Second click on mobile - redirect
+          window.location.href = redirectUrl;
+          return;
+        } else {
+          // First click on mobile - activate tile
+          tiles.forEach((t) => t.classList.remove('active'));
+          tile.classList.add('active');
+          
+          const tileTop = tile.getBoundingClientRect().top + window.pageYOffset;
+          const offset  = window.innerHeight * 0.5;
+          window.scrollTo({
+            top: tileTop - offset,
+            behavior: 'smooth'
+          });
+        }
+      } else {
+        // On desktop: immediate redirect
+        if (redirectUrl) {
+          window.location.href = redirectUrl;
+        }
       }
     });
   });

@@ -2703,4 +2703,391 @@ a {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
+.social-content-content {
+  padding: 4rem 0;
+}
+.social-content-content .content-grid {
+  display: grid;
+  gap: 3rem;
+}
+.social-content-content .service-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.social-content-content .service-intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.social-content-content .service-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+.social-content-content .content-services .content-grid-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.social-content-content .content-services .content-service {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid #FCB900;
+}
+.social-content-content .content-services .content-service h4 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.social-content-content .content-services .content-service ul {
+  list-style: none;
+  padding: 0;
+}
+.social-content-content .content-services .content-service ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+  color: #666;
+}
+.social-content-content .content-services .content-service ul li:last-child {
+  border-bottom: none;
+}
+.social-content-content .content-services .content-service ul li::before {
+  content: "✓";
+  color: #FCB900;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+.social-content-content .content-services h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.social-content-content .content-process {
+  margin-top: 4rem;
+}
+.social-content-content .content-process h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+.social-content-content .content-process .process-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.social-content-content .content-process .process-step {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.social-content-content .content-process .process-step:hover {
+  transform: translateY(-5px);
+}
+.social-content-content .content-process .process-step h4 {
+  color: #FCB900;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.social-content-content .content-process .process-step p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.content-cta {
+  background: linear-gradient(135deg, #FCB900 0%, #FFB300 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+.content-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.content-cta p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+.content-cta .btn {
+  background: white;
+  color: #FCB900;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.content-cta .btn:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+.web-hosting-content {
+  padding: 4rem 0;
+}
+.web-hosting-content .content-grid {
+  display: grid;
+  gap: 3rem;
+}
+.web-hosting-content .service-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.web-hosting-content .service-intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.web-hosting-content .service-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+.web-hosting-content .hosting-services .hosting-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.web-hosting-content .hosting-services .hosting-service {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid #FCB900;
+}
+.web-hosting-content .hosting-services .hosting-service h4 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.web-hosting-content .hosting-services .hosting-service ul {
+  list-style: none;
+  padding: 0;
+}
+.web-hosting-content .hosting-services .hosting-service ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+  color: #666;
+}
+.web-hosting-content .hosting-services .hosting-service ul li:last-child {
+  border-bottom: none;
+}
+.web-hosting-content .hosting-services .hosting-service ul li::before {
+  content: "✓";
+  color: #FCB900;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+.web-hosting-content .hosting-services h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.web-hosting-content .hosting-process {
+  margin-top: 4rem;
+}
+.web-hosting-content .hosting-process h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+.web-hosting-content .hosting-process .process-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.web-hosting-content .hosting-process .process-step {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.web-hosting-content .hosting-process .process-step:hover {
+  transform: translateY(-5px);
+}
+.web-hosting-content .hosting-process .process-step h4 {
+  color: #FCB900;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.web-hosting-content .hosting-process .process-step p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.hosting-cta {
+  background: linear-gradient(135deg, #FCB900 0%, #FFB300 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+.hosting-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.hosting-cta p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+.hosting-cta .btn {
+  background: white;
+  color: #FCB900;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.hosting-cta .btn:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+.managed-services-content {
+  padding: 4rem 0;
+}
+.managed-services-content .content-grid {
+  display: grid;
+  gap: 3rem;
+}
+.managed-services-content .service-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.managed-services-content .service-intro h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.managed-services-content .service-intro p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #666;
+}
+.managed-services-content .managed-services-grid .managed-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.managed-services-content .managed-services-grid .managed-service {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 8px;
+  border-left: 4px solid #FCB900;
+}
+.managed-services-content .managed-services-grid .managed-service h4 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.managed-services-content .managed-services-grid .managed-service ul {
+  list-style: none;
+  padding: 0;
+}
+.managed-services-content .managed-services-grid .managed-service ul li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e9ecef;
+  color: #666;
+}
+.managed-services-content .managed-services-grid .managed-service ul li:last-child {
+  border-bottom: none;
+}
+.managed-services-content .managed-services-grid .managed-service ul li::before {
+  content: "✓";
+  color: #FCB900;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+.managed-services-content .managed-services-grid h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.managed-services-content .managed-process {
+  margin-top: 4rem;
+}
+.managed-services-content .managed-process h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+.managed-services-content .managed-process .process-timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.managed-services-content .managed-process .process-step {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+.managed-services-content .managed-process .process-step:hover {
+  transform: translateY(-5px);
+}
+.managed-services-content .managed-process .process-step h4 {
+  color: #FCB900;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+.managed-services-content .managed-process .process-step p {
+  color: #666;
+  line-height: 1.5;
+}
+
+.managed-cta {
+  background: linear-gradient(135deg, #FCB900 0%, #FFB300 100%);
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
+}
+.managed-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.managed-cta p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+.managed-cta .btn {
+  background: white;
+  color: #FCB900;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.managed-cta .btn:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+}
+
 /*# sourceMappingURL=style.css.map */

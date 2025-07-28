@@ -38,31 +38,31 @@
 
 <section class="services-dashboard">
   <div class="dashboard-grid">
-    <div class="dashboard-tile" data-zone="handlebars">
+    <div class="dashboard-tile" data-zone="handlebars" data-redirect="<?php echo esc_url( site_url('/wordpress-development') ); ?>" style="cursor: pointer;">
       <h3>Web Development</h3>
       <div class="dashboard-content">
         <p>We work in Wordpress & develop highly functional, beautiful sites that work on all devices. Custom themes, plugins, headless sites, child themes, etc...</p>
       </div>
     </div>
-    <div class="dashboard-tile" data-zone="rear">
+    <div class="dashboard-tile" data-zone="rear" data-redirect="<?php echo esc_url( site_url('/social-content') ); ?>" style="cursor: pointer;">
       <h3>Social Content</h3>
       <div class="dashboard-content">
         <p>We can help you stay grounded to audience. We have strategic relationships with the best deisgners in NYC ***we're cool like that***</p>
       </div>
     </div>
-    <div class="dashboard-tile" data-zone="front">
+    <div class="dashboard-tile" data-zone="front" data-redirect="<?php echo esc_url( site_url('/web-hosting') ); ?>" style="cursor: pointer;">
       <h3>Hosting</h3>
       <div class="dashboard-content">
         <p>We provide hosting to our clients at the lowest possible prices. Hosting with us give you direct file access to make quick & easy updates to your site + its 99.999% secure</p>
       </div>
     </div>
-    <div class="dashboard-tile" data-zone="engine">
+    <div class="dashboard-tile" data-zone="engine" data-redirect="<?php echo esc_url( site_url('/managed-services') ); ?>" style="cursor: pointer;">
       <h3>Managed or DIY</h3>
       <div class="dashboard-content">
         <p>Once we build your site, we can stay on to manage security, updates, & content posting -- or, leave that to you!</p>
       </div>
     </div>
-    <div class="dashboard-tile" data-zone="exhaust">
+    <div class="dashboard-tile" data-zone="exhaust" data-redirect="<?php echo esc_url( site_url('/seo-optimization') ); ?>" style="cursor: pointer;">
       <h3>SEO</h3>
       <div class="dashboard-content">
         <p>Our sites come out of the box following SEO best practices -- Paired with high level keyword research & you will be ranking higher than you thought possible!</p>
