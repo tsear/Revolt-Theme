@@ -47,4 +47,9 @@
       </div>
     </div>
   </div>
+  <div class="tech-cta">
+    <h3>Curious about our WordPress expertise?</h3>
+    <p>Dive deep into our WordPress development approach and see how we build custom, scalable solutions.</p>
+    <a href="<?php echo esc_url( site_url('/wordpress-development') ); ?>" class="btn btn-tech">Learn About Our WordPress Development</a>
+  </div>
 </section>
