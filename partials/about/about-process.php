@@ -45,6 +45,6 @@
   <div class="process-cta">
     <h3>Want to see this process in action?</h3>
     <p>Check out our detailed breakdown of how we approach web design from concept to completion.</p>
-    <a href="<?php echo esc_url( site_url('/web-design') ); ?>" class="btn btn-process">Explore Our Design Process</a>
+    <a href="https://revoltstrategies.com/custom-web-design/" class="btn btn-process">Explore Our Design Process</a>
   </div>
 </section>
