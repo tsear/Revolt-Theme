@@ -1,11 +1,23 @@
 /* _header.scss */
 
 #site-header {
-  background-color: #fff;
   color: #000;
   padding: 1rem 5vw;
   border-bottom: 2px solid #000;
   font-family: 'Fira Code', monospace;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  isolation: isolate;
+  will-change: transform;
+  transform: translateZ(0);
 
   .header-inner {
     @extend .container;
@@ -36,6 +48,8 @@
 
   .header-nav {
     padding-right: 1rem;
+    position: relative;
+    z-index: 999997; // Ensure nav container is properly layered
 
     ul {
       list-style: none;
@@ -44,12 +58,77 @@
       margin: 0;
       padding: 0;
 
-      li a {
-        font-weight: bold;
-        transition: color 0.2s ease;
+      li {
+        position: relative;
+        z-index: 999998; // Ensure parent li is above body content
 
-        &:hover {
-          color: #FCB900;
+        a {
+          font-weight: bold;
+          transition: color 0.2s ease;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+
+          &:hover {
+            color: #FCB900;
+          }
+        }
+
+        // Dropdown arrow styling
+        .dropdown-arrow {
+          font-size: 0.8rem;
+          transition: transform 0.2s ease;
+        }
+
+        &:hover .dropdown-arrow {
+          transform: rotate(180deg);
+        }
+
+        // Dropdown menu styling
+        .dropdown-menu {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          background-color: rgba(255, 255, 255, 0.98);
+          backdrop-filter: blur(10px);
+          border: 2px solid #000;
+          border-top: none;
+          min-width: 200px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(-10px);
+          transition: all 0.3s ease;
+          z-index: 9999999; // Super high z-index
+          flex-direction: column;
+          gap: 0;
+
+          li {
+            width: 100%;
+
+            a {
+              padding: 0.75rem 1rem;
+              border-bottom: 1px solid #eee;
+              justify-content: flex-start;
+              white-space: nowrap;
+
+              &:hover {
+                background-color: #FCB900;
+                color: #000;
+              }
+            }
+
+            &:last-child a {
+              border-bottom: none;
+            }
+          }
+        }
+
+        // Show dropdown on hover
+        &:hover .dropdown-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: translateY(0);
         }
       }
     }
@@ -88,11 +167,41 @@
         flex-direction: row;
         justify-content: center;
         gap: 1.25rem;
-      }
+        flex-wrap: wrap;
 
-      li a {
-        font-size: 1rem;
-        padding: 0.25rem 0.5rem;
+        li {
+          .dropdown-toggle {
+            font-size: 1rem;
+            padding: 0.25rem 0.5rem;
+          }
+
+          .dropdown-arrow {
+            display: none; // Hide arrows on mobile for cleaner look
+          }
+
+          // Mobile dropdown styling - stack vertically under nav
+          .dropdown-menu {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            transform: none;
+            width: 100%;
+            margin-top: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: none; // Hidden by default
+
+            li a {
+              font-size: 0.9rem;
+              padding: 0.5rem 0.75rem;
+            }
+          }
+
+          // Show dropdown when parent is clicked (requires JS)
+          &.mobile-active .dropdown-menu {
+            display: block;
+          }
+        }
       }
     }
   }

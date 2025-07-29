@@ -67,6 +67,13 @@ function simple_theme_enqueue_styles() {
         null,
         true
     );
+    wp_enqueue_script(
+        'dropdown-nav',
+        get_template_directory_uri() . '/assets/js/dropdown-nav.js',
+        array(),
+        '1.0',
+        true
+    );
 
     // ✅ Only for About page
     if ( is_page('about') ) {

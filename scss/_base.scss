@@ -14,6 +14,7 @@ body {
   color: #000;
   margin: 0;
   padding: 0;
+  padding-top: 80px; // Space for fixed header
 }
 
 a {
@@ -34,6 +35,10 @@ a {
 }
 
 @media (max-width: 768px) {
+  body {
+    padding-top: 120px; // More space for mobile header with stacked layout
+  }
+  
   .page-wrapper > section,
   .page-wrapper > .container {
     padding: 2rem 1rem;
