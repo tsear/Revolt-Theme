@@ -1,0 +1,200 @@
+// About Services CTA - Bridge to Action
+.about-services-cta {
+  background: linear-gradient(135deg, #f8f8f8 0%, #fff 100%);
+  padding: 4rem 2rem;
+  margin-top: 3rem;
+  position: relative;
+  
+  // Subtle top border accent
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: #FCB900;
+  }
+  
+  .cta-container {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .cta-header {
+    margin-bottom: 3rem;
+    
+    .cta-title {
+      font-size: 2.5rem;
+      font-family: 'Fira Code', monospace;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 1rem;
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+    
+    .cta-subtitle {
+      font-size: 1.2rem;
+      color: #666;
+      font-weight: 500;
+      margin: 0;
+      
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  .cta-content {
+    margin-bottom: 3rem;
+    
+    .cta-description {
+      margin-bottom: 2.5rem;
+      
+      p {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: #555;
+        max-width: 700px;
+        margin: 0 auto;
+        
+        @media (max-width: 768px) {
+          font-size: 1rem;
+          line-height: 1.6;
+        }
+      }
+    }
+    
+    .cta-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+      
+      @media (max-width: 768px) {
+        gap: 1.5rem;
+      }
+    }
+    
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: #FCB900;
+      color: #000;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(252, 185, 0, 0.3);
+      
+      &:hover {
+        background: #e6a700;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(252, 185, 0, 0.4);
+        
+        .cta-arrow {
+          transform: translateX(5px);
+        }
+      }
+      
+      .cta-icon {
+        font-size: 1.2rem;
+      }
+      
+      .cta-arrow {
+        font-size: 1.1rem;
+        transition: transform 0.3s ease;
+      }
+      
+      @media (max-width: 768px) {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+      }
+    }
+    
+    .cta-secondary {
+      .cta-note {
+        font-size: 0.95rem;
+        color: #777;
+        margin-bottom: 0.75rem;
+        font-style: italic;
+      }
+      
+      .quick-links {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+        .quick-link {
+          color: #FCB900;
+          text-decoration: none;
+          font-weight: 500;
+          font-size: 0.9rem;
+          padding: 0.5rem 0.75rem;
+          border: 1px solid #FCB900;
+          border-radius: 4px;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            background: #FCB900;
+            color: #000;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          gap: 0.5rem;
+          
+          .quick-link {
+            font-size: 0.85rem;
+            padding: 0.4rem 0.6rem;
+          }
+        }
+      }
+    }
+  }
+  
+  .cta-footer {
+    border-top: 1px solid #e0e0e0;
+    padding-top: 2rem;
+    
+    .cta-promise {
+      font-size: 1rem;
+      color: #666;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      
+      .promise-icon {
+        font-size: 1.1rem;
+      }
+      
+      strong {
+        color: #333;
+        font-family: 'Fira Code', monospace;
+      }
+      
+      @media (max-width: 768px) {
+        font-size: 0.9rem;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.25rem;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+    margin-top: 2rem;
+  }
+}

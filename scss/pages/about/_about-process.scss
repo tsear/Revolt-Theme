@@ -3,11 +3,11 @@
     font-size: 2.75rem;
     color: #111;
     text-align: center;
-    margin: 0 0 2.5rem 0; // tightened from 4rem
+    margin: 1.5rem 0 2.5rem 0; // Added 1.5rem top margin to match revolt-timeline section padding
   
     @media (max-width: 600px) {
       font-size: 2rem;
-      margin-bottom: 2rem;
+      margin: 1rem 0 2rem 0; // Proportional mobile spacing
     }
   }
   

@@ -78,9 +78,9 @@ function simple_theme_enqueue_styles() {
     // ✅ Only for About page
     if ( is_page('about') ) {
         wp_enqueue_script(
-            'about-ide',
-            get_template_directory_uri() . '/assets/js/about-ide.js',
-            array('prism-core'),
+            'about-timeline',
+            get_template_directory_uri() . '/assets/js/about-timeline.js',
+            array(),
             null,
             true
         );
