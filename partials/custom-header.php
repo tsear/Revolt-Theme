@@ -12,9 +12,9 @@
       <li class="dropdown">
         <a href="<?php echo site_url('/about'); ?>" class="dropdown-toggle">About <span class="dropdown-arrow">▼</span></a>
         <ul class="dropdown-menu">
-          <li><a href="<?php echo site_url('/about'); ?>#process">Our Process</a></li>
-          <li><a href="<?php echo site_url('/about'); ?>#technology">Technology Stack</a></li>
-          <li><a href="<?php echo site_url('/about'); ?>#development">Dev Environment</a></li>
+          <li><a href="<?php echo site_url('/our-process'); ?>">Our Process</a></li>
+          <li><a href="<?php echo site_url('/technology-stack'); ?>">Technology Stack</a></li>
+          <li><a href="<?php echo site_url('/development-environment'); ?>">Dev Environment</a></li>
         </ul>
       </li>
       <li class="dropdown">
@@ -32,9 +32,9 @@
       <li class="dropdown">
         <a href="<?php echo site_url('/contact'); ?>" class="dropdown-toggle">Contact <span class="dropdown-arrow">▼</span></a>
         <ul class="dropdown-menu">
-          <li><a href="<?php echo site_url('/contact'); ?>#quote">Get Quote</a></li>
-          <li><a href="<?php echo site_url('/contact'); ?>#discussion">Project Discussion</a></li>
-          <li><a href="<?php echo site_url('/contact'); ?>#support">Support</a></li>
+          <li><a href="<?php echo site_url('/get-quote'); ?>">Get Quote</a></li>
+          <li><a href="<?php echo site_url('/project-discussion'); ?>">Project Discussion</a></li>
+          <li><a href="<?php echo site_url('/support'); ?>">Support</a></li>
         </ul>
       </li>
     </ul>
