@@ -1,0 +1,927 @@
+// Development Environment Page - Terminal/IDE Aesthetic
+
+.keyword-page-content {
+  padding: 0;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .page-header {
+    text-align: center;
+    padding: 4rem 0 3rem;
+    background: linear-gradient(135deg, #0D1117 0%, #161B22 100%);
+    color: white;
+    margin-bottom: 0;
+    position: relative;
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'Source Code Pro', monospace;
+    
+    &::before {
+      content: '> development_environment --init';
+      position: absolute;
+      top: 1rem;
+      left: 2rem;
+      color: #58A6FF;
+      font-size: 0.85rem;
+      font-family: monospace;
+    }
+    
+    &::after {
+      content: '█';
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      color: #58A6FF;
+      font-size: 0.85rem;
+      animation: blink 1s infinite;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      color: #F0F6FC;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      font-family: monospace;
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+    
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: #8B949E;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      font-family: monospace;
+      
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+  
+  .content-body {
+    padding: 4rem 0;
+    background: #0D1117;
+    color: #C9D1D9;
+    
+    section {
+      margin-bottom: 4rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    h2 {
+      font-size: 2rem;
+      color: #58A6FF;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      font-family: monospace;
+      position: relative;
+      
+      &::before {
+        content: '$ ';
+        color: #7C3AED;
+        font-weight: normal;
+      }
+      
+      @media (max-width: 768px) {
+        font-size: 1.75rem;
+      }
+    }
+    
+    h3 {
+      font-size: 1.4rem;
+      color: #F0F6FC;
+      margin: 2rem 0 1rem 0;
+      font-weight: 600;
+      font-family: monospace;
+      background: #21262D;
+      padding: 0.75rem 1.5rem;
+      border-left: 3px solid #F85149;
+      border-radius: 0 6px 6px 0;
+      position: relative;
+      
+      &::before {
+        content: '// ';
+        color: #7C3AED;
+      }
+      
+      @media (max-width: 768px) {
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+    
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #C9D1D9;
+      margin-bottom: 1.5rem;
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    ul, ol {
+      margin: 1.5rem 0;
+      padding-left: 2rem;
+      
+      li {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #C9D1D9;
+        margin-bottom: 0.75rem;
+        position: relative;
+        padding-left: 1.5rem;
+        font-family: 'Segoe UI', system-ui, sans-serif;
+        
+        &::before {
+          content: '→';
+          position: absolute;
+          left: 0;
+          color: #58A6FF;
+          font-weight: bold;
+        }
+        
+        strong {
+          color: #F0F6FC;
+          font-weight: 600;
+          font-family: monospace;
+        }
+      }
+    }
+  }
+  
+  .intro-section {
+    background: #161B22;
+    border: 1px solid #30363D;
+    padding: 2rem;
+    margin: 0 -2rem 4rem;
+    border-radius: 6px;
+    position: relative;
+    
+    &::before {
+      content: '/* Welcome to our dev environment */';
+      position: absolute;
+      top: -0.75rem;
+      left: 1rem;
+      background: #161B22;
+      color: #7C3AED;
+      font-family: monospace;
+      font-size: 0.85rem;
+      padding: 0 0.5rem;
+    }
+  }
+  
+  .tools-section {
+    background: #21262D;
+    padding: 3rem 2rem;
+    margin: 0 -2rem;
+    border-radius: 6px;
+    border: 1px solid #30363D;
+    position: relative;
+    
+    &::before {
+      content: 'tools/';
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      color: #58A6FF;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+    
+    h2::before {
+      content: '$ ls ';
+    }
+  }
+  
+  .version-control-section {
+    background: linear-gradient(135deg, #238636 15%, #2EA043 85%);
+    color: white;
+    padding: 3rem 2rem;
+    margin: 4rem -2rem;
+    border-radius: 6px;
+    position: relative;
+    
+    &::before {
+      content: 'git branch --all';
+      position: absolute;
+      top: 1rem;
+      left: 2rem;
+      color: rgba(255,255,255,0.8);
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+    
+    h2, h3 {
+      color: white;
+    }
+    
+    h2::before {
+      content: '$ git ';
+      color: #C9D1D9;
+    }
+    
+    h3 {
+      background: rgba(0,0,0,0.2);
+      border-left-color: #C9D1D9;
+    }
+    
+    p {
+      color: rgba(255,255,255,0.95);
+    }
+    
+    ul li {
+      color: rgba(255,255,255,0.95);
+      
+      &::before {
+        color: #C9D1D9;
+      }
+    }
+  }
+  
+  .local-environment {
+    background: #161B22;
+    padding: 3rem 2rem;
+    margin: 4rem -2rem;
+    border: 2px solid #F85149;
+    border-radius: 6px;
+    position: relative;
+    
+    &::before {
+      content: 'localhost:3000';
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      color: #F85149;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+    
+    h2::before {
+      content: '$ npm ';
+    }
+  }
+  
+  .testing-section {
+    background: #21262D;
+    padding: 3rem 2rem;
+    margin: 4rem -2rem;
+    border-radius: 6px;
+    border-left: 4px solid #A5A5A5;
+    position: relative;
+    
+    &::before {
+      content: 'tests/ ✓ All tests passing';
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      color: #238636;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+    
+    h2::before {
+      content: '$ test ';
+    }
+  }
+  
+  .deployment-section {
+    background: linear-gradient(135deg, #7C3AED 0%, #8B5CF6 100%);
+    color: white;
+    padding: 3rem 2rem;
+    margin: 4rem -2rem;
+    border-radius: 6px;
+    position: relative;
+    
+    &::before {
+      content: 'deploy.sh --production';
+      position: absolute;
+      top: 1rem;
+      left: 2rem;
+      color: rgba(255,255,255,0.8);
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+    
+    h2, h3 {
+      color: white;
+    }
+    
+    h2::before {
+      content: '$ deploy ';
+      color: #C9D1D9;
+    }
+    
+    h3 {
+      background: rgba(0,0,0,0.2);
+      border-left-color: #C9D1D9;
+    }
+    
+    p {
+      color: rgba(255,255,255,0.95);
+    }
+    
+    ul li {
+      color: rgba(255,255,255,0.95);
+      
+      &::before {
+        color: #C9D1D9;
+      }
+    }
+  }
+  
+  .security-section {
+    background: #21262D;
+    padding: 3rem 2rem;
+    margin: 4rem -2rem;
+    border: 2px dashed #F85149;
+    border-radius: 6px;
+    position: relative;
+    
+    &::before {
+      content: '🔒 security.conf';
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      color: #F85149;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+    
+    h2::before {
+      content: '$ secure ';
+    }
+  }
+  
+  .benefits-section {
+    background: linear-gradient(135deg, #238636 0%, #2EA043 100%);
+    color: white;
+    padding: 3rem 2rem;
+    margin: 4rem -2rem 0;
+    border-radius: 6px;
+    position: relative;
+    
+    &::before {
+      content: 'build successful ✓';
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      color: rgba(255,255,255,0.9);
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+    
+    h2, h3 {
+      color: white;
+    }
+    
+    h2::before {
+      content: '$ benefits ';
+      color: #C9D1D9;
+    }
+    
+    h3 {
+      background: rgba(0,0,0,0.2);
+      border-left-color: #C9D1D9;
+    }
+    
+    p {
+      color: rgba(255,255,255,0.95);
+    }
+    
+    ul li {
+      color: rgba(255,255,255,0.95);
+      
+      &::before {
+        color: #C9D1D9;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+    
+    .page-header {
+      padding: 3rem 0 2rem;
+      
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+    
+    .content-body {
+      padding: 3rem 0;
+    }
+    
+    .intro-section,
+    .tools-section,
+    .version-control-section,
+    .local-environment,
+    .testing-section,
+    .deployment-section,
+    .security-section,
+    .benefits-section {
+      margin-left: -1rem;
+      margin-right: -1rem;
+      padding: 2rem 1rem;
+      
+      &::before {
+        display: none;
+      }
+    }
+  }
+}
+
+// Development Environment CTA Section
+.development-environment-cta-section {
+  background: #0D1117;
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+  position: relative;
+  font-family: monospace;
+  
+  &::before {
+    content: '> Ready to work in a professional environment?';
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #58A6FF;
+    font-size: 0.85rem;
+  }
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #F0F6FC;
+    font-family: monospace;
+  }
+  
+  p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #8B949E;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: monospace;
+  }
+  
+  .btn {
+    background: #238636;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-family: monospace;
+    border: 1px solid #238636;
+    
+    &:hover {
+      background: #2EA043;
+      border-color: #2EA043;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(35, 134, 54, 0.3);
+    }
+  }
+}
+.dev-environment-content {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+  
+  .dev-header {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+    
+    h1 {
+      font-size: 2.8rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+      font-family: 'Fira Code', monospace;
+      font-weight: 700;
+      
+      @media (max-width: 768px) {
+        font-size: 2.2rem;
+      }
+    }
+    
+    .dev-subtitle {
+      font-size: 1.2rem;
+      line-height: 1.7;
+      color: #666;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+  }
+  
+  .dev-overview {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+    padding: 0 2rem;
+    text-align: center;
+    
+    h2 {
+      font-size: 2.2rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+    
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #555;
+      margin-bottom: 1.5rem;
+    }
+  }
+}
+
+// Unique Setup Timeline Design
+.dev-setup {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  
+  h2 {
+    font-size: 2.2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+}
+
+.setup-timeline {
+  position: relative;
+  
+  // Central timeline line
+  &::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #FCB900 0%, #333 100%);
+    transform: translateX(-50%);
+    z-index: 1;
+    
+    @media (max-width: 768px) {
+      left: 60px;
+      width: 3px;
+    }
+  }
+}
+
+.setup-stage {
+  position: relative;
+  margin-bottom: 4rem;
+  
+  &:nth-child(odd) {
+    .stage-content {
+      margin-left: 50%;
+      padding-left: 3rem;
+      
+      @media (max-width: 768px) {
+        margin-left: 0;
+        padding-left: 120px;
+      }
+    }
+  }
+  
+  &:nth-child(even) {
+    .stage-content {
+      margin-right: 50%;
+      padding-right: 3rem;
+      text-align: right;
+      
+      @media (max-width: 768px) {
+        margin-right: 0;
+        padding-right: 0;
+        padding-left: 120px;
+        text-align: left;
+      }
+    }
+  }
+  
+  .stage-icon {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #FCB900 0%, #FFB300 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(252, 185, 0, 0.3);
+    
+    @media (max-width: 768px) {
+      left: 60px;
+      width: 60px;
+      height: 60px;
+      font-size: 1.5rem;
+    }
+  }
+  
+  h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-family: 'Fira Code', monospace;
+    font-weight: 600;
+  }
+  
+  .stage-content {
+    max-width: 45%;
+    
+    @media (max-width: 768px) {
+      max-width: none;
+    }
+    
+    > p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+.tools-showcase {
+  display: grid;
+  gap: 1.5rem;
+  
+  .tool-item {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    border-left: 4px solid #FCB900;
+    
+    h4 {
+      font-size: 1.2rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+      font-family: 'Fira Code', monospace;
+      font-weight: 600;
+    }
+    
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #666;
+      margin: 0;
+    }
+  }
+}
+
+// Workflow Steps
+.dev-workflow {
+  max-width: 1000px;
+  margin: 4rem auto 0;
+  padding: 0 2rem;
+  
+  h2 {
+    font-size: 2.2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  > p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+  }
+  
+  .workflow-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .workflow-step {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    h3 {
+      font-size: 1.3rem;
+      color: #FCB900;
+      margin-bottom: 1rem;
+      font-family: 'Fira Code', monospace;
+      font-weight: 600;
+    }
+    
+    p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #666;
+      margin: 0;
+    }
+  }
+}
+
+// Benefits Matrix
+.dev-benefits {
+  max-width: 1000px;
+  margin: 4rem auto 0;
+  padding: 0 2rem;
+  
+  h2 {
+    font-size: 2.2rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .benefits-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .benefit-category {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    border-top: 4px solid #FCB900;
+    
+    h3 {
+      font-size: 1.4rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+      font-family: 'Fira Code', monospace;
+      text-align: center;
+    }
+    
+    ul {
+      list-style: none;
+      padding: 0;
+      
+      li {
+        position: relative;
+        padding: 0.75rem 0 0.75rem 1.5rem;
+        color: #666;
+        font-size: 0.95rem;
+        border-bottom: 1px solid #e9ecef;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        &::before {
+          content: '✓';
+          position: absolute;
+          left: 0;
+          color: #FCB900;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+// Security & Evolution Sections
+.dev-security,
+.dev-evolution {
+  max-width: 800px;
+  margin: 4rem auto 0;
+  padding: 0 2rem;
+  text-align: center;
+  
+  h2 {
+    font-size: 2.2rem;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+  
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+}
+
+// CTA Section
+.dev-env-cta {
+  background: linear-gradient(135deg, #FCB900 0%, #FFB300 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-top: 4rem;
+  
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    color: #000;
+    margin-bottom: 1rem;
+    font-family: 'Fira Code', monospace;
+    font-weight: 700;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+  }
+  
+  .btn {
+    background: #000;
+    color: #FCB900;
+    padding: 1.2rem 2.5rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: #333;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+  }
+}
+
+// Mobile Responsiveness
+@media (max-width: 768px) {
+  .dev-environment-content {
+    padding: 2rem 0;
+    
+    .dev-header {
+      margin-bottom: 3rem;
+      padding: 0 1rem;
+    }
+    
+    .dev-overview {
+      padding: 0 1rem;
+      margin-bottom: 3rem;
+    }
+  }
+  
+  .dev-setup {
+    padding: 0 1rem;
+  }
+  
+  .setup-stage {
+    .stage-content {
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  
+  .workflow-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .benefits-matrix {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,666 @@
+// Our Process Page - SEO Keyword Page Style
+
+.keyword-page-content {
+  padding: 0;
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .page-header {
+    text-align: center;
+    padding: 4rem 0 3rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    margin-bottom: 0;
+    
+    h1 {
+      font-size: 2.5rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      
+      @media (max-width: 768px) {
+        font-size: 2rem;
+      }
+    }
+    
+    .page-subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
+    }
+  }
+  
+  .content-body {
+    padding: 4rem 0;
+    
+    section {
+      margin-bottom: 4rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    h2 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 2rem;
+      font-weight: 600;
+      
+      @media (max-width: 768px) {
+        font-size: 1.75rem;
+      }
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+      color: #444;
+      margin: 2.5rem 0 1rem 0;
+      font-weight: 600;
+      
+      @media (max-width: 768px) {
+        font-size: 1.3rem;
+      }
+    }
+    
+    p {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: #555;
+      margin-bottom: 1.5rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    ul, ol {
+      margin: 1.5rem 0;
+      padding-left: 2rem;
+      
+      li {
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 0.75rem;
+        
+        strong {
+          color: #333;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  
+  .intro-section {
+    background: #fff;
+    border-left: 4px solid #FCB900;
+    padding: 2rem;
+    margin-bottom: 4rem;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  }
+  
+  .phases-section {
+    .phases-grid {
+      display: grid;
+      gap: 2rem;
+      margin-top: 2rem;
+      
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    .phase-item {
+      background: #f8f9fa;
+      padding: 2rem;
+      border-radius: 8px;
+      border: 1px solid #e9ecef;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      }
+      
+      h4 {
+        color: #FCB900;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+    }
+  }
+  
+  .methodology-section {
+    background: #f8f9fa;
+    padding: 3rem 2rem;
+    margin: 4rem -2rem;
+    border-radius: 8px;
+  }
+  
+  .tools-section {
+    .tools-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+      
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      @media (min-width: 1024px) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .tool-item {
+      background: #fff;
+      padding: 1.5rem;
+      border: 1px solid #e9ecef;
+      border-radius: 8px;
+      text-align: center;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        border-color: #FCB900;
+        transform: translateY(-2px);
+      }
+      
+      h4 {
+        color: #333;
+        margin-bottom: 0.5rem;
+        font-size: 1rem;
+      }
+      
+      p {
+        font-size: 0.9rem;
+        color: #666;
+        margin: 0;
+      }
+    }
+  }
+  
+  .results-section {
+    background: linear-gradient(135deg, #FCB900 0%, #FFB300 100%);
+    color: white;
+    padding: 3rem 2rem;
+    margin: 4rem -2rem 0;
+    border-radius: 8px;
+    text-align: center;
+    
+    h2 {
+      color: white;
+      margin-bottom: 2rem;
+    }
+    
+    p {
+      color: rgba(255,255,255,0.9);
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 0 1rem;
+    }
+    
+    .page-header {
+      padding: 3rem 0 2rem;
+    }
+    
+    .content-body {
+      padding: 3rem 0;
+    }
+    
+    .methodology-section,
+    .results-section {
+      margin-left: -1rem;
+      margin-right: -1rem;
+      padding: 2rem 1rem;
+    }
+  }
+}
+
+// Process CTA Section (matches other service pages)
+.process-cta-section {
+  background: #333;
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: white;
+  }
+  
+  p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: rgba(255,255,255,0.9);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .btn {
+    background: #FCB900;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+    display: inline-block;
+    
+    &:hover {
+      background: #FFB300;
+    }
+  }
+}
+
+  .about-process-section {
+    background: #fff;
+    padding: 4vh 2rem 6vh;
+    position: relative;
+    overflow: hidden;
+
+    .fade-edge {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      z-index: 5;
+      pointer-events: none;
+    }
+
+    .fade-edge.left {
+      left: 0;
+      background: linear-gradient(to right, #fff 0%, transparent 100%);
+    }
+
+    .fade-edge.right {
+      right: 0;
+      background: linear-gradient(to left, #fff 0%, transparent 100%);
+    }
+
+    .node-label-inline {
+      font-family: monospace;
+      font-size: 0.95rem;
+      color: #888;
+      margin-bottom: 1rem;
+      margin-left: 2rem;
+      text-align: left;
+    }
+
+    .about-process-track {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      gap: 2rem;
+      padding: 0 2rem 0.5rem 2rem;
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
+    .about-node {
+      flex: 0 0 auto;
+      width: 300px;
+      min-height: 180px;
+      border: 1px solid #FFB300;
+      border-radius: 8px;
+      padding: 1.5rem;
+      background: #f5f5f5;
+      color: #222;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      scroll-snap-align: start;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      .node-label {
+        font-size: 1rem;
+        font-family: monospace;
+        text-align: center;
+        color: #FFB300;
+        letter-spacing: 0.05em;
+        margin-bottom: 0.75rem;
+      }
+
+      .node-content {
+        font-size: 0.9rem;
+        font-family: monospace;
+        color: #111;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      &.active {
+        .node-content {
+          max-height: 1000px;
+          opacity: 1;
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    @media (max-width: 600px) {
+      .about-node {
+        width: 80vw;
+      }
+    }
+  }
+
+// Benefits Grid
+.process-benefits {
+  background: #fff;
+  padding: 0 2rem 6vh;
+  position: relative;
+  overflow: hidden;
+
+  .fade-edge {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .fade-edge.left {
+    left: 0;
+    background: linear-gradient(to right, #fff 0%, transparent 100%);
+  }
+
+  .fade-edge.right {
+    right: 0;
+    background: linear-gradient(to left, #fff 0%, transparent 100%);
+  }
+
+  h2 {
+    font-family: monospace;
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .benefits-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 0 2rem 0.5rem 2rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .benefit-item {
+    flex: 0 0 auto;
+    width: 280px;
+    min-height: 160px;
+    border: 1px solid #FFB300;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: #f5f5f5;
+    color: #222;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    scroll-snap-align: start;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h3 {
+      font-size: 0.95rem;
+      font-family: monospace;
+      text-align: center;
+      color: #FFB300;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 0.8rem;
+      font-family: monospace;
+      color: #111;
+      line-height: 1.4;
+      text-align: center;
+    }
+
+    &:hover {
+      background: #fafafa;
+      border-color: #FFB300;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 179, 0, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      width: 80vw;
+    }
+  }
+}
+
+// Tools Section
+.process-tools {
+  background: #fff;
+  padding: 0 2rem 6vh;
+  position: relative;
+  overflow: hidden;
+
+  .fade-edge {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 60px;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .fade-edge.left {
+    left: 0;
+    background: linear-gradient(to right, #fff 0%, transparent 100%);
+  }
+
+  .fade-edge.right {
+    right: 0;
+    background: linear-gradient(to left, #fff 0%, transparent 100%);
+  }
+
+  h2 {
+    font-family: monospace;
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  > p {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+  }
+
+  .tools-categories {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 0 2rem 0.5rem 2rem;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .tool-category {
+    flex: 0 0 auto;
+    width: 280px;
+    min-height: 180px;
+    border: 1px solid #FFB300;
+    border-radius: 8px;
+    padding: 1.5rem;
+    background: #f5f5f5;
+    color: #222;
+    transition: all 0.3s ease;
+    scroll-snap-align: start;
+
+    h3 {
+      font-size: 0.95rem;
+      font-family: monospace;
+      text-align: center;
+      color: #FFB300;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        position: relative;
+        padding-left: 1rem;
+        margin-bottom: 0.4rem;
+        font-family: monospace;
+        font-size: 0.75rem;
+        color: #111;
+        line-height: 1.4;
+
+        &::before {
+          content: '●';
+          position: absolute;
+          left: 0;
+          color: #FFB300;
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    &:hover {
+      background: #fafafa;
+      border-color: #FFB300;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 179, 0, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      width: 80vw;
+    }
+  }
+}
+
+// Communication Section
+.process-communication {
+  max-width: 800px;
+  margin: 4rem auto 0;
+  padding: 0 2rem;
+  text-align: center;
+
+  h2 {
+    font-family: monospace;
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+}
+
+// Process CTA section matching the about page style  
+.process-cta {
+  margin: 3rem auto 0;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 600px;
+  border: 1px solid #e9ecef;
+
+  h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: monospace;
+    font-weight: 600;
+  }
+
+  p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-family: monospace;
+  }
+
+  .btn-process {
+    background: #FCB900;
+    color: #000;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-family: monospace;
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-size: 0.9rem;
+    border: 1px solid #FCB900;
+
+    &:hover {
+      background: #000;
+      color: #FCB900;
+      border-color: #000;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  @media (max-width: 600px) {
+    margin-top: 2rem;
+    padding: 1.5rem;
+
+    .btn-process {
+      padding: 0.8rem 1.5rem;
+      font-size: 0.85rem;
+    }
+  }
+}
