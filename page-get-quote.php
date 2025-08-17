@@ -18,4 +18,4 @@ get_header(); ?>
     </section>
 </main>
 
-<?php get_footer(); ?>
+<?php include get_template_directory() . '/partials/footer-custom.php'; ?>
