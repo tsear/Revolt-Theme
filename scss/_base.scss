@@ -36,7 +36,7 @@ a {
 
 @media (max-width: 768px) {
   body {
-    padding-top: 120px; // More space for mobile header with stacked layout
+    padding-top: 100px; // Reduced since no ASCII title on mobile
   }
   
   .page-wrapper > section,
