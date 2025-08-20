@@ -1,11 +1,94 @@
 .barbed-wire-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 100px;
-  background-image: url('/wp-content/themes/custom-theme copy/assets/images/barbed-wire.png'); // direct path, no PHP
+  background-image: url('/wp-content/themes/custom-theme copy/assets/images/barbed-wire.png');
   background-repeat: repeat-x;
   background-size: auto 100%;
   background-position: center;
+  background-color: transparent; /* Remove white background */
   margin: 0;
   padding: 0;
   overflow: hidden;
+  z-index: 5; /* Lower than static background */
+}
+
+/* ASCII Art Overlay using your image */
+.barbed-wire-divider::after {
+  content: '';
+  position: absolute;
+  top: 3px; /* 3px offset from original */
+  left: 0;
+  width: 1000%; /* 10x width for continuous scroll */
+  height: 100px;
+  background-image: 
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png');
+  background-repeat: repeat-x;
+  background-size: 10% 100%; /* Each image takes 10% of the width */
+  background-position: 0% center, 10% center, 20% center, 30% center, 40% center, 50% center, 60% center, 70% center, 80% center, 90% center;
+  background-color: transparent;
+  opacity: 0.6;
+  z-index: 15; /* Above static background */
+  pointer-events: none;
+  animation: asciiWireContinuous 40s linear infinite; /* Slowed down from 10s to 40s */
+}
+
+@keyframes asciiWireContinuous {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-10%); } /* Move one image width */
+}
+
+.barbed-wire-divider-two {
+  width: 100%;
+  height: 100px;
+  background-image: url('assets/images/barbed-wire.png');
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center;
+  background-color: transparent; /* Remove white background */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 5; /* Lower than static background */
+}
+
+/* ASCII Art Overlay for second divider using your image */
+.barbed-wire-divider-two::after {
+  content: '';
+  position: absolute;
+  top: -2px; /* 2px offset above */
+  left: 0;
+  width: 1000%; /* 10x width for continuous scroll */
+  height: 100px;
+  background-image: 
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png'),
+    url('assets/images/ascii-art.png');
+  background-repeat: repeat-x;
+  background-size: 10% 100%; /* Each image takes 10% of the width */
+  background-position: 0% center, 10% center, 20% center, 30% center, 40% center, 50% center, 60% center, 70% center, 80% center, 90% center;
+  background-color: transparent;
+  opacity: 0.6;
+  z-index: 15; /* Above static background */
+  pointer-events: none;
+  animation: asciiWireContinuous 50s linear infinite reverse; /* Slowed down from 12s to 50s, opposite direction */
 }

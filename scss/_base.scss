@@ -8,13 +8,51 @@ html, body {
   box-sizing: border-box;
 }
 
-body {
-  font-family: Helvetica, sans-serif;
-  background-color: #fff;
-  color: #000;
+/* _base.scss */
+
+* {
   margin: 0;
   padding: 0;
-  padding-top: 80px; // Space for fixed header
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Fira Code", monospace;
+  background: #F0F0F0; /* Light gray base */
+  color: #000;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* SVG TV Static Background for entire site */
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200vw;
+  height: 200vh;
+  z-index: 10; /* Higher z-index to run over dividers */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.9' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+  animation: tvStatic 0.5s steps(10, end) infinite;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+@keyframes tvStatic {
+  0% { transform: translate(0px, 0px); }
+  10% { transform: translate(-5px, 5px); }
+  20% { transform: translate(8px, -3px); }
+  30% { transform: translate(-3px, 8px); }
+  40% { transform: translate(5px, -8px); }
+  50% { transform: translate(-8px, 3px); }
+  60% { transform: translate(3px, -5px); }
+  70% { transform: translate(8px, 8px); }
+  80% { transform: translate(-5px, -3px); }
+  90% { transform: translate(3px, 5px); }
+  100% { transform: translate(-8px, -8px); }
 }
 
 a {

@@ -1,16 +1,31 @@
 /* _hero.scss */
 
 .hero {
-  padding: 6rem 0 3rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start; /* Move content to top */
+  justify-content: center;
   text-align: center;
+  position: relative;
+  padding-bottom: 120px; /* Account for divider height + spacing */
+  padding-top: 200px; /* Higher top padding to push content down */
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    transform: translateY(0); /* No additional offset needed */
+    position: relative;
+    z-index: 2;
+  }
 
   .hero-heading {
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     line-height: 1.2;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.25rem;
     justify-content: center;
     align-items: center;
@@ -40,7 +55,8 @@
   }
 
   p {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
     font-size: 1.2rem;
     font-family: monospace;
   }
@@ -53,7 +69,7 @@
     padding: 1rem 2rem;
     border-radius: 6px;
     display: inline-block;
-    margin-top: 2rem;
+    margin-top: 0;
     font-size: 1rem;
     font-family: monospace;
     transition: background 0.3s ease;

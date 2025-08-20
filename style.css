@@ -9,15 +9,73 @@ html, body {
   box-sizing: border-box;
 }
 
-body {
-  font-family: Helvetica, sans-serif;
-  background-color: #fff;
-  color: #000;
+/* _base.scss */
+* {
   margin: 0;
   padding: 0;
-  padding-top: 80px;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Fira Code", monospace;
+  background: #F0F0F0; /* Light gray base */
+  color: #000;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* SVG TV Static Background for entire site */
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200vw;
+  height: 200vh;
+  z-index: 10; /* Higher z-index to run over dividers */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='turbulence' baseFrequency='0.9' numOctaves='4' seed='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-size: 300px 300px;
+  animation: tvStatic 0.5s steps(10, end) infinite;
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+@keyframes tvStatic {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  10% {
+    transform: translate(-5px, 5px);
+  }
+  20% {
+    transform: translate(8px, -3px);
+  }
+  30% {
+    transform: translate(-3px, 8px);
+  }
+  40% {
+    transform: translate(5px, -8px);
+  }
+  50% {
+    transform: translate(-8px, 3px);
+  }
+  60% {
+    transform: translate(3px, -5px);
+  }
+  70% {
+    transform: translate(8px, 8px);
+  }
+  80% {
+    transform: translate(-5px, -3px);
+  }
+  90% {
+    transform: translate(3px, 5px);
+  }
+  100% {
+    transform: translate(-8px, -8px);
+  }
+}
 a {
   text-decoration: none;
   color: #000;
@@ -398,16 +456,30 @@ a {
 }
 /* _hero.scss */
 .hero {
-  padding: 6rem 0 3rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start; /* Move content to top */
+  justify-content: center;
   text-align: center;
+  position: relative;
+  padding-bottom: 120px; /* Account for divider height + spacing */
+  padding-top: 200px; /* Higher top padding to push content down */
+}
+.hero .container, .hero #site-header .header-inner, #site-header .hero .header-inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  transform: translateY(0); /* No additional offset needed */
+  position: relative;
+  z-index: 2;
 }
 .hero .hero-heading {
-  font-size: 3.5rem;
+  font-size: 2.8rem;
   font-weight: bold;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   line-height: 1.2;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.25rem;
   justify-content: center;
   align-items: center;
@@ -432,7 +504,8 @@ a {
   transition: opacity 0.5s ease-in-out;
 }
 .hero p {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
   font-size: 1.2rem;
   font-family: monospace;
 }
@@ -444,7 +517,7 @@ a {
   padding: 1rem 2rem;
   border-radius: 6px;
   display: inline-block;
-  margin-top: 2rem;
+  margin-top: 0;
   font-size: 1rem;
   font-family: monospace;
   transition: background 0.3s ease;
@@ -1253,7 +1326,7 @@ a {
 
 #what-to-expect {
   width: 85vw;
-  margin: 0 auto;
+  margin: -50px auto 0;
   padding: 6rem 0;
   font-family: "Fira Code", monospace;
   color: #000;
@@ -1271,47 +1344,178 @@ a {
   background: #f8f8f8;
   max-width: 1000px;
   margin: 1.5rem auto;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem;
   position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
 }
-#what-to-expect .expect-group::before, #what-to-expect .expect-group::after {
+#what-to-expect .expect-group::before {
   content: "";
   position: absolute;
+  left: 0;
   top: 0;
   height: 100%;
   width: 4px;
-  background-color: #eee;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
 }
-#what-to-expect .expect-group::before {
-  left: 0;
+#what-to-expect .expect-group[data-level=critical]::before {
+  background-color: #ff4444;
 }
-#what-to-expect .expect-group::after {
-  right: 0;
-}
-#what-to-expect .expect-group:hover::before, #what-to-expect .expect-group:hover::after {
+#what-to-expect .expect-group[data-level=essential]::before {
   background-color: #FCB900;
+}
+#what-to-expect .expect-group[data-level=reliable]::before {
+  background-color: #00aa44;
+}
+#what-to-expect .expect-group[data-level=premium]::before {
+  background-color: #4444ff;
+}
+#what-to-expect .expect-group[data-level=selective]::before {
+  background-color: #aa44aa;
+}
+#what-to-expect .expect-group:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+#what-to-expect .expect-group .expect-icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+#what-to-expect .expect-group .expect-content {
+  flex: 1;
 }
 #what-to-expect .expect-group .expect-label {
   font-weight: bold;
-  margin-bottom: 0.5rem;
-  color: #111;
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: #000;
 }
 #what-to-expect .expect-group .expect-detail {
-  color: #333;
+  font-size: 0.95rem;
   line-height: 1.6;
+  color: #333;
+  margin-bottom: 1rem;
+}
+#what-to-expect .expect-group .expect-proof {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+#what-to-expect .expect-group .expect-proof .proof-item {
+  font-size: 0.85rem;
+  color: #666;
+  background: rgba(252, 185, 0, 0.1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 3px;
+  border: 1px solid rgba(252, 185, 0, 0.3);
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  #what-to-expect {
+    width: 95vw;
+    padding: 4rem 0;
+  }
+  #what-to-expect .expect-intro {
+    padding-left: 1rem;
+    margin-bottom: 2rem;
+  }
+  #what-to-expect .expect-group {
+    margin: 1rem auto;
+    padding: 1.25rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  #what-to-expect .expect-group .expect-icon {
+    font-size: 1.5rem;
+    align-self: flex-start;
+  }
+  #what-to-expect .expect-group .expect-proof .proof-item {
+    font-size: 0.8rem;
+  }
 }
 
 .barbed-wire-divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 100px;
   background-image: url("/wp-content/themes/custom-theme copy/assets/images/barbed-wire.png");
   background-repeat: repeat-x;
   background-size: auto 100%;
   background-position: center;
+  background-color: transparent; /* Remove white background */
   margin: 0;
   padding: 0;
   overflow: hidden;
+  z-index: 5; /* Lower than static background */
+}
+
+/* ASCII Art Overlay using your image */
+.barbed-wire-divider::after {
+  content: "";
+  position: absolute;
+  top: 3px; /* 3px offset from original */
+  left: 0;
+  width: 1000%; /* 10x width for continuous scroll */
+  height: 100px;
+  background-image: url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png");
+  background-repeat: repeat-x;
+  background-size: 10% 100%; /* Each image takes 10% of the width */
+  background-position: 0% center, 10% center, 20% center, 30% center, 40% center, 50% center, 60% center, 70% center, 80% center, 90% center;
+  background-color: transparent;
+  opacity: 0.6;
+  z-index: 15; /* Above static background */
+  pointer-events: none;
+  animation: asciiWireContinuous 40s linear infinite; /* Slowed down from 10s to 40s */
+}
+
+@keyframes asciiWireContinuous {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10%);
+  } /* Move one image width */
+}
+.barbed-wire-divider-two {
+  width: 100%;
+  height: 100px;
+  background-image: url("assets/images/barbed-wire.png");
+  background-repeat: repeat-x;
+  background-size: auto 100%;
+  background-position: center;
+  background-color: transparent; /* Remove white background */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  z-index: 5; /* Lower than static background */
+}
+
+/* ASCII Art Overlay for second divider using your image */
+.barbed-wire-divider-two::after {
+  content: "";
+  position: absolute;
+  top: -2px; /* 2px offset above */
+  left: 0;
+  width: 1000%; /* 10x width for continuous scroll */
+  height: 100px;
+  background-image: url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png");
+  background-repeat: repeat-x;
+  background-size: 10% 100%; /* Each image takes 10% of the width */
+  background-position: 0% center, 10% center, 20% center, 30% center, 40% center, 50% center, 60% center, 70% center, 80% center, 90% center;
+  background-color: transparent;
+  opacity: 0.6;
+  z-index: 15; /* Above static background */
+  pointer-events: none;
+  animation: asciiWireContinuous 50s linear infinite reverse; /* Slowed down from 12s to 50s, opposite direction */
 }
 
 .barbed-wire-divider {

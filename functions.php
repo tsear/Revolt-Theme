@@ -9,64 +9,7 @@ function simple_theme_enqueue_styles() {
         get_stylesheet_uri()
     );
 
-    // 2) Prism CSS (global)
-    wp_enqueue_style(
-        'prism-css',
-        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css'
-    );
-
-    // 3) Prism JS (global)
-    wp_enqueue_script(
-        'prism-core',
-        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js',
-        array(),
-        null,
-        true
-    );
-    wp_enqueue_script(
-        'prism-json',
-        'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js',
-        array('prism-core'),
-        null,
-        true
-    );
-
-    // 4) Global JavaScript files
-    wp_enqueue_script(
-        'rotate-words',
-        get_template_directory_uri() . '/assets/js/rotate-words.js',
-        array(),
-        '1.0',
-        true
-    );
-    wp_enqueue_script(
-        'code-showcase',
-        get_template_directory_uri() . '/assets/js/code-showcase.js',
-        array('prism-core'),
-        null,
-        true
-    );
-    wp_enqueue_script(
-        'start-here',
-        get_template_directory_uri() . '/assets/js/start-here.js',
-        array(),
-        null,
-        true
-    );
-    wp_enqueue_script(
-        'revolt-revolution',
-        get_template_directory_uri() . '/assets/js/revolt-revolution.js',
-        array(),
-        null,
-        true
-    );
-    wp_enqueue_script(
-        'voices-for-rent',
-        get_template_directory_uri() . '/assets/js/voices-for-rent.js',
-        array(),
-        null,
-        true
-    );
+    // 2) Global scripts
     wp_enqueue_script(
         'dropdown-nav',
         get_template_directory_uri() . '/assets/js/dropdown-nav.js',
@@ -74,6 +17,45 @@ function simple_theme_enqueue_styles() {
         '1.0',
         true
     );
+
+    // ✅ Only for front page
+    if ( is_front_page() ) {
+        wp_enqueue_script(
+            'three-js',
+            'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js',
+            array(),
+            null,
+            true
+        );
+        wp_enqueue_script(
+            'hero-background',
+            get_template_directory_uri() . '/assets/js/hero-background.js',
+            array('three-js'),
+            null,
+            true
+        );
+        wp_enqueue_script(
+            'rotate-words',
+            get_template_directory_uri() . '/assets/js/rotate-words.js',
+            array(),
+            '1.0',
+            true
+        );
+        wp_enqueue_script(
+            'what-to-expect',
+            get_template_directory_uri() . '/assets/js/what-to-expect.js',
+            array(),
+            null,
+            true
+        );
+        wp_enqueue_script(
+            'start-here',
+            get_template_directory_uri() . '/assets/js/start-here.js',
+            array(),
+            null,
+            true
+        );
+    }
 
     // ✅ Only for About page
     if ( is_page('about') ) {

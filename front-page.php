@@ -7,17 +7,17 @@
         <h1 class="hero-heading">
           <span class="hero-static">We Build Websites for&nbsp;</span>
           <span class="rotating-container">
-            <span class="rotating-placeholder">Entrepreneurs</span>
-            <span id="rotating-word">Everyone</span>
+            <span class="rotating-placeholder">Young Creators</span>
+            <span id="rotating-word">Young Creators</span>
           </span>
         </h1>
-        <p>WordPress builds for Self-Publishing</p>
-        <a href="<?php echo esc_url( site_url('/contact') ); ?>" class="btn">Get Started</a>
+        <p class="hero-subtext">Because having something to say shouldn't require a trust fund.</p>
+        <a href="<?php echo esc_url( site_url('/contact') ); ?>" class="btn hero-cta">Break the Paywall</a>
       </div>
     </section>
 
-    <?php get_template_part('partials/divider-horizontal'); ?>
     <?php get_template_part('partials/what-to-expect'); ?>
+    <?php get_template_part('partials/divider-horizontal'); ?>
     <?php get_template_part('partials/divider-two'); ?>
     <?php get_template_part('partials/start-here'); ?>
 

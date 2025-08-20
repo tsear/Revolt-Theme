@@ -1,2 +1,2 @@
-<section class="barbed-wire-divider">
+<section class="barbed-wire-divider-two">
 </section>
