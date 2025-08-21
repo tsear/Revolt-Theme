@@ -15,6 +15,22 @@
   z-index: 5; /* Lower than static background */
 }
 
+@media (max-width: 768px) {
+  .barbed-wire-divider {
+    transform: scaleY(0.3);
+    transform-origin: bottom; /* Scale from the bottom for the absolute hero divider */
+  }
+
+  .static-divider-wrapper {
+    height: 30px; /* Match the scaled height of the divider */
+  }
+
+  /* Adjust for dividers inside the static wrapper */
+  .static-divider-wrapper .barbed-wire-divider {
+    transform-origin: center; /* Scale from the center for static dividers */
+  }
+}
+
 /* ASCII Art Overlay using your image */
 .barbed-wire-divider::after {
   content: '';
@@ -47,6 +63,12 @@
 @keyframes asciiWireContinuous {
   0% { transform: translateX(0%); }
   100% { transform: translateX(-10%); } /* Move one image width */
+}
+
+.static-divider-wrapper {
+  position: relative;
+  height: 100px; /* This holds the space in the document flow */
+  margin: 2rem 0; /* Add some vertical spacing */
 }
 
 .barbed-wire-divider-two {

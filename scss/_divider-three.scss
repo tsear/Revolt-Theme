@@ -76,13 +76,22 @@
   #divider-three .ascii-site-image {
     flex-direction: column;
     gap: 1rem;
+    width: 100%; /* Ensure the container takes full width */
+  }
+  #divider-three .ascii-site-image img {
+    max-width: 100%; /* The image can't be wider than its container */
+    height: auto;    /* The height will scale automatically to maintain aspect ratio */
+    width: auto;     /* Let the width be flexible, up to the max-width */
   }
   #divider-three .logo-wrapper {
     flex-direction: column;
     gap: 0.5rem;
+    align-items: center; /* Center the content */
   }
   #divider-three .logo-wrapper img {
-    max-height: 80px;
+    max-width: 250px; /* Set a max-width on the logo to prevent it from being huge */
+    width: 80%;       /* Use a percentage width for better scaling */
+    height: auto;
   }
   #divider-three .logo-wrapper .btn {
     width: 100%;
