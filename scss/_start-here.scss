@@ -1,80 +1,141 @@
-#start-here {
-  font-family: 'Fira Code', 'Courier New', monospace;
-  background: #fff;
-  color: #000;
+.start-here-v2 {
   padding: 6rem 2rem;
-  max-width: 760px;
+  max-width: 960px;
   margin: 0 auto;
-  text-align: center; // ✅ center inline elements like the button
+  font-family: 'Inter', sans-serif; // Using a cleaner font for body text
 
-  p {
-    font-size: 1.1rem;
-    line-height: 2.1;
-    margin-bottom: 2.5rem;
+  // Shared container styles
+  .start-here-intro-container,
+  .start-here-form-container {
+    background: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 16px;
+    padding: 4rem;
+    margin-bottom: 4rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04), 0 1px 4px rgba(0,0,0,0.02);
   }
 
-  input[type="text"],
-  input[type="email"],
-  select {
-    appearance: none;
-    border: none;
-    border-bottom: 2px dashed #000;
-    font-family: inherit;
-    font-size: 1rem;
-    padding: 0 4px 2px;
-    background: transparent;
-    color: #000;
-    min-width: 120px;
-    margin-bottom: 1rem;
-    transition: all 0.2s ease;
-  }
-
-  input::placeholder {
-    color: #aaa;
-    font-style: italic;
-  }
-
-  input:focus,
-  select:focus {
-    outline: none;
-    border-color: #fcb900;
-    background: #f9f9f9;
-  }
-
-  select {
-    padding-bottom: 2px;
-    background: transparent;
-    font-family: inherit;
-  }
-
-  #startHereResponse {
-    font-size: 1.2rem;
+  // --- Intro Section ---
+  .intro-header {
     text-align: center;
-    margin-top: 4rem;
-    line-height: 1.6;
-    font-style: italic;
+    margin-bottom: 4rem;
+    .intro-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 1rem;
+    }
+    .intro-subtitle {
+      font-size: 1.2rem;
+      color: #495057;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
   }
 
-  .btn-cta {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 1rem 2rem;
-    font-size: 1rem;
-    font-weight: bold;
-    font-family: 'Fira Code', monospace;
-    border-radius: 6px;
-    border: 2px solid #FCB900;
-    background: #FCB900;
-    color: #000;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    transition: all 0.3s ease;
+  .intro-content-elements {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    
+    .element {
+      .element-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .element-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #212529;
+        margin-bottom: 0.75rem;
+      }
+      .element-text {
+        font-size: 1rem;
+        color: #495057;
+        line-height: 1.7;
+      }
+    }
   }
 
-  .btn-cta:hover {
-    background: #000;
-    color: #fff;
-    border-color: #000;
+  // --- Form Section ---
+  .start-here-form-container {
+    .form-header {
+      text-align: center;
+      margin-bottom: 3rem;
+      .form-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+    }
+
+    .conversational-form {
+      font-family: 'Fira Code', 'Courier New', monospace;
+      p {
+        font-size: 1.2rem;
+        line-height: 2.5;
+        margin-bottom: 2rem;
+        color: #212529;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      select {
+        appearance: none;
+        border: none;
+        border-bottom: 2px dashed #ced4da;
+        font-family: inherit;
+        font-size: 1.1rem;
+        padding: 0 4px 4px;
+        background: transparent;
+        color: #000;
+        min-width: 150px;
+        transition: all 0.2s ease-in-out;
+
+        &:focus {
+          outline: none;
+          border-bottom-style: solid;
+          border-color: #fcb900;
+          background: #fff9e6;
+        }
+      }
+
+      input::placeholder {
+        color: #adb5bd;
+        font-style: italic;
+      }
+
+      .btn-cta {
+        display: block;
+        width: fit-content;
+        margin: 3rem auto 0;
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+        font-weight: bold;
+        font-family: 'Fira Code', monospace;
+        border-radius: 8px;
+        border: 2px solid #000;
+        background: #FCB900;
+        color: #000;
+        cursor: pointer;
+        text-decoration: none;
+        transition: all 0.2s ease-in-out;
+        box-shadow: 0 4px 10px rgba(252, 185, 0, 0.3);
+
+        &:hover {
+          background: #000;
+          color: #FCB900;
+          transform: translateY(-3px);
+          box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+      }
+    }
   }
+
+  // --- CTA Section ---
+  // The styling is inherited from its own partial's SCSS file
+  // We just provide a container for spacing if needed.
+  .start-here-cta-container {}
 }

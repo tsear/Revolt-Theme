@@ -1,46 +1,52 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("startHereForm");
-    const response = document.getElementById("startHereResponse");
-  
+  const form = document.getElementById("startHereForm");
+  const response = document.getElementById("startHereResponse");
+
+  // Ensure form and response elements exist before adding listeners
+  if (form && response) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-  
+
       const data = new FormData(form);
-  
-      // Compile submission as a single message (for Formspree or HubSpot field)
+
+      // Compile a summary message based on the NEW, simplified form fields
       let summary = `
-  Hi, I’m ${data.get("name")} and I ${data.get("action")} ${data.get("what")}.
-  
-  Lately, I’ve been trying to ${data.get("trying")}, 
-  but I keep getting distracted by ${data.get("distracted")} 
-  or blocked by ${data.get("blocked")}.
-  
-  The truth is, I think what I’m building could ${data.get("impact")}, 
-  but I need help with ${data.get("need")}.
-  
-  I’ve worked with ${data.get("worked_with")} before. 
-  It went ${data.get("experience")}.
-  
-  If I could wave a wand and get one thing built right now, 
-  it would be ${data.get("magic")}. I’d call that a win.
-  
-  You can reach me at ${data.get("email")}, 
-  and if I ghost you, it’s probably because ${data.get("ghost_reason")}.
+Hi, I’m ${data.get("name")} and I ${data.get("action")} ${data.get("what")}.
+
+Lately, I’ve been trying to ${data.get("trying")}, but I'm blocked by ${data.get("blocked")}.
+
+You can reach me at ${data.get("email")}.
       `;
-  
-      // Send to Formspree (replace YOUR_ID)
+
+      // The Formspree endpoint remains the same
       fetch("https://formspree.io/f/mrbprrpv", {
         method: "POST",
         headers: {
           Accept: "application/json",
         },
+        // Send the simplified summary and the required email field
         body: new URLSearchParams({
           message: summary,
           email: data.get("email"),
         }),
-      }).then(() => {
-        form.style.display = "none";
+      })
+      .then(res => {
+        if (res.ok) {
+          // On successful submission, hide the form and show the response message
+          form.style.display = "none";
+          response.style.display = "block";
+        } else {
+          // Optional: Handle submission errors
+          response.innerHTML = "<p>Sorry, there was an error submitting the form. Please try again.</p>";
+          response.style.display = "block";
+        }
+      })
+      .catch(error => {
+        // Optional: Handle network errors
+        console.error("Form submission error:", error);
+        response.innerHTML = "<p>Sorry, a network error occurred. Please try again.</p>";
         response.style.display = "block";
       });
     });
-  });
+  }
+});
