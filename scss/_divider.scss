@@ -22,9 +22,9 @@
   }
 
   .static-divider-wrapper .barbed-wire-divider {
-    transform: scale(1.6); /* Same scaling for static dividers */
-    transform-origin: center;
-    bottom: 15px; /* Adjusted positioning for smaller container */
+    /* Identical to regular dividers */
+    transform-origin: bottom;
+    bottom: 0; /* Same as regular dividers */
   }
 
   /* Stretch ASCII art horizontally for better readability */

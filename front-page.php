@@ -15,23 +15,17 @@
         <a href="<?php echo esc_url( site_url('/contact') ); ?>" class="btn hero-cta">Break the Paywall</a>
       </div>
       <?php get_template_part('partials/divider-horizontal'); ?>
-      <?php get_template_part('partials/divider-horizontal'); ?>
-      <?php get_template_part('partials/divider-horizontal'); ?>
     </section>
 
     <?php get_template_part('partials/what-to-expect'); ?>
 
     <div class="static-divider-wrapper">
       <?php get_template_part('partials/divider-horizontal'); ?>
-      <?php get_template_part('partials/divider-horizontal'); ?>
-      <?php get_template_part('partials/divider-horizontal'); ?>
     </div>
 
     <?php get_template_part('partials/start-here'); ?>
 
     <div class="static-divider-wrapper" style="margin-bottom: 5rem;">
-      <?php get_template_part('partials/divider-horizontal'); ?>
-      <?php get_template_part('partials/divider-horizontal'); ?>
       <?php get_template_part('partials/divider-horizontal'); ?>
     </div>
 

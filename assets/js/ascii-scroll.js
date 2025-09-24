@@ -1,6 +1,13 @@
 // ASCII scrolling with WordPress theme file loading
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Prevent multiple initializations
+    if (window.asciiScrollInitialized) {
+        console.log('⚠️ ASCII scroll already initialized, skipping');
+        return;
+    }
+    window.asciiScrollInitialized = true;
+    
     console.log('🎯 ASCII scroll initializing...');
     
     const dividers = document.querySelectorAll('.barbed-wire-divider');

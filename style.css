@@ -1552,16 +1552,16 @@ a {
 
 @media (max-width: 768px) {
   .barbed-wire-divider {
-    transform: scale(1.6); /* Reduced from 2.5x to 1.6x */
+    /* Scaling handled by JavaScript to avoid conflicts */
     transform-origin: bottom;
   }
   .static-divider-wrapper {
     height: 200px; /* Reduced container height for smaller scale */
   }
   .static-divider-wrapper .barbed-wire-divider {
-    transform: scale(1.6); /* Same scaling for static dividers */
-    transform-origin: center;
-    bottom: 15px; /* Adjusted positioning for smaller container */
+    /* Identical to regular dividers */
+    transform-origin: bottom;
+    bottom: 0; /* Same as regular dividers */
   }
   /* Stretch ASCII art horizontally for better readability */
   .barbed-wire-divider::after {
