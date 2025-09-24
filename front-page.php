@@ -48,6 +48,7 @@
 Subscribe to the underground feed:
   </pre>
   <form id="popup-terminal-form">
+    <?php wp_nonce_field('revolt_newsletter_subscribe', 'revolt_newsletter_nonce'); ?>
     <input type="email" id="popup-terminal-email" placeholder="email@revolt.dev" required />
     <button type="submit">subscribe</button>
   </form>

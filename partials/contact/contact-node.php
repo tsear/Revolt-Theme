@@ -8,6 +8,7 @@
         <span class="node-label">Web Development</span>
       </div>
       <form class="node-form" action="https://formspree.io/f/mjkyzqvg" method="POST">
+        <?php wp_nonce_field('revolt_contact_form', 'revolt_contact_nonce'); ?>
         <input type="hidden" name="_subject" value="Web Development Inquiry">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
@@ -23,6 +24,7 @@
         <span class="node-label">CMS Setup</span>
       </div>
       <form class="node-form" action="https://formspree.io/f/mjkyzqvg" method="POST">
+        <?php wp_nonce_field('revolt_contact_form', 'revolt_contact_nonce'); ?>
         <input type="hidden" name="_subject" value="CMS Setup Inquiry">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
@@ -38,6 +40,7 @@
         <span class="node-label">Content Strategy</span>
       </div>
       <form class="node-form" action="https://formspree.io/f/mjkyzqvg" method="POST">
+        <?php wp_nonce_field('revolt_contact_form', 'revolt_contact_nonce'); ?>
         <input type="hidden" name="_subject" value="Content Strategy Inquiry">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
@@ -53,6 +56,7 @@
         <span class="node-label">Social Media</span>
       </div>
       <form class="node-form" action="https://formspree.io/f/mjkyzqvg" method="POST">
+        <?php wp_nonce_field('revolt_contact_form', 'revolt_contact_nonce'); ?>
         <input type="hidden" name="_subject" value="Social Media Inquiry">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
@@ -68,6 +72,7 @@
         <span class="node-label">Something Else</span>
       </div>
       <form class="node-form" action="https://formspree.io/f/mjkyzqvg" method="POST">
+        <?php wp_nonce_field('revolt_contact_form', 'revolt_contact_nonce'); ?>
         <input type="hidden" name="_subject" value="General Inquiry">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />

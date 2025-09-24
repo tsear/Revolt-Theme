@@ -136,6 +136,61 @@
 
   // --- CTA Section ---
   // The styling is inherited from its own partial's SCSS file
-  // We just provide a container for spacing if needed.
-  .start-here-cta-container {}
+
+  // Mobile responsive styles
+  @media (max-width: 768px) {
+    padding: 3rem 1rem; // Less padding on mobile
+    
+    .start-here-intro-container,
+    .start-here-form-container {
+      padding: 2rem; // Less padding in containers
+      margin-bottom: 2rem; // Less margin between sections
+    }
+
+    .intro-header {
+      margin-bottom: 2.5rem; // Less spacing
+      
+      .intro-title {
+        font-size: 2rem; // Smaller title
+      }
+      
+      .intro-subtitle {
+        font-size: 1rem; // Smaller subtitle
+      }
+    }
+
+    .intro-content-elements {
+      grid-template-columns: 1fr; // Stack vertically on mobile
+      gap: 2rem; // Less gap between elements
+      
+      .element {
+        text-align: center; // Center align on mobile
+        
+        .element-title {
+          font-size: 1.3rem; // Slightly smaller
+        }
+        
+        .element-text {
+          font-size: 0.95rem; // Slightly smaller
+        }
+      }
+    }
+
+    .start-here-form-container {
+      .form-header {
+        margin-bottom: 2rem; // Less spacing
+        
+        .form-title {
+          font-size: 1.6rem; // Smaller form title
+        }
+      }
+
+      .conversational-form {
+        p {
+          font-size: 1.1rem; // Slightly smaller form text
+          line-height: 2.2; // Less line height for mobile
+        }
+      }
+    }
+  }
 }

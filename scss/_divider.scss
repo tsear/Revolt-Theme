@@ -4,113 +4,60 @@
   left: 0;
   width: 100%;
   height: 100px;
-  background-image: url('/wp-content/themes/custom-theme copy/assets/images/barbed-wire.png');
-  background-repeat: repeat-x;
-  background-size: auto 100%;
-  background-position: center;
-  background-color: transparent; /* Remove white background */
+  background-color: transparent;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  z-index: 5; /* Lower than static background */
+  z-index: 5;
 }
 
 @media (max-width: 768px) {
   .barbed-wire-divider {
-    transform: scaleY(0.3);
-    transform-origin: bottom; /* Scale from the bottom for the absolute hero divider */
+    transform: scale(1.6); /* Reduced from 2.5x to 1.6x */
+    transform-origin: bottom;
   }
 
   .static-divider-wrapper {
-    height: 30px; /* Match the scaled height of the divider */
+    height: 200px; /* Reduced container height for smaller scale */
   }
 
-  /* Adjust for dividers inside the static wrapper */
   .static-divider-wrapper .barbed-wire-divider {
-    transform-origin: center; /* Scale from the center for static dividers */
+    transform: scale(1.6); /* Same scaling for static dividers */
+    transform-origin: center;
+    bottom: 15px; /* Adjusted positioning for smaller container */
+  }
+
+  /* Stretch ASCII art horizontally for better readability */
+  .barbed-wire-divider::after {
+    transform: scaleX(1.8); /* Stretch horizontally to make characters wider/more readable */
+    image-rendering: pixelated; /* Keep sharp edges */
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: crisp-edges; /* Standard */
   }
 }
 
-/* ASCII Art Overlay using your image */
-.barbed-wire-divider::after {
-  content: '';
+/* ASCII Art Content - JS will create real DOM elements */
+.ascii-content {
   position: absolute;
-  top: 3px; /* 3px offset from original */
+  top: 0;
   left: 0;
-  width: 1000%; /* 10x width for continuous scroll */
   height: 100px;
-  background-image: 
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png');
-  background-repeat: repeat-x;
-  background-size: 10% 100%; /* Each image takes 10% of the width */
-  background-position: 0% center, 10% center, 20% center, 30% center, 40% center, 50% center, 60% center, 70% center, 80% center, 90% center;
-  background-color: transparent;
-  opacity: 0.6;
-  z-index: 15; /* Above static background */
+  font-family: 'Courier New', monospace;
+  font-size: 8px;
+  line-height: 9px;
+  color: rgba(128, 128, 128, 0.8);
+  white-space: pre;
+  z-index: 15;
   pointer-events: none;
-  animation: asciiWireContinuous 40s linear infinite; /* Slowed down from 10s to 40s */
 }
 
 @keyframes asciiWireContinuous {
   0% { transform: translateX(0%); }
-  100% { transform: translateX(-10%); } /* Move one image width */
+  100% { transform: translateX(-50%); } /* Move half the width since we doubled it */
 }
 
 .static-divider-wrapper {
   position: relative;
-  height: 100px; /* This holds the space in the document flow */
-  margin: 2rem 0; /* Add some vertical spacing */
-}
-
-.barbed-wire-divider-two {
-  width: 100%;
   height: 100px;
-  background-image: url('assets/images/barbed-wire.png');
-  background-repeat: repeat-x;
-  background-size: auto 100%;
-  background-position: center;
-  background-color: transparent; /* Remove white background */
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  position: relative;
-  z-index: 5; /* Lower than static background */
-}
-
-/* ASCII Art Overlay for second divider using your image */
-.barbed-wire-divider-two::after {
-  content: '';
-  position: absolute;
-  top: -2px; /* 2px offset above */
-  left: 0;
-  width: 1000%; /* 10x width for continuous scroll */
-  height: 100px;
-  background-image: 
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png'),
-    url('assets/images/ascii-art.png');
-  background-repeat: repeat-x;
-  background-size: 10% 100%; /* Each image takes 10% of the width */
-  background-position: 0% center, 10% center, 20% center, 30% center, 40% center, 50% center, 60% center, 70% center, 80% center, 90% center;
-  background-color: transparent;
-  opacity: 0.6;
-  z-index: 15; /* Above static background */
-  pointer-events: none;
-  animation: asciiWireContinuous 50s linear infinite reverse; /* Slowed down from 12s to 50s, opposite direction */
+  margin: 2rem 0;
 }

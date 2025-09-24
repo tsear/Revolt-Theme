@@ -1371,9 +1371,52 @@ a {
   transform: translateY(-3px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
+@media (max-width: 768px) {
+  .start-here-v2 {
+    padding: 3rem 1rem;
+  }
+  .start-here-v2 .start-here-intro-container,
+  .start-here-v2 .start-here-form-container {
+    padding: 2rem;
+    margin-bottom: 2rem;
+  }
+  .start-here-v2 .intro-header {
+    margin-bottom: 2.5rem;
+  }
+  .start-here-v2 .intro-header .intro-title {
+    font-size: 2rem;
+  }
+  .start-here-v2 .intro-header .intro-subtitle {
+    font-size: 1rem;
+  }
+  .start-here-v2 .intro-content-elements {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .start-here-v2 .intro-content-elements .element {
+    text-align: center;
+  }
+  .start-here-v2 .intro-content-elements .element .element-title {
+    font-size: 1.3rem;
+  }
+  .start-here-v2 .intro-content-elements .element .element-text {
+    font-size: 0.95rem;
+  }
+  .start-here-v2 .start-here-form-container .form-header {
+    margin-bottom: 2rem;
+  }
+  .start-here-v2 .start-here-form-container .form-header .form-title {
+    font-size: 1.6rem;
+  }
+  .start-here-v2 .start-here-form-container .conversational-form p {
+    font-size: 1.1rem;
+    line-height: 2.2;
+  }
+}
+
 #what-to-expect {
   width: 85vw;
-  margin: -50px auto 0;
+  margin: 4rem auto 0; /* Added proper spacing above */
   padding: 6rem 0;
   font-family: "Fira Code", monospace;
   color: #000;
@@ -1493,47 +1536,47 @@ a {
   left: 0;
   width: 100%;
   height: 100px;
-  background-image: url("/wp-content/themes/custom-theme copy/assets/images/barbed-wire.png");
-  background-repeat: repeat-x;
-  background-size: auto 100%;
-  background-position: center;
-  background-color: transparent; /* Remove white background */
+  background-color: transparent;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  z-index: 5; /* Lower than static background */
+  z-index: 5;
 }
 
 @media (max-width: 768px) {
   .barbed-wire-divider {
-    transform: scaleY(0.3);
-    transform-origin: bottom; /* Scale from the bottom for the absolute hero divider */
+    transform: scale(1.6); /* Reduced from 2.5x to 1.6x */
+    transform-origin: bottom;
   }
   .static-divider-wrapper {
-    height: 30px; /* Match the scaled height of the divider */
+    height: 200px; /* Reduced container height for smaller scale */
   }
-  /* Adjust for dividers inside the static wrapper */
   .static-divider-wrapper .barbed-wire-divider {
-    transform-origin: center; /* Scale from the center for static dividers */
+    transform: scale(1.6); /* Same scaling for static dividers */
+    transform-origin: center;
+    bottom: 15px; /* Adjusted positioning for smaller container */
+  }
+  /* Stretch ASCII art horizontally for better readability */
+  .barbed-wire-divider::after {
+    transform: scaleX(1.8); /* Stretch horizontally to make characters wider/more readable */
+    image-rendering: pixelated; /* Keep sharp edges */
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: crisp-edges; /* Standard */
   }
 }
-/* ASCII Art Overlay using your image */
-.barbed-wire-divider::after {
-  content: "";
+/* ASCII Art Content - JS will create real DOM elements */
+.ascii-content {
   position: absolute;
-  top: 3px; /* 3px offset from original */
+  top: 0;
   left: 0;
-  width: 1000%; /* 10x width for continuous scroll */
   height: 100px;
-  background-image: url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png");
-  background-repeat: repeat-x;
-  background-size: 10% 100%; /* Each image takes 10% of the width */
-  background-position: 0% center, 10% center, 20% center, 30% center, 40% center, 50% center, 60% center, 70% center, 80% center, 90% center;
-  background-color: transparent;
-  opacity: 0.6;
-  z-index: 15; /* Above static background */
+  font-family: "Courier New", monospace;
+  font-size: 8px;
+  line-height: 9px;
+  color: rgba(128, 128, 128, 0.8);
+  white-space: pre;
+  z-index: 15;
   pointer-events: none;
-  animation: asciiWireContinuous 40s linear infinite; /* Slowed down from 10s to 40s */
 }
 
 @keyframes asciiWireContinuous {
@@ -1541,162 +1584,15 @@ a {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-10%);
-  } /* Move one image width */
+    transform: translateX(-50%);
+  } /* Move half the width since we doubled it */
 }
 .static-divider-wrapper {
   position: relative;
-  height: 100px; /* This holds the space in the document flow */
-  margin: 2rem 0; /* Add some vertical spacing */
-}
-
-.barbed-wire-divider-two {
-  width: 100%;
   height: 100px;
-  background-image: url("assets/images/barbed-wire.png");
-  background-repeat: repeat-x;
-  background-size: auto 100%;
-  background-position: center;
-  background-color: transparent; /* Remove white background */
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  position: relative;
-  z-index: 5; /* Lower than static background */
+  margin: 2rem 0;
 }
 
-/* ASCII Art Overlay for second divider using your image */
-.barbed-wire-divider-two::after {
-  content: "";
-  position: absolute;
-  top: -2px; /* 2px offset above */
-  left: 0;
-  width: 1000%; /* 10x width for continuous scroll */
-  height: 100px;
-  background-image: url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png"), url("assets/images/ascii-art.png");
-  background-repeat: repeat-x;
-  background-size: 10% 100%; /* Each image takes 10% of the width */
-  background-position: 0% center, 10% center, 20% center, 30% center, 40% center, 50% center, 60% center, 70% center, 80% center, 90% center;
-  background-color: transparent;
-  opacity: 0.6;
-  z-index: 15; /* Above static background */
-  pointer-events: none;
-  animation: asciiWireContinuous 50s linear infinite reverse; /* Slowed down from 12s to 50s, opposite direction */
-}
-
-.barbed-wire-divider-two {
-  width: 100%;
-  height: 40px; /* Maintain a consistent height */
-  background-image: url("assets/images/barbed-wire.png");
-  background-repeat: no-repeat; /* Stop repeating to allow for stretching */
-  background-size: 100% 100%; /* Stretch to fill container horizontally and vertically */
-  background-position: center;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
-
-/* _divider-three.scss */
-#divider-three.ascii-divider {
-  background: #1a1a1a;
-  color: #FFB300;
-  padding: 4rem 1rem;
-  text-align: center;
-  border-top: 2px solid #FFB300;
-  border-bottom: 2px solid #FFB300;
-}
-
-#divider-three .ascii-scroll-container {
-  overflow-x: hidden;
-}
-
-/* inline-block + max-content ensures full scrollWidth */
-#divider-three .ascii-scroll-container .ascii-art {
-  display: inline-block;
-  width: max-content;
-  font-family: monospace;
-  font-size: 0.75rem;
-  line-height: 1.3;
-  white-space: pre;
-  margin: 0 auto 3rem;
-}
-
-#divider-three .ascii-site-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-}
-
-#divider-three .logo-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-#divider-three .logo-wrapper img {
-  max-height: 100px;
-  width: auto;
-}
-
-#divider-three .logo-wrapper .btn {
-  padding: 0.85rem 1.6rem;
-  font-size: 1rem;
-  font-weight: bold;
-  font-family: "Fira Code", monospace;
-  border-radius: 6px;
-  border: 2px solid #FCB900;
-  background: #FCB900;
-  color: #000;
-  white-space: nowrap;
-  transition: all 0.2s ease;
-}
-
-#divider-three .logo-wrapper .btn:hover {
-  background: #000;
-  color: #fff;
-  border-color: #000;
-}
-
-@media (max-width: 768px) {
-  #divider-three.ascii-divider {
-    padding: 2rem 1rem;
-    border-top-width: 1px;
-    border-bottom-width: 1px;
-  }
-  #divider-three .ascii-scroll-container .ascii-art {
-    font-size: 0.6rem;
-    line-height: 1.2;
-    display: inline-block;
-    width: max-content;
-  }
-  #divider-three .ascii-site-image {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%; /* Ensure the container takes full width */
-  }
-  #divider-three .ascii-site-image img {
-    max-width: 100%; /* The image can't be wider than its container */
-    height: auto; /* The height will scale automatically to maintain aspect ratio */
-    width: auto; /* Let the width be flexible, up to the max-width */
-  }
-  #divider-three .logo-wrapper {
-    flex-direction: column;
-    gap: 0.5rem;
-    align-items: center; /* Center the content */
-  }
-  #divider-three .logo-wrapper img {
-    max-width: 250px; /* Set a max-width on the logo to prevent it from being huge */
-    width: 80%; /* Use a percentage width for better scaling */
-    height: auto;
-  }
-  #divider-three .logo-wrapper .btn {
-    width: 100%;
-    max-width: 200px;
-    padding: 0.75rem 1.2rem;
-    font-size: 0.9rem;
-  }
-}
 .about-main {
   padding: 8rem 5vw;
   background: #fff;
@@ -4631,4 +4527,4 @@ a {
     padding: 0.8rem 1.5rem;
     font-size: 0.85rem;
   }
-}/*# sourceMappingURL=style.css.map */
+}

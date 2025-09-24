@@ -1,7 +1,12 @@
 <?php
 /**
- * Partial: Start Here V2
- * A structured introduction, form, and CTA section.
+ * Partial: Start Here V2     <form id="startHereForm" class="conversational-form">
+      <?php wp_nonce_field('revolt_start_here_form', 'revolt_start_here_nonce'); ?>
+      <p>Hi, I'm <input type="text" name="name" placeholder="your name"> and I 
+        <select name="action">
+          <option value="make">make</option>form id="startHereForm" class="conversational-form">
+      <?php wp_nonce_field('revolt_start_here_form', 'revolt_start_here_nonce'); ?>
+      <p>Hi, I'm <input type="text" name="name" placeholder="your name"> and I* A structured introduction, form, and CTA section.
  */
 ?>
 

@@ -1,7 +1,4 @@
 <?php
-// ✅ functions.php is loaded
-error_log("✅ functions.php is loaded");
-
 function simple_theme_enqueue_styles() {
     // 1) Main stylesheet
     wp_enqueue_style(
@@ -122,3 +119,37 @@ function simple_theme_enqueue_styles() {
 }
 
 add_action('wp_enqueue_scripts', 'simple_theme_enqueue_styles');
+
+// Add theme support
+function revolt_theme_setup() {
+    // Post thumbnails support
+    add_theme_support('post-thumbnails');
+    
+    // Navigation menus support
+    add_theme_support('menus');
+    
+    // HTML5 support for forms
+    add_theme_support('html5', array('search-form', 'comment-form', 'comment-list', 'gallery', 'caption'));
+    
+    // Title tag support
+    add_theme_support('title-tag');
+    
+    // Custom logo support
+    add_theme_support('custom-logo');
+    
+    // Automatic feed links
+    add_theme_support('automatic-feed-links');
+    
+    // Custom background support
+    add_theme_support('custom-background');
+}
+add_action('after_setup_theme', 'revolt_theme_setup');
+
+// Register navigation menus
+function revolt_register_menus() {
+    register_nav_menus(array(
+        'primary' => 'Primary Menu',
+        'footer' => 'Footer Menu'
+    ));
+}
+add_action('init', 'revolt_register_menus');
