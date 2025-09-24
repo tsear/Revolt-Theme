@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
             container.style.position = 'absolute';
             container.style.top = '0';
             container.style.left = '0';
-            container.style.width = '200%';
             container.style.height = '100px';
             container.style.whiteSpace = 'pre';
             container.style.fontFamily = '"Courier New", monospace';
@@ -48,6 +47,16 @@ document.addEventListener('DOMContentLoaded', function() {
             container.style.color = 'rgba(128, 128, 128, 0.8)';
             container.style.pointerEvents = 'none';
             container.style.overflow = 'hidden';
+            
+            // Make container wide enough for mobile scaling
+            const screenWidth = window.innerWidth;
+            if (screenWidth <= 768) {
+                container.style.width = '600%'; // Much wider for scaled content
+                container.style.transform = 'scale(1.6) scaleX(1.8)';
+                container.style.transformOrigin = 'bottom left';
+            } else {
+                container.style.width = '200%';
+            }
             
             // Create two separate elements that touch each other
             const original = document.createElement('div');
