@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const screenWidth = window.innerWidth;
             if (screenWidth <= 768) {
                 container.style.width = '600%'; // Much wider for scaled content
+                container.style.height = '160px'; // Taller for scaled content
                 container.style.transform = 'scale(1.6) scaleX(1.8)';
                 container.style.transformOrigin = 'bottom left';
             } else {
