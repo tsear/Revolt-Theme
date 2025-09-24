@@ -1,0 +1,16 @@
+# Tell GitHub these are text files, not code
+*.txt linguist-language=Text
+assets/images/ascii-art*.txt linguist-language=Text
+
+# JavaScript files
+*.js linguist-language=JavaScript
+
+# SCSS files  
+*.scss linguist-language=SCSS
+
+# PHP files (WordPress theme)
+*.php linguist-language=PHP
+
+# Mark ASCII art as documentation/assets, not code
+assets/images/ linguist-documentation
+assets/code/ linguist-documentation
