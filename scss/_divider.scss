@@ -13,7 +13,7 @@
 
 @media (max-width: 768px) {
   .barbed-wire-divider {
-    transform: scale(1.6); /* Reduced from 2.5x to 1.6x */
+    /* Scaling handled by JavaScript to avoid conflicts */
     transform-origin: bottom;
   }
 

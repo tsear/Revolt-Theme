@@ -34,8 +34,15 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Create scrolling for each divider
         dividers.forEach(divider => {
+            // Check if this divider already has ASCII content
+            if (divider.querySelector('.ascii-container')) {
+                console.log('⚠️ ASCII already initialized for this divider, skipping');
+                return;
+            }
+            
             // Create container for both pieces
             const container = document.createElement('div');
+            container.className = 'ascii-container'; // Add class to prevent duplicates
             container.style.position = 'absolute';
             container.style.top = '0';
             container.style.left = '0';
@@ -48,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
             container.style.pointerEvents = 'none';
             container.style.overflow = 'hidden';
             
-            // Make container wide enough for mobile scaling
+            // Make container wide enough for mobile scaling - apply to ALL dividers
             const screenWidth = window.innerWidth;
             if (screenWidth <= 768) {
                 container.style.width = '600%'; // Much wider for scaled content
