@@ -41,6 +41,24 @@
   color: #FCB900;
 }
 
+// Terminal nav button for modal trigger
+.terminal-footer .terminal-nav li .terminal-nav-btn {
+  background: transparent;
+  border: none;
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  font-family: 'Fira Code', monospace;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #FCB900;
+  }
+}
+
 .terminal-footer .terminal-newsletter {
   display: flex;
   justify-content: center;

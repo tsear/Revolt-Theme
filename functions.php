@@ -116,6 +116,15 @@ function simple_theme_enqueue_styles() {
         '1.0',
         true
     );
+
+    // ✅ Solution Builder (global - available on all pages)
+    wp_enqueue_script(
+        'solution-builder',
+        get_template_directory_uri() . '/assets/js/solution-builder.js',
+        array(),
+        '1.0',
+        true
+    );
 }
 
 add_action('wp_enqueue_scripts', 'simple_theme_enqueue_styles');

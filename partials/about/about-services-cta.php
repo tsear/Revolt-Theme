@@ -18,18 +18,18 @@
       </div>
       
       <div class="cta-actions">
-        <a href="/services" class="cta-primary">
+        <button type="button" class="cta-primary" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">
           <span class="cta-icon">⚡</span>
-          <span class="cta-text">Explore Solutions</span>
+          <span class="cta-text">Build Your Solution</span>
           <span class="cta-arrow">→</span>
-        </a>
+        </button>
         
         <div class="cta-secondary">
-          <p class="cta-note">Or jump straight to:</p>
+          <p class="cta-note">Or explore our services:</p>
           <div class="quick-links">
+            <a href="/services" class="quick-link">All Services</a>
             <a href="/web-design" class="quick-link">Web Design</a>
             <a href="/wordpress-development" class="quick-link">WordPress Dev</a>
-            <a href="/seo-optimization" class="quick-link">SEO Strategy</a>
           </div>
         </div>
       </div>

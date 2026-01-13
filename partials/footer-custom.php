@@ -12,11 +12,12 @@
 ░▒▓█▓▒░░▒▓█▓▒░ ░▒▓████████▓▒░    ░▒▓██▓▒░     ░▒▓██████▓▒░  ░▒▓████████▓▒░    ░▒▓█▓▒░     
     </pre>
 
-    <!-- Navigation (our-work removed) -->
+    <!-- Navigation -->
     <ul class="terminal-nav">
       <li><a href="<?php echo site_url('/about'); ?>">├── about-us/</a></li>
       <li><a href="<?php echo site_url('/services'); ?>">├── services/</a></li>
-      <li><a href="<?php echo site_url('/contact'); ?>">└── contact/</a></li>
+      <li><a href="<?php echo site_url('/contact'); ?>">├── contact/</a></li>
+      <li><button type="button" class="terminal-nav-btn" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">└── build-solution/</button></li>
     </ul>
 
     <!-- Newsletter Uplink -->
@@ -35,7 +36,14 @@
     <div class="terminal-credit">// revoltstrategies.com — reclaimed & reimagined © <?php echo date("Y"); ?> //</div>
 
   </div>
-  <?php wp_footer(); ?>
 </footer>
+
+<!-- Solution Builder Modal (global) -->
+<?php get_template_part('partials/solution-builder'); ?>
+
+<!-- Flowbite JS -->
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+
+<?php wp_footer(); ?>
 </body>
 </html>

@@ -1,0 +1,19 @@
+{
+  "name": "revolt-theme",
+  "version": "1.0.0",
+  "description": "Revolt Strategies WordPress Theme",
+  "scripts": {
+    "build:css": "sass style.scss style.css --style=compressed --no-source-map",
+    "build:js": "terser assets/js/*.js --output assets/js/bundle.min.js --compress --mangle",
+    "build": "npm run build:css",
+    "watch:css": "sass style.scss style.css --watch",
+    "watch": "npm run watch:css",
+    "dev": "npm run watch"
+  },
+  "devDependencies": {
+    "sass": "^1.69.0",
+    "terser": "^5.24.0"
+  },
+  "author": "Revolt Strategies",
+  "license": "MIT"
+}

@@ -12,7 +12,10 @@
           </span>
         </h1>
         <p class="hero-subtext">Because having something to say shouldn't require a trust fund.</p>
-        <a href="<?php echo esc_url( site_url('/contact') ); ?>" class="btn hero-cta">Break the Paywall</a>
+        <div class="hero-cta-group">
+          <a href="<?php echo esc_url( site_url('/contact') ); ?>" class="btn hero-cta">Break the Paywall</a>
+          <button type="button" class="btn hero-cta hero-cta-secondary" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">Build Your Solution</button>
+        </div>
       </div>
       <?php get_template_part('partials/divider-horizontal'); ?>
     </section>

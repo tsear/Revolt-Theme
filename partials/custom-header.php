@@ -37,6 +37,9 @@
           <li><a href="<?php echo site_url('/support'); ?>">Support</a></li>
         </ul>
       </li>
+      <li class="nav-cta">
+        <button type="button" class="header-build-btn" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">⚡ Build</button>
+      </li>
     </ul>
   </nav>
 </div>

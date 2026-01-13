@@ -73,10 +73,33 @@
     font-size: 1rem;
     font-family: monospace;
     transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
 
     &:hover {
       background: #000;
       color: #fff;
+    }
+  }
+
+  // Hero CTA button group
+  .hero-cta-group {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-cta-secondary {
+    background: transparent;
+    border: 2px solid #000;
+    color: #000;
+
+    &:hover {
+      background: #000;
+      color: #FCB900;
+      border-color: #000;
     }
   }
 }
@@ -117,6 +140,12 @@
     .btn-cta,
     .btn {
       padding: 0.75rem 1.5rem;
+      margin-top: 0;
+    }
+
+    .hero-cta-group {
+      flex-direction: column;
+      gap: 0.75rem;
       margin-top: 1.25rem;
     }
   }

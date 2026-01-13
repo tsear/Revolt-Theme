@@ -18,6 +18,29 @@
                  WordPress site maintenance by Revolt Strategies,
                  Professional WordPress development agency" />
 
+  <!-- 👇 Tailwind CSS + Flowbite -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      prefix: 'tw-', // Prefix to avoid conflicts with existing styles
+      corePlugins: {
+        preflight: false, // Disable Tailwind's reset to preserve your existing styles
+      },
+      theme: {
+        extend: {
+          colors: {
+            'revolt-yellow': '#FCB900',
+            'revolt-amber': '#FFB300',
+          },
+          fontFamily: {
+            'mono': ['Fira Code', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
+
   <!-- 👇 Inline JSON-LD structured data -->
   <script type="application/ld+json">
   {
