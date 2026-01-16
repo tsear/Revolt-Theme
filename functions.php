@@ -32,8 +32,8 @@ function simple_theme_enqueue_styles() {
             true
         );
         wp_enqueue_script(
-            'rotate-words',
-            get_template_directory_uri() . '/assets/js/rotate-words.js',
+            'hero-rotating',
+            get_template_directory_uri() . '/assets/js/hero-rotating.bundle.js',
             array(),
             '1.0',
             true

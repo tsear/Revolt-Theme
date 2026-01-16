@@ -6,10 +6,7 @@
       <div class="container">
         <h1 class="hero-heading">
           <span class="hero-static">We Build Websites for&nbsp;</span>
-          <span class="rotating-container">
-            <span class="rotating-placeholder">Young Creators</span>
-            <span id="rotating-word">Young Creators</span>
-          </span>
+          <span id="rotating-text-root" class="rotating-container"></span>
         </h1>
         <p class="hero-subtext">Because having something to say shouldn't require a trust fund.</p>
         <div class="hero-cta-group">

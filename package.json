@@ -5,15 +5,22 @@
   "scripts": {
     "build:css": "sass style.scss style.css --style=compressed --no-source-map",
     "build:js": "terser assets/js/*.js --output assets/js/bundle.min.js --compress --mangle",
-    "build": "npm run build:css",
+    "build:react": "esbuild assets/js/react/hero-rotating.jsx --bundle --minify --outfile=assets/js/hero-rotating.bundle.js --loader:.jsx=jsx --define:process.env.NODE_ENV=\\\"production\\\"",
+    "build": "npm run build:css && npm run build:react",
     "watch:css": "sass style.scss style.css --watch",
     "watch": "npm run watch:css",
     "dev": "npm run watch"
   },
   "devDependencies": {
+    "esbuild": "^0.27.2",
     "sass": "^1.69.0",
     "terser": "^5.24.0"
   },
   "author": "Revolt Strategies",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "motion": "^12.26.2",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  }
 }
