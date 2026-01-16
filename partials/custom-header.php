@@ -32,7 +32,7 @@
       <li class="dropdown">
         <a href="<?php echo site_url('/contact'); ?>" class="dropdown-toggle">Contact <span class="dropdown-arrow">▼</span></a>
         <ul class="dropdown-menu">
-          <li><a href="<?php echo site_url('/get-quote'); ?>">Get Quote</a></li>
+          <li><a href="#" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">Get Quote</a></li>
           <li><a href="<?php echo site_url('/project-discussion'); ?>">Project Discussion</a></li>
           <li><a href="<?php echo site_url('/support'); ?>">Support</a></li>
         </ul>

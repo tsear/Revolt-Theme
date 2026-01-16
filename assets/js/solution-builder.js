@@ -45,9 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const totalSteps = 4;
 
   const pricing = {
-    base: { landing: 800, simple: 1500, wordpress: 2500, ecommerce: 4000 },
-    features: { forms: 150, blog: 300, newsletter: 100, gallery: 250, booking: 350, membership: 500, crm: 300, 'analytics-setup': 150, chat: 100 },
-    services: { hosting: 29, maintenance: 99, seo: 199, content: 149, social: 299, support: 149 }
+    base: { landing: 199, simple: 499, wordpress: 999, ecommerce: 1199 },
+    features: { forms: 49, blog: 49, newsletter: 79, gallery: 49, booking: 79, membership: 79, jetpack: 49, chat: 79 },
+    services: { hosting: 49, maintenance: 149, seo: 74, content: 149, social: 299, support: 49 }
   };
 
   const displayInfo = {
@@ -60,10 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const recommendations = {
-    landing: { features: ['forms', 'newsletter', 'analytics-setup'], services: ['hosting', 'seo'] },
+    landing: { features: ['forms', 'newsletter', 'jetpack'], services: ['hosting', 'seo'] },
     simple: { features: ['forms', 'blog', 'newsletter'], services: ['hosting', 'maintenance', 'seo'] },
-    wordpress: { features: ['forms', 'blog', 'gallery', 'analytics-setup'], services: ['hosting', 'maintenance', 'seo'] },
-    ecommerce: { features: ['forms', 'newsletter', 'analytics-setup', 'chat'], services: ['hosting', 'maintenance', 'seo', 'support'] }
+    wordpress: { features: ['forms', 'blog', 'gallery', 'jetpack'], services: ['hosting', 'maintenance', 'seo'] },
+    ecommerce: { features: ['forms', 'newsletter', 'jetpack', 'chat'], services: ['hosting', 'maintenance', 'seo', 'support'] }
   };
 
   // ===== ELEMENTS =====
@@ -78,8 +78,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = modal.querySelector('#solution-builder-form');
 
   // ===== EVENT LISTENERS =====
-  btnNext.addEventListener('click', () => { if (currentStep < totalSteps) { currentStep++; updateUI(); } });
-  btnBack.addEventListener('click', () => { if (currentStep > 1) { currentStep--; updateUI(); } });
+  btnNext.addEventListener('click', () => { 
+    if (currentStep < totalSteps) { 
+      currentStep++; 
+      updateUI(); 
+      // Scroll modal to top on mobile
+      if (window.innerWidth <= 768) {
+        modal.scrollTo(0, 0);
+      }
+    } 
+  });
+  btnBack.addEventListener('click', () => { 
+    if (currentStep > 1) { 
+      currentStep--; 
+      updateUI(); 
+      // Scroll modal to top on mobile
+      if (window.innerWidth <= 768) {
+        modal.scrollTo(0, 0);
+      }
+    } 
+  });
   // Skip button removed - users must complete each step
   btnSubmit.addEventListener('click', handleSubmit);
 
@@ -374,21 +392,30 @@ Message: ${formData.get('message') || '(none)'}
       btnSubmit.textContent = 'Sending...';
       btnSubmit.disabled = true;
 
+      // Build FormData for Formspree
+      const submitData = new FormData();
+      submitData.append('name', nameInput.value.trim());
+      submitData.append('email', emailInput.value.trim());
+      submitData.append('_replyto', emailInput.value.trim());
+      submitData.append('message', summaryText);
+      submitData.append('_subject', `Solution Builder: ${baseInfo.name} - $${prices.total}`);
+
       const response = await fetch('https://formspree.io/f/mjkyzqvg', {
         method: 'POST',
-        headers: { 'Accept': 'application/json' },
-        body: new URLSearchParams({
-          name: formData.get('name'),
-          email: formData.get('email'),
-          message: summaryText,
-          _subject: `Solution Builder: ${baseInfo.name} - $${prices.total}`
-        })
+        body: submitData,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
+
+      const responseData = await response.json();
 
       if (response.ok) {
         successMessage.classList.remove('tw-hidden');
+        form.classList.add('tw-hidden');
+        btnSubmit.classList.add('tw-hidden');
       } else {
-        throw new Error('Submission failed');
+        throw new Error(responseData.error || 'Submission failed');
       }
     } catch (error) {
       console.error('Submission error:', error);

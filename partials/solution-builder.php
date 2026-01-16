@@ -155,8 +155,7 @@
                         <input type="checkbox" name="features[]" value="gallery" data-feature="gallery" data-available="simple,wordpress,ecommerce" data-icon="🖼️" data-label="Gallery">
                         <input type="checkbox" name="features[]" value="booking" data-feature="booking" data-available="wordpress,ecommerce" data-icon="📅" data-label="Booking">
                         <input type="checkbox" name="features[]" value="membership" data-feature="membership" data-available="wordpress,ecommerce" data-icon="🔐" data-label="Members">
-                        <input type="checkbox" name="features[]" value="crm" data-feature="crm" data-available="wordpress,ecommerce" data-icon="🔗" data-label="CRM">
-                        <input type="checkbox" name="features[]" value="analytics-setup" data-feature="analytics-setup" data-available="landing,simple,wordpress,ecommerce" data-icon="📊" data-label="Analytics">
+                        <input type="checkbox" name="features[]" value="jetpack" data-feature="jetpack" data-available="landing,simple,wordpress,ecommerce" data-icon="🚀" data-label="Jetpack">
                         <input type="checkbox" name="features[]" value="chat" data-feature="chat" data-available="landing,simple,wordpress,ecommerce" data-icon="💬" data-label="Live Chat">
                     </div>
                 </div>
@@ -195,7 +194,7 @@
                         <input type="checkbox" name="services[]" value="hosting" data-service="hosting" data-available="landing,simple,wordpress,ecommerce" data-icon="🖥️" data-label="Hosting">
                         <input type="checkbox" name="services[]" value="maintenance" data-service="maintenance" data-available="simple,wordpress,ecommerce" data-icon="🔧" data-label="Maintenance">
                         <input type="checkbox" name="services[]" value="seo" data-service="seo" data-available="landing,simple,wordpress,ecommerce" data-icon="📈" data-label="SEO">
-                        <input type="checkbox" name="services[]" value="content" data-service="content" data-available="simple,wordpress,ecommerce" data-icon="✍️" data-label="Content">
+                        <input type="checkbox" name="services[]" value="content" data-service="content" data-available="simple,wordpress,ecommerce" data-icon="✨" data-label="Content Bot">
                         <input type="checkbox" name="services[]" value="social" data-service="social" data-available="landing,simple,wordpress,ecommerce" data-icon="📱" data-label="Social">
                         <input type="checkbox" name="services[]" value="support" data-service="support" data-available="wordpress,ecommerce" data-icon="🎯" data-label="Support">
                     </div>
@@ -226,17 +225,23 @@
                     <!-- Pricing -->
                     <div class="tw-bg-black tw-text-white tw-rounded-lg tw-p-5 tw-mb-6">
                         <div class="tw-flex tw-justify-between tw-items-center">
-                            <span class="tw-text-gray-400">Project</span>
+                            <div>
+                                <span class="tw-text-gray-400 tw-text-sm">Upfront</span>
+                                <p class="tw-text-[10px] tw-text-gray-500">One-time project cost</p>
+                            </div>
                             <span id="price-total" class="tw-text-2xl tw-font-bold tw-text-revolt-yellow">$2,500</span>
                         </div>
                         <div id="monthly-row" class="tw-hidden tw-flex tw-justify-between tw-items-center tw-pt-3 tw-mt-3 tw-border-t tw-border-gray-700">
-                            <span class="tw-text-gray-400">Monthly</span>
+                            <div>
+                                <span class="tw-text-gray-400 tw-text-sm">Recurring</span>
+                                <p class="tw-text-[10px] tw-text-gray-500">Billed monthly</p>
+                            </div>
                             <span id="price-monthly" class="tw-text-lg tw-font-bold">$0/mo</span>
                         </div>
                     </div>
                     
                     <!-- Contact Form -->
-                    <form id="solution-builder-form" class="tw-space-y-3">
+                    <form id="solution-builder-form" method="POST" action="https://formspree.io/f/mjkyzqvg" class="tw-space-y-3">
                         <input type="hidden" name="configuration" id="form-configuration" value="">
                         <input type="hidden" name="total_price" id="form-total-price" value="">
                         
