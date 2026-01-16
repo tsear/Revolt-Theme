@@ -17,7 +17,7 @@
       <li><a href="<?php echo site_url('/about'); ?>">├── about-us/</a></li>
       <li><a href="<?php echo site_url('/services'); ?>">├── services/</a></li>
       <li><a href="<?php echo site_url('/contact'); ?>">├── contact/</a></li>
-      <li><button type="button" class="terminal-nav-btn" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">└── build-solution/</button></li>
+      <li><button type="button" class="terminal-nav-btn" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">├── build-solution/</button></li>
     </ul>
 
     <!-- Newsletter Uplink -->

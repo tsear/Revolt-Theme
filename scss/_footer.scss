@@ -49,7 +49,7 @@
   color: #000;
   font-weight: bold;
   font-family: 'Fira Code', monospace;
-  font-size: inherit;
+  font-size: 1rem; // Match link size exactly
   cursor: pointer;
   padding: 0;
   transition: color 0.3s ease;
@@ -94,9 +94,32 @@
   color: #fff;
 }
 
-.terminal-footer .terminal-logo img {
-  height: 60px;
+.terminal-footer .terminal-logo {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 2rem;
+
+  // Horizontal line behind the logo
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #000;
+    z-index: 0;
+  }
+
+  img {
+    height: 60px;
+    position: relative;
+    z-index: 1;
+    background: #fff;
+    padding: 0 1rem;
+  }
 }
 
 .terminal-footer .terminal-credit {
@@ -122,33 +145,60 @@
   }
 
   .terminal-footer .terminal-nav {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem 1rem;
     margin-bottom: 1.5rem;
     padding: 0 1rem;
   }
 
-  .terminal-footer .terminal-nav li a {
+  .terminal-footer .terminal-nav li {
+    text-align: left;
+  }
+
+  .terminal-footer .terminal-nav li a,
+  .terminal-footer .terminal-nav li .terminal-nav-btn {
     font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    white-space: normal;
+    padding: 0;
+    white-space: nowrap;
   }
 
   .terminal-footer .terminal-newsletter {
     flex-direction: row;
+    flex-wrap: nowrap;
     gap: 0.5rem;
     margin-bottom: 1.5rem;
+    align-items: center;
+  }
+
+  .terminal-footer .terminal-newsletter .label {
+    display: none;
+  }
+
+  .terminal-footer .terminal-newsletter input,
+  .terminal-footer .terminal-newsletter button {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+    height: 38px;
+    box-sizing: border-box;
   }
 
   .terminal-footer .terminal-newsletter input {
-    width: 100%;
-    max-width: none;
+    flex: 1;
+    min-width: 0;
   }
 
-  .terminal-footer .terminal-logo img {
-    height: 40px;
+  .terminal-footer .terminal-newsletter button {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .terminal-footer .terminal-logo {
     margin-top: 1rem;
+
+    img {
+      height: 40px;
+    }
   }
 
   .terminal-footer .terminal-credit {
