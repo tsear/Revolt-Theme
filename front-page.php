@@ -10,10 +10,14 @@
         </h1>
         <p class="hero-subtext">Because having something to say shouldn't require a trust fund.</p>
         <div class="hero-cta-group">
-          <a href="<?php echo esc_url( site_url('/contact') ); ?>" class="btn hero-cta">Break the Paywall</a>
+          <a href="<?php echo esc_url( site_url('/about') ); ?>" class="btn hero-cta">About Us</a>
           <button type="button" class="btn hero-cta hero-cta-secondary" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">Build Your Solution</button>
         </div>
       </div>
+
+      <!-- Scroll arrow React component -->
+      <div id="scroll-arrow-root"></div>
+
       <?php get_template_part('partials/divider-horizontal'); ?>
     </section>
 

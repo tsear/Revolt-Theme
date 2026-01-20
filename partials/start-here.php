@@ -31,6 +31,17 @@
         <p class="element-text">Your project is our project. We're invested in your success because it's the only metric that matters. It's that simple.</p>
       </div>
     </div>
+
+    <!-- About Us CTA -->
+    <div class="intro-cta">
+      <a href="<?php echo esc_url( site_url('/about') ); ?>" class="btn intro-cta-main">Learn More About Us</a>
+      <p class="cta-sub-label">Or dive deeper:</p>
+      <div class="intro-cta-sub">
+        <a href="<?php echo esc_url( site_url('/our-process') ); ?>">Our Process</a>
+        <a href="<?php echo esc_url( site_url('/technology-stack') ); ?>">Tech Stack</a>
+        <a href="<?php echo esc_url( site_url('/support') ); ?>">Support</a>
+      </div>
+    </div>
   </div>
 
   <!-- Part 2: Form Container -->

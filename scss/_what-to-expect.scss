@@ -92,6 +92,78 @@
     }
   }
 
+  // Services CTA
+  .expect-cta {
+    max-width: 1000px;
+    margin: 3rem auto 0;
+    padding: 3rem;
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04), 0 1px 4px rgba(0,0,0,0.02);
+    text-align: center;
+
+    .expect-cta-header {
+      margin-bottom: 2rem;
+
+      h3 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #1a1a1a;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #495057;
+      }
+    }
+
+    .expect-cta-main {
+      display: inline-block;
+      background: #FCB900;
+      color: #000;
+      padding: 1rem 2.5rem;
+      font-size: 1.1rem;
+      font-weight: bold;
+      border: 2px solid #000;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #000;
+        color: #FCB900;
+      }
+    }
+
+    .cta-sub-label {
+      font-size: 0.85rem;
+      color: #666;
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    .expect-cta-sub {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      a {
+        font-size: 0.85rem;
+        color: #000;
+        padding: 0.5rem 1rem;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        transition: all 0.2s ease;
+
+        &:hover {
+          border-color: #FCB900;
+          background: rgba(252, 185, 0, 0.1);
+        }
+      }
+    }
+  }
+
   // Mobile responsive
   @media (max-width: 768px) {
     width: 95vw;
@@ -116,6 +188,22 @@
       .expect-proof {
         .proof-item {
           font-size: 0.8rem;
+        }
+      }
+    }
+
+    .expect-cta {
+      flex-direction: column;
+      gap: 1rem;
+
+      .expect-cta-sub {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+
+        a {
+          font-size: 0.75rem;
+          padding: 0.4rem 0.75rem;
         }
       }
     }

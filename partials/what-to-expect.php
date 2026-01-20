@@ -65,4 +65,20 @@
       </div>
     </div>
   </div>
+
+  <!-- Services CTA -->
+  <div class="expect-cta">
+    <div class="expect-cta-header">
+      <h3>Ready to Get Started?</h3>
+      <p>See how we can help bring your project to life.</p>
+    </div>
+    <a href="<?php echo esc_url( site_url('/services') ); ?>" class="btn expect-cta-main">Explore Our Services</a>
+    <p class="cta-sub-label">Or jump to a specific service:</p>
+    <div class="expect-cta-sub">
+      <a href="<?php echo esc_url( site_url('/web-design') ); ?>">Web Design</a>
+      <a href="<?php echo esc_url( site_url('/wordpress-development') ); ?>">WordPress Dev</a>
+      <a href="<?php echo esc_url( site_url('/ecommerce-solutions') ); ?>">E-Commerce</a>
+      <a href="<?php echo esc_url( site_url('/managed-services') ); ?>">Managed Services</a>
+    </div>
+  </div>
 </section>

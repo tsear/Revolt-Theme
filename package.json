@@ -19,6 +19,7 @@
   "author": "Revolt Strategies",
   "license": "MIT",
   "dependencies": {
+    "lucide-react": "^0.562.0",
     "motion": "^12.26.2",
     "react": "^19.2.3",
     "react-dom": "^19.2.3"

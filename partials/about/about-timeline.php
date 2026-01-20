@@ -11,12 +11,12 @@
     <div class="manifesto-container">
       <div class="manifesto-section">
         <h3 class="manifesto-header">The Problem</h3>
-        <p class="manifesto-text">Revolt Strategies comes from a simple frustration: the whole industry is set up to milk clients. Agencies promise strategy but deliver the minimum, keep the levers hidden, and bill you for staying dependent. Platforms do the same—raise your costs if engagement dips, turn SEO into a treadmill, and punish anyone without the time or budget to keep up. The system is engineered to squeeze the little guy.</p>
+        <p class="manifesto-text">Revolt Strategies started from a simple observation: too much of this industry is designed to keep clients dependent. Agencies promise strategy but deliver the minimum. Platforms raise costs when engagement dips, turn SEO into a treadmill, and make it harder for anyone without deep pockets to compete. The deck is stacked.</p>
       </div>
       
       <div class="manifesto-section">
         <h3 class="manifesto-header">The Solution</h3>
-        <p class="manifesto-text">Revolt is my way of flipping that script. I work in the open, building without tricks or lock-ins, because the point is bigger than agencies and their games. Everyone deserves a place online that's theirs—whether you're an artist, a nonprofit, or just someone with something to say. A domain, url, and site is land in 1742. Claim it, grow it, and use it without selling yourself short.</p>
+        <p class="manifesto-text">Revolt is my answer. I build in the open—no tricks, no lock-ins, no hidden levers. Because everyone deserves a real presence online. Whether you're an artist, a nonprofit, or just someone with something to say, your domain is your ground. Own it. Grow it. Don't rent it from someone else's algorithm.</p>
       </div>
       
       <div class="timeline-bridge">

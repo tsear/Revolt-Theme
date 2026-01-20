@@ -1,0 +1,18 @@
+# Dependencies
+node_modules/
+
+# Build artifacts (optional - keep if you want to commit compiled assets)
+# style.css
+# assets/js/*.bundle.js
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*

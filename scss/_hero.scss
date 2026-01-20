@@ -149,7 +149,21 @@
   }
 }
 
+// Scroll arrow component container
+.scroll-indicator {
+  position: absolute;
+  bottom: 140px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  color: #000;
+}
+
 @media (max-width: 768px) {
+  .scroll-indicator {
+    display: none;
+  }
+
   .hero {
     padding: 4rem 1rem 2rem;
 

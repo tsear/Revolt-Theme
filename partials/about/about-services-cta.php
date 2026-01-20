@@ -25,11 +25,10 @@
         </button>
         
         <div class="cta-secondary">
-          <p class="cta-note">Or explore our services:</p>
+          <p class="cta-note">Current clients:</p>
           <div class="quick-links">
-            <a href="/services" class="quick-link">All Services</a>
-            <a href="/web-design" class="quick-link">Web Design</a>
-            <a href="/wordpress-development" class="quick-link">WordPress Dev</a>
+            <a href="/support" class="quick-link">Support</a>
+            <a href="/project-discussion" class="quick-link">Project Discussion</a>
           </div>
         </div>
       </div>
