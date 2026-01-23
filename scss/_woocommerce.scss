@@ -1,0 +1,1227 @@
+/* WooCommerce Custom Styling for Revolt Theme */
+
+/* ===========================
+   Cart Notifications - Must appear above nav
+   =========================== */
+.woocommerce-message,
+.woocommerce-error,
+.woocommerce-info {
+    position: fixed !important;
+    top: 80px !important;
+    right: 20px !important;
+    z-index: 99999 !important;
+    max-width: 400px !important;
+    background: #fff !important;
+    border: 2px solid #000 !important;
+    padding: 1rem !important;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.2) !important;
+    font-family: 'Fira Code', monospace !important;
+    animation: slideInRight 0.3s ease !important;
+}
+
+.woocommerce-message {
+    border-left: 4px solid #2a9d8f !important;
+}
+
+.woocommerce-error {
+    border-left: 4px solid #e63946 !important;
+}
+
+.woocommerce-info {
+    border-left: 4px solid #FCB900 !important;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* ===========================
+   Reset WooCommerce Defaults - SCOPED TO CONTENT ONLY
+   =========================== */
+main .woocommerce,
+main .woocommerce-page {
+    * {
+        box-sizing: border-box;
+    }
+}
+
+/* ===========================
+   Main WooCommerce Wrapper
+   =========================== */
+.revolt-woocommerce-wrapper {
+    padding: 0;
+    min-height: 60vh;
+    background: #F0F0F0;
+    
+    .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 2rem 2rem;
+    }
+}
+
+/* ===========================
+   Shop Hero Section
+   =========================== */
+.revolt-shop-hero {
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+    border-bottom: 4px solid #FCB900;
+    padding: 4rem 2rem;
+    margin: 0;
+    position: relative;
+    overflow: hidden;
+    
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(252, 185, 0, 0.03) 10px,
+            rgba(252, 185, 0, 0.03) 20px
+        );
+        pointer-events: none;
+    }
+    
+    .revolt-shop-hero-content {
+        max-width: 1400px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .revolt-shop-title {
+        font-family: "Fira Code", monospace;
+        font-size: 3rem;
+        font-weight: 700;
+        color: #FCB900;
+        margin: 0 0 1rem 0;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+        
+        @media (max-width: 768px) {
+            font-size: 1.8rem;
+        }
+    }
+    
+    .revolt-shop-tagline {
+        font-family: "Fira Code", monospace;
+        font-size: 1.1rem;
+        color: #fff;
+        margin: 0;
+        opacity: 0.9;
+        max-width: 600px;
+        
+        @media (max-width: 768px) {
+            font-size: 0.9rem;
+        }
+    }
+}
+
+/* ===========================
+   Shop Controls & Filters
+   =========================== */
+.revolt-shop-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    background: #fff;
+    border: 2px solid #000;
+    margin: 2rem 2rem 3rem;
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+    
+    .revolt-shop-stats {
+        .product-count {
+            font-family: "Fira Code", monospace;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #000;
+            
+            &::before {
+                content: '> ';
+                color: #FCB900;
+            }
+        }
+    }
+    
+    .revolt-shop-filters {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        
+        .woocommerce-ordering {
+            select {
+                padding: 0.5rem 2rem 0.5rem 0.75rem;
+                border: 2px solid #000;
+                background: #fff;
+                font-family: "Fira Code", monospace;
+                font-size: 0.9rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    background: #FCB900;
+                    border-color: #FCB900;
+                }
+                
+                &:focus {
+                    outline: none;
+                    box-shadow: 0 0 0 3px rgba(252, 185, 0, 0.3);
+                }
+            }
+        }
+    }
+}
+
+/* No products message */
+.revolt-no-products {
+    text-align: center;
+    padding: 4rem 2rem;
+    font-family: "Fira Code", monospace;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+/* ===========================
+   Product Grid/Loop
+   =========================== */
+.woocommerce-products-header {
+    margin-bottom: 2rem;
+}
+
+main .woocommerce,
+main .woocommerce-page {
+    ul.products {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 2.5rem !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        
+        @media (max-width: 1200px) {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+        
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+        }
+        
+        li.product {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: auto !important;
+            float: none !important;
+            text-align: left !important;
+        }
+    }
+}
+
+/* ===========================
+   Product Card
+   =========================== */
+main .woocommerce,
+main .woocommerce-page {
+    ul.products li.product,
+    .revolt-product-card {
+        background: #fff !important;
+        border: 2px solid #000 !important;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+        
+        .revolt-product-inner {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        a.revolt-product-link,
+        a.woocommerce-LoopProduct-link {
+            text-decoration: none !important;
+            color: inherit;
+            display: block;
+            flex: 1;
+        }
+        
+        .revolt-product-image,
+        a img {
+            position: relative;
+            background: #f5f5f5;
+            border-bottom: 2px solid #000;
+            overflow: hidden;
+            width: 100% !important;
+            height: 300px !important;
+            min-height: 300px !important;
+            max-height: 300px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            
+            img,
+            .attachment-woocommerce_thumbnail,
+            .wp-post-image {
+                width: 100% !important;
+                height: 100% !important;
+                min-height: 300px !important;
+                max-height: 300px !important;
+                object-fit: cover !important;
+                object-position: center !important;
+                transition: transform 0.3s ease;
+                display: block !important;
+            }
+            
+            &:hover img {
+                transform: scale(1.05);
+            }
+        }
+        
+        .revolt-product-details {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        h2.revolt-product-title,
+        h2.woocommerce-loop-product__title,
+        .woocommerce-loop-product__title {
+            font-family: "Fira Code", monospace !important;
+            font-size: 1.2rem !important;
+            font-weight: 700 !important;
+            margin: 0 0 0.5rem 0 !important;
+            color: #000 !important;
+            line-height: 1.3 !important;
+            display: block !important;
+        }
+        
+        .revolt-product-meta {
+            margin-bottom: 1rem;
+            
+            .revolt-product-type {
+                display: inline-block;
+                background: #000;
+                color: #fff;
+                padding: 0.25rem 0.75rem;
+                font-size: 0.75rem;
+                font-family: "Fira Code", monospace;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+        }
+        
+        .revolt-product-price,
+        .price {
+            font-family: "Fira Code", monospace !important;
+            font-size: 1.5rem !important;
+            font-weight: 700 !important;
+            color: #000 !important;
+            margin: 0.5rem 0 !important;
+            
+            .woocommerce-Price-amount,
+            .amount {
+                font-weight: 700 !important;
+                font-family: "Fira Code", monospace !important;
+            }
+            
+            del {
+                opacity: 0.5;
+                font-size: 1.1rem;
+                margin-right: 0.5rem;
+            }
+            
+            ins {
+                text-decoration: none;
+                color: #e63946;
+            }
+            
+            // Hide regular price when there's no sale (both prices are the same)
+            del + ins {
+                display: inline;
+            }
+            
+            // If there's only one price (no sale), show it normally
+            &:not(:has(del)) .amount {
+                color: #000;
+            }
+        }
+        
+        .revolt-product-actions {
+            padding: 0 1.5rem 1.5rem;
+            margin-top: auto;
+        }
+        
+        .button,
+        .add_to_cart_button,
+        a.button {
+            display: block !important;
+            width: 100% !important;
+            background: #000 !important;
+            color: #fff !important;
+            border: 2px solid #000 !important;
+            padding: 0.75rem 1.5rem !important;
+            font-family: "Fira Code", monospace !important;
+            font-size: 0.9rem !important;
+            font-weight: 700 !important;
+            text-align: center !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05em !important;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none !important;
+            margin: 0 !important;
+            box-sizing: border-box !important;
+            
+            &:hover {
+                background: #fff !important;
+                color: #000 !important;
+            }
+            
+            &.added {
+                background: #2a9d8f !important;
+                border-color: #2a9d8f !important;
+                color: #fff !important;
+            }
+        }
+    }
+}
+
+/* ===========================
+   Single Product Page
+   =========================== */
+.revolt-single-product {
+    padding: 2rem 0;
+}
+
+.revolt-product-single {
+    background: #fff;
+    border: 2px solid #000;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    
+    @media (max-width: 768px) {
+        padding: 1rem;
+    }
+}
+
+.revolt-product-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    
+    @media (max-width: 968px) {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+.revolt-product-images {
+    .woocommerce-product-gallery {
+        border: 2px solid #000;
+        
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.revolt-product-summary {
+    .product_title {
+        font-family: "Fira Code", monospace;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        color: #000;
+        line-height: 1.2;
+        
+        @media (max-width: 768px) {
+            font-size: 1.8rem;
+        }
+    }
+    
+    .price {
+        font-family: "Fira Code", monospace;
+        font-size: 2rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: #000;
+        
+        del {
+            opacity: 0.5;
+            font-size: 1.5rem;
+            margin-right: 0.5rem;
+        }
+        
+        ins {
+            text-decoration: none;
+            color: #e63946;
+        }
+    }
+    
+    .woocommerce-product-details__short-description {
+        font-family: "Fira Code", monospace;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    .cart {
+        margin-bottom: 2rem;
+        
+        .quantity {
+            display: inline-block;
+            margin-right: 1rem;
+            
+            input[type="number"] {
+                width: 60px;
+                padding: 0.75rem;
+                border: 2px solid #000;
+                font-family: "Fira Code", monospace;
+                text-align: center;
+            }
+        }
+        
+        .single_add_to_cart_button {
+            background: #000;
+            color: #fff;
+            border: 2px solid #000;
+            padding: 0.75rem 2rem;
+            font-family: "Fira Code", monospace;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                background: #fff;
+                color: #000;
+            }
+        }
+    }
+    
+    .product_meta {
+        font-family: "Fira Code", monospace;
+        font-size: 0.85rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #ddd;
+        
+        > span {
+            display: block;
+            margin-bottom: 0.5rem;
+            
+            a {
+                color: #000;
+                text-decoration: underline;
+                
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+/* ===========================
+   Product Tabs
+   =========================== */
+.revolt-product-tabs {
+    .woocommerce-tabs {
+        border: 2px solid #000;
+        background: #fff;
+        
+        .tabs {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border-bottom: 2px solid #000;
+            background: #f5f5f5;
+            
+            li {
+                margin: 0;
+                
+                a {
+                    display: block;
+                    padding: 1rem 2rem;
+                    font-family: "Fira Code", monospace;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    font-size: 0.9rem;
+                    color: #666;
+                    text-decoration: none;
+                    border-right: 2px solid #000;
+                    transition: all 0.3s ease;
+                    
+                    &:hover {
+                        background: #000;
+                        color: #fff;
+                    }
+                }
+                
+                &.active a {
+                    background: #fff;
+                    color: #000;
+                }
+            }
+        }
+        
+        .woocommerce-Tabs-panel {
+            padding: 2rem;
+            font-family: "Fira Code", monospace;
+            
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            p {
+                line-height: 1.6;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+/* ===========================
+   Cart & Checkout
+   =========================== */
+body.woocommerce-cart main,
+body.woocommerce-checkout main {
+    padding-top: 120px;
+    background: #F0F0F0;
+    min-height: 60vh;
+    
+    @media (max-width: 768px) {
+        padding-top: 100px;
+    }
+    
+    .woocommerce {
+        font-family: "Fira Code", monospace;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 2rem;
+    }
+    
+    // Page title
+    .entry-header {
+        margin-bottom: 2rem;
+        
+        .entry-title {
+            font-family: "Fira Code", monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #000;
+            text-transform: uppercase;
+        }
+    }
+    
+    // Cart table
+    table.shop_table {
+        border: 2px solid #000;
+        background: #fff;
+        width: 100%;
+        margin-bottom: 2rem;
+        font-family: "Fira Code", monospace;
+        
+        thead {
+            background: #000;
+            color: #fff;
+            
+            th {
+                padding: 1rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+                text-align: left;
+                border: none;
+            }
+        }
+        
+        tbody {
+            tr {
+                border-bottom: 1px solid #ddd;
+                
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+            
+            td {
+                padding: 1rem;
+                border-top: 1px solid #ddd;
+                vertical-align: middle;
+                
+                &.product-thumbnail {
+                    img {
+                        width: 80px;
+                        height: auto;
+                        border: 2px solid #000;
+                    }
+                }
+                
+                &.product-name {
+                    font-weight: 700;
+                    
+                    a {
+                        color: #000;
+                        text-decoration: none;
+                        
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+                
+                &.product-price,
+                &.product-subtotal {
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                }
+            }
+        }
+        
+        tfoot {
+            tr {
+                border-top: 2px solid #000;
+                
+                th,
+                td {
+                    padding: 1rem;
+                    font-weight: 700;
+                    font-size: 1.2rem;
+                }
+            }
+            
+            .order-total {
+                th,
+                td {
+                    font-size: 1.5rem;
+                    color: #000;
+                }
+            }
+        }
+    }
+    
+    // Quantity input
+    .quantity {
+        input[type="number"] {
+            width: 60px;
+            padding: 0.5rem;
+            border: 2px solid #000;
+            font-family: "Fira Code", monospace;
+            text-align: center;
+            font-weight: 700;
+        }
+    }
+    
+    // Buttons
+    .button,
+    button,
+    input[type="submit"] {
+        background: #000 !important;
+        color: #fff !important;
+        border: 2px solid #000 !important;
+        padding: 0.75rem 2rem !important;
+        font-family: "Fira Code", monospace !important;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none !important;
+        display: inline-block;
+        font-size: 0.9rem;
+        
+        &:hover {
+            background: #fff !important;
+            color: #000 !important;
+        }
+        
+        &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    }
+    
+    // Cart actions
+    .actions {
+        .coupon {
+            display: inline-flex;
+            gap: 0.5rem;
+            margin-right: 1rem;
+            
+            input[type="text"] {
+                padding: 0.75rem;
+                border: 2px solid #000;
+                font-family: "Fira Code", monospace;
+            }
+        }
+    }
+    
+    // Cart totals
+    .cart-collaterals {
+        margin-top: 3rem;
+        
+        .cart_totals {
+            background: #fff;
+            border: 2px solid #000;
+            padding: 2rem;
+            
+            h2 {
+                font-family: "Fira Code", monospace;
+                font-size: 1.8rem;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+                color: #000;
+                text-transform: uppercase;
+            }
+            
+            .wc-proceed-to-checkout {
+                margin-top: 1.5rem;
+                
+                .button {
+                    width: 100%;
+                    padding: 1rem 2rem !important;
+                    font-size: 1.1rem !important;
+                }
+            }
+        }
+    }
+    
+    // Checkout form
+    .checkout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        
+        @media (max-width: 968px) {
+            grid-template-columns: 1fr;
+        }
+        
+        .col2-set {
+            .col-1,
+            .col-2 {
+                margin-bottom: 2rem;
+            }
+        }
+        
+        h3 {
+            font-family: "Fira Code", monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #000;
+            text-transform: uppercase;
+        }
+        
+        .form-row {
+            margin-bottom: 1.5rem;
+            
+            label {
+                font-family: "Fira Code", monospace;
+                font-weight: 700;
+                display: block;
+                margin-bottom: 0.5rem;
+                
+                .required {
+                    color: #e63946;
+                }
+            }
+            
+            input[type="text"],
+            input[type="email"],
+            input[type="tel"],
+            textarea,
+            select {
+                width: 100%;
+                padding: 0.75rem;
+                border: 2px solid #000;
+                font-family: "Fira Code", monospace;
+                font-size: 1rem;
+                background: #fff;
+                
+                &:focus {
+                    outline: none;
+                    border-color: #FCB900;
+                }
+            }
+            
+            textarea {
+                min-height: 120px;
+                resize: vertical;
+            }
+        }
+        
+        #order_review_heading {
+            grid-column: 1 / -1;
+        }
+        
+        #order_review {
+            background: #fff;
+            border: 2px solid #000;
+            padding: 2rem;
+            
+            .shop_table {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+    
+    // Payment methods
+    #payment {
+        background: #f5f5f5;
+        border: 2px solid #000;
+        padding: 2rem;
+        margin-top: 2rem;
+        
+        .payment_methods {
+            list-style: none;
+            margin: 0 0 1.5rem;
+            padding: 0;
+            
+            li {
+                margin-bottom: 1rem;
+                padding: 1rem;
+                background: #fff;
+                border: 2px solid #ddd;
+                
+                &.wc_payment_method {
+                    label {
+                        font-family: "Fira Code", monospace;
+                        font-weight: 700;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                    }
+                    
+                    input[type="radio"] {
+                        margin: 0;
+                    }
+                }
+                
+                .payment_box {
+                    margin-top: 1rem;
+                    padding: 1rem;
+                    background: #f5f5f5;
+                    font-family: "Fira Code", monospace;
+                    font-size: 0.9rem;
+                }
+            }
+        }
+        
+        .place-order {
+            .button {
+                width: 100%;
+                padding: 1.2rem 2rem !important;
+                font-size: 1.2rem !important;
+                background: #FCB900 !important;
+                border-color: #FCB900 !important;
+                
+                &:hover {
+                    background: #000 !important;
+                    color: #fff !important;
+                }
+            }
+        }
+    }
+    
+    // Order received / Thank you page
+    .woocommerce-order {
+        ul.order_details {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            
+            li {
+                background: #fff;
+                border: 2px solid #000;
+                padding: 1rem;
+                font-family: "Fira Code", monospace;
+                
+                strong {
+                    display: block;
+                    font-size: 0.85rem;
+                    text-transform: uppercase;
+                    margin-bottom: 0.5rem;
+                    color: #666;
+                }
+            }
+        }
+    }
+}
+
+/* ===========================
+   Utilities
+   =========================== */
+.woocommerce-message,
+.woocommerce-info,
+.woocommerce-error {
+    font-family: "Fira Code", monospace;
+    padding: 1rem 1.5rem;
+    border: 2px solid #000;
+    margin-bottom: 2rem;
+    
+    &::before {
+        display: none;
+    }
+}
+
+.woocommerce-message {
+    background: #d4edda;
+    border-color: #2a9d8f;
+}
+
+.woocommerce-info {
+    background: #d1ecf1;
+    border-color: #0c5460;
+}
+
+.woocommerce-error {
+    background: #f8d7da;
+    border-color: #e63946;
+}
+
+/* Hide WooCommerce default styles we're overriding */
+main .woocommerce .woocommerce-loop-product__title,
+main .woocommerce .star-rating {
+    display: none;
+}
+
+/* Override any default WooCommerce wrapper styles */
+main .woocommerce,
+main .woocommerce-page {
+    .woocommerce-products-header {
+        margin-bottom: 2rem;
+    }
+}
+
+/* Ensure proper z-index layering */
+.revolt-woocommerce-wrapper {
+    position: relative;
+    z-index: 1;
+    background: #F0F0F0;
+}
+
+/* Additional product list overrides */
+main .woocommerce ul.products li.product {
+    text-align: left;
+    
+    .woocommerce-loop-product__link {
+        display: block;
+    }
+    
+    .button {
+        margin: 0;
+    }
+}
+
+/* Fix any margin/padding issues from WooCommerce defaults */
+main .woocommerce .revolt-product-card {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* ===========================
+   Downloads Section
+   =========================== */
+.woocommerce-account,
+.woocommerce-downloads {
+    padding-top: 120px;
+    
+    .woocommerce-MyAccount-content {
+        font-family: "Fira Code", monospace;
+    }
+    
+    .woocommerce-orders-table,
+    .shop_table.shop_table_responsive.my_account_orders,
+    table.shop_table_responsive.my_account_downloads {
+        border: 2px solid #000;
+        background: #fff;
+        width: 100%;
+        margin-bottom: 2rem;
+        
+        thead {
+            background: #000;
+            color: #fff;
+            
+            th {
+                padding: 1rem;
+                font-family: "Fira Code", monospace;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+                text-align: left;
+                border: none;
+            }
+        }
+        
+        tbody {
+            tr {
+                border-bottom: 1px solid #ddd;
+                
+                &:last-child {
+                    border-bottom: none;
+                }
+                
+                td {
+                    padding: 1rem;
+                    font-family: "Fira Code", monospace;
+                    vertical-align: middle;
+                    
+                    &::before {
+                        font-weight: 700;
+                        margin-right: 0.5rem;
+                    }
+                }
+            }
+        }
+        
+        .download-file,
+        .download-product {
+            font-weight: 700;
+        }
+        
+        .download-actions {
+            .button,
+            a.button {
+                background: #000 !important;
+                color: #fff !important;
+                border: 2px solid #000 !important;
+                padding: 0.5rem 1rem !important;
+                font-family: "Fira Code", monospace !important;
+                font-weight: 700 !important;
+                text-transform: uppercase !important;
+                text-decoration: none !important;
+                display: inline-block !important;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    background: #fff !important;
+                    color: #000 !important;
+                }
+            }
+        }
+    }
+}
+
+/* Order Downloads after purchase */
+.woocommerce-order-downloads {
+    border: 2px solid #000;
+    background: #fff;
+    padding: 2rem;
+    margin: 2rem 0;
+    
+    h2 {
+        font-family: "Fira Code", monospace;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #000;
+    }
+    
+    .woocommerce-table__product-name,
+    .woocommerce-table__download-file {
+        font-family: "Fira Code", monospace;
+    }
+    
+    .download-product {
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    
+    .download-file {
+        a {
+            background: #000;
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            font-family: "Fira Code", monospace;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            border: 2px solid #000;
+            transition: all 0.3s ease;
+            
+            &:hover {
+                background: #fff;
+                color: #000;
+            }
+        }
+    }
+}
+
+/* My Account Navigation */
+.woocommerce-MyAccount-navigation {
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        border: 2px solid #000;
+        background: #fff;
+        
+        li {
+            border-bottom: 1px solid #ddd;
+            
+            &:last-child {
+                border-bottom: none;
+            }
+            
+            a {
+                display: block;
+                padding: 1rem 1.5rem;
+                font-family: "Fira Code", monospace;
+                font-weight: 700;
+                text-transform: uppercase;
+                font-size: 0.9rem;
+                color: #000;
+                text-decoration: none;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    background: #000;
+                    color: #fff;
+                }
+            }
+            
+            &.is-active a {
+                background: #000;
+                color: #fff;
+            }
+        }
+    }
+}

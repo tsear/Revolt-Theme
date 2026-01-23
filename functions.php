@@ -108,6 +108,17 @@ function simple_theme_enqueue_styles() {
         );
     }
 
+    // ✅ Only for single product pages
+    if ( is_product() ) {
+        wp_enqueue_script(
+            'product-tabs',
+            get_template_directory_uri() . '/assets/js/product-tabs.js',
+            array(),
+            '1.0',
+            true
+        );
+    }
+
     // ✅ ASCII scroll auto-pan (mobile-only)
     wp_enqueue_script(
         'ascii-scroll',
@@ -128,6 +139,19 @@ function simple_theme_enqueue_styles() {
 }
 
 add_action('wp_enqueue_scripts', 'simple_theme_enqueue_styles');
+
+// Fix WooCommerce services undefined error
+function revolt_fix_wc_services_error() {
+    if ( is_cart() || is_checkout() ) {
+        ?>
+        <script>
+        window.wcSettings = window.wcSettings || {};
+        window.wcSettings['woocommerce-services'] = window.wcSettings['woocommerce-services'] || { notices: [] };
+        </script>
+        <?php
+    }
+}
+add_action('wp_head', 'revolt_fix_wc_services_error', 1);
 
 // Add theme support
 function revolt_theme_setup() {
@@ -151,8 +175,45 @@ function revolt_theme_setup() {
     
     // Custom background support
     add_theme_support('custom-background');
+    
+    // WooCommerce support
+    add_theme_support('woocommerce');
+    
+    // Optional: WooCommerce features
+    add_theme_support('wc-product-gallery-zoom');
+    add_theme_support('wc-product-gallery-lightbox');
+    add_theme_support('wc-product-gallery-slider');
 }
 add_action('after_setup_theme', 'revolt_theme_setup');
+
+// Remove WooCommerce breadcrumbs
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20 );
+
+// Force uniform product thumbnail size
+add_filter( 'woocommerce_get_image_size_gallery_thumbnail', function( $size ) {
+    return array(
+        'width'  => 600,
+        'height' => 600,
+        'crop'   => 1,
+    );
+});
+
+add_filter( 'woocommerce_get_image_size_thumbnail', function( $size ) {
+    return array(
+        'width'  => 600,
+        'height' => 600,
+        'crop'   => 1,
+    );
+});
+
+// Remove inline width/height attributes from WooCommerce images
+add_filter( 'woocommerce_product_get_image', function( $image ) {
+    return preg_replace( '/(width|height)="\d*"\s/', '', $image );
+}, 10 );
+
+add_filter( 'post_thumbnail_html', function( $html ) {
+    return preg_replace( '/(width|height)="\d*"\s/', '', $html );
+}, 10 );
 
 // Register navigation menus
 function revolt_register_menus() {

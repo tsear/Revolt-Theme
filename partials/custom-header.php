@@ -29,17 +29,24 @@
           <li><a href="<?php echo site_url('/managed-services'); ?>">Managed Services</a></li>
         </ul>
       </li>
-      <li class="dropdown">
-        <a href="<?php echo site_url('/contact'); ?>" class="dropdown-toggle">Contact <span class="dropdown-arrow">▼</span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">Get Quote</a></li>
-          <li><a href="<?php echo site_url('/project-discussion'); ?>">Project Discussion</a></li>
-          <li><a href="<?php echo site_url('/support'); ?>">Support</a></li>
-        </ul>
-      </li>
       <li class="nav-cta">
         <button type="button" class="header-build-btn" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">⚡ Build</button>
       </li>
+      <?php if ( function_exists('is_woocommerce') ) : ?>
+      <li class="nav-cart">
+        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart-link">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.4 5M17 13l1.4 5M9 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"/>
+          </svg>
+          <?php 
+          $cart_count = WC()->cart->get_cart_contents_count();
+          if ( $cart_count > 0 ) : 
+          ?>
+          <span class="cart-count"><?php echo esc_html( $cart_count ); ?></span>
+          <?php endif; ?>
+        </a>
+      </li>
+      <?php endif; ?>
     </ul>
   </nav>
 </div>

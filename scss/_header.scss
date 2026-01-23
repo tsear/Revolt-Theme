@@ -60,6 +60,49 @@
       padding: 0;
       transform: translateX(20px); // Slide nav items 20px to the right
 
+      .nav-cart {
+        display: flex;
+        align-items: center;
+        
+        .header-cart-link {
+          position: relative;
+          display: flex;
+          align-items: center;
+          padding: 0;
+          color: #FCB900;
+          transition: all 0.3s ease;
+          
+          &:hover {
+            color: #FFB300;
+            transform: scale(1.1);
+          }
+          
+          svg {
+            width: 24px;
+            height: 24px;
+          }
+          
+          .cart-count {
+            position: absolute;
+            top: -6px;
+            right: -8px;
+            background: #e63946;
+            color: #fff;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 0.125rem 0.35rem;
+            border-radius: 50%;
+            min-width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+          }
+        }
+      }
+
       li {
         position: relative;
         z-index: 999998; // Ensure parent li is above body content
