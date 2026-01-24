@@ -21,6 +21,8 @@
       <?php get_template_part('partials/divider-horizontal'); ?>
     </section>
 
+    <?php get_template_part('partials/agency-breakdown'); ?>
+
     <?php get_template_part('partials/what-to-expect'); ?>
 
     <div class="static-divider-wrapper">
