@@ -249,6 +249,7 @@ main .woocommerce-page {
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
+        list-style: none !important;
         
         &:hover {
             transform: translateY(-5px);
@@ -269,33 +270,22 @@ main .woocommerce-page {
             flex: 1;
         }
         
-        .revolt-product-image,
-        a img {
+        .revolt-product-image {
             position: relative;
             background: #f5f5f5;
             border-bottom: 2px solid #000;
             overflow: hidden;
-            width: 100% !important;
-            height: 300px !important;
-            min-height: 300px !important;
-            max-height: 300px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            margin: 0 !important;
-            padding: 0 !important;
+            width: 100%;
+            height: 300px;
+            display: block;
             
-            img,
-            .attachment-woocommerce_thumbnail,
-            .wp-post-image {
-                width: 100% !important;
-                height: 100% !important;
-                min-height: 300px !important;
-                max-height: 300px !important;
-                object-fit: cover !important;
-                object-position: center !important;
+            img {
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                object-position: center;
                 transition: transform 0.3s ease;
-                display: block !important;
+                display: block;
             }
             
             &:hover img {
@@ -308,8 +298,10 @@ main .woocommerce-page {
             flex: 1;
             display: flex;
             flex-direction: column;
+            list-style: none;
         }
         
+        h3.revolt-product-title,
         h2.revolt-product-title,
         h2.woocommerce-loop-product__title,
         .woocommerce-loop-product__title {
@@ -320,6 +312,7 @@ main .woocommerce-page {
             color: #000 !important;
             line-height: 1.3 !important;
             display: block !important;
+            list-style: none !important;
         }
         
         .revolt-product-meta {
@@ -1225,3 +1218,143 @@ main .woocommerce .revolt-product-card {
         }
     }
 }
+
+/* ===========================
+   Empty Cart Page
+   =========================== */
+.revolt-empty-cart {
+    max-width: 600px;
+    margin: 4rem auto;
+    padding: 3rem;
+    text-align: center;
+    background: #fff;
+    border: 2px solid #000;
+    font-family: 'Fira Code', monospace;
+
+    .empty-cart-icon {
+        font-size: 4rem;
+        margin-bottom: 1rem;
+    }
+
+    .empty-cart-terminal {
+        margin-bottom: 1.5rem;
+    }
+
+    .empty-cart-ascii {
+        font-size: 0.8rem;
+        color: #666;
+        margin: 0;
+    }
+
+    .empty-cart-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #000;
+        margin: 0 0 0.5rem 0;
+    }
+
+    .empty-cart-message {
+        font-size: 1rem;
+        color: #666;
+        margin: 0 0 2rem 0;
+    }
+
+    .empty-cart-actions {
+        margin-bottom: 2rem;
+
+        .empty-cart-btn {
+            display: inline-block;
+            background: #FCB900;
+            color: #000;
+            padding: 1rem 2rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: 2px solid #000;
+            transition: all 0.3s ease;
+
+            &:hover {
+                background: #000;
+                color: #FCB900;
+            }
+        }
+    }
+
+    .empty-cart-suggestions {
+        border-top: 1px solid #e5e5e5;
+        padding-top: 1.5rem;
+
+        .suggestions-label {
+            font-size: 0.8rem;
+            color: #999;
+            margin: 0 0 1rem 0;
+        }
+
+        .suggestions-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+
+            a, 
+            button,
+            button[data-modal-target],
+            button[data-modal-toggle] {
+                color: #666 !important;
+                text-decoration: none;
+                font-size: 0.9rem !important;
+                background: transparent !important;
+                border: none !important;
+                cursor: pointer;
+                font-family: 'Fira Code', monospace !important;
+                transition: color 0.3s ease;
+                padding: 0 !important;
+                margin: 0;
+                box-shadow: none !important;
+                outline: none;
+                line-height: 1.6 !important;
+                font-weight: normal !important;
+                text-transform: none !important;
+                letter-spacing: normal !important;
+
+                &:hover {
+                    color: #FCB900 !important;
+                    background: transparent !important;
+                }
+            }
+        }
+    }
+}
+
+/* ===========================
+   Block Cart Empty State Override
+   =========================== */
+.wc-block-cart__empty-cart__title,
+.wp-block-woocommerce-empty-cart-block,
+.wc-block-cart--is-empty .wc-block-cart__empty-cart__title {
+    display: none !important;
+}
+
+.wc-block-cart--is-empty {
+    .wc-block-cart__empty-cart__title,
+    .wc-block-cart__empty-cart__subtitle {
+        display: none !important;
+    }
+}
+
+/* Style the block empty cart button to match */
+.wc-block-cart--is-empty .wp-block-button__link,
+.wc-block-cart__empty-cart__button {
+    background: #FCB900 !important;
+    color: #000 !important;
+    font-family: 'Fira Code', monospace !important;
+    font-weight: 700 !important;
+    border: 2px solid #000 !important;
+    text-transform: uppercase !important;
+    
+    &:hover {
+        background: #000 !important;
+        color: #FCB900 !important;
+    }
+}
+

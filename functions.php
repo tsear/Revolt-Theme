@@ -153,6 +153,68 @@ function revolt_fix_wc_services_error() {
 }
 add_action('wp_head', 'revolt_fix_wc_services_error', 1);
 
+// Custom empty cart message - works with both blocks and shortcode
+function revolt_custom_empty_cart_message() {
+    ?>
+    <div class="revolt-empty-cart">
+        <div class="empty-cart-icon">🛒</div>
+        <div class="empty-cart-terminal">
+            <pre class="empty-cart-ascii">
+  _______________
+ /               \
+|  CART IS EMPTY  |
+ \_______________/
+            </pre>
+        </div>
+        <h2 class="empty-cart-title">// Nothing here yet</h2>
+        <p class="empty-cart-message">Your cart is waiting for something revolutionary.</p>
+        
+        <div class="empty-cart-actions">
+            <a href="<?php echo esc_url( wc_get_page_permalink( 'shop' ) ); ?>" class="btn empty-cart-btn">
+                Browse Tools →
+            </a>
+        </div>
+        
+        <div class="empty-cart-suggestions">
+            <p class="suggestions-label">// Quick links</p>
+            <div class="suggestions-links">
+                <a href="<?php echo esc_url( site_url('/services') ); ?>">Our Services</a>
+                <a href="<?php echo esc_url( site_url('/about') ); ?>">About Us</a>
+                <button type="button" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">Build Your Solution</button>
+            </div>
+        </div>
+    </div>
+    <?php
+}
+remove_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
+add_action( 'woocommerce_cart_is_empty', 'revolt_custom_empty_cart_message', 10 );
+
+// Block cart - enqueue JS for cart functionality and nav counter updates
+function revolt_block_cart_empty_override() {
+    // Load on all WooCommerce pages for cart counter updates
+    if ( ! class_exists( 'WooCommerce' ) ) return;
+    
+    wp_enqueue_script(
+        'revolt-empty-cart',
+        get_template_directory_uri() . '/assets/js/empty-cart.js',
+        array(),
+        filemtime( get_template_directory() . '/assets/js/empty-cart.js' ),
+        true
+    );
+}
+add_action('wp_enqueue_scripts', 'revolt_block_cart_empty_override');
+
+function revolt_add_cart_data_attrs($output) {
+    if ( class_exists( 'WooCommerce' ) ) {
+        $shop_url = esc_url( wc_get_page_permalink( 'shop' ) );
+        $services_url = esc_url( site_url('/services') );
+        $about_url = esc_url( site_url('/about') );
+        $output .= ' data-shop-url="' . $shop_url . '" data-services-url="' . $services_url . '" data-about-url="' . $about_url . '"';
+    }
+    return $output;
+}
+add_filter('language_attributes', 'revolt_add_cart_data_attrs');
+
 // Add theme support
 function revolt_theme_setup() {
     // Post thumbnails support

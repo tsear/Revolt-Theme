@@ -24,11 +24,11 @@ if ( empty( $product ) || ! $product->is_visible() ) {
         ?>
 
         <a href="<?php echo esc_url( get_permalink() ); ?>" class="revolt-product-link">
-            <div class="revolt-product-image" style="width: 100%; height: 300px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #f5f5f5;">
+            <div class="revolt-product-image" style="width: 100%; height: 300px; overflow: hidden; display: block; background: #f5f5f5;">
                 <?php 
                 $thumbnail_id = $product->get_image_id();
                 if ( $thumbnail_id ) {
-                    echo '<img src="' . esc_url( wp_get_attachment_image_url( $thumbnail_id, 'full' ) ) . '" alt="' . esc_attr( $product->get_name() ) . '" style="width: 100%; height: 100%; object-fit: cover; display: block;">';
+                    echo '<img src="' . esc_url( wp_get_attachment_image_url( $thumbnail_id, 'woocommerce_thumbnail' ) ) . '" alt="' . esc_attr( $product->get_name() ) . '" style="width: 100%; height: 300px; object-fit: cover; display: block;">';
                 } else {
                     echo wc_placeholder_img();
                 }
