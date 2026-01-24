@@ -113,12 +113,12 @@
     font-weight: bold;
     padding: 1rem 2rem;
     border-radius: 6px;
+    border: 2px solid #000;
     display: inline-block;
     margin-top: 0;
     font-size: 1rem;
     font-family: monospace;
     transition: background 0.3s ease;
-    border: none;
     cursor: pointer;
 
     &:hover {

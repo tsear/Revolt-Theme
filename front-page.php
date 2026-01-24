@@ -10,7 +10,7 @@
         </h1>
         <p class="hero-subtext">Because having something to say shouldn't require a trust fund.</p>
         <div class="hero-cta-group">
-          <a href="<?php echo esc_url( site_url('/about') ); ?>" class="btn hero-cta">About Us</a>
+          <a href="<?php echo esc_url( wc_get_page_permalink('shop') ); ?>" class="btn hero-cta">Shop</a>
           <button type="button" class="btn hero-cta hero-cta-secondary" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">Build Your Solution</button>
         </div>
       </div>

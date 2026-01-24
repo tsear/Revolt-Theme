@@ -58,7 +58,7 @@
       gap: 1.5rem;
       margin: 0;
       padding: 0;
-      transform: translateX(20px); // Slide nav items 20px to the right
+      transform: translateX(50px); // Slide nav items 30px to the right
 
       .nav-cart {
         display: flex;
@@ -99,6 +99,17 @@
             align-items: center;
             justify-content: center;
             line-height: 1;
+          }
+        }
+      }
+
+      .nav-shop {
+        .header-shop-link {
+          font-weight: bold;
+          transition: color 0.2s ease;
+          
+          &:hover {
+            color: #FCB900;
           }
         }
       }
@@ -284,31 +295,28 @@
         }
       }
 
-      // Header Build Button - plain text on mobile like other nav items
+      // Header Build Button
       .nav-cta {
-        text-align: center;
         
         .header-build-btn {
           background: transparent;
           color: #000;
-          font-weight: bold;
-          padding: 0.5rem;
+          font-weight: 700 !important;
+          padding: 0;
           border: none;
           font-family: 'Fira Code', monospace;
           font-size: 1rem;
           cursor: pointer;
           transition: color 0.2s ease;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          text-transform: none;
+          letter-spacing: normal;
 
-          // Hide emoji on mobile
-          &::before {
-            content: 'Build';
-          }
-          
-          // Hide original text with emoji
-          font-size: 0;
-          
-          &::before {
-            font-size: 1rem;
+          .emoji-icon {
+            font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+            font-weight: normal;
           }
 
           &:hover {

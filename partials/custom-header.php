@@ -30,9 +30,12 @@
         </ul>
       </li>
       <li class="nav-cta">
-        <button type="button" class="header-build-btn" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">⚡ Build</button>
+        <a href="#" class="header-build-btn" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">Build <span class="emoji-icon">⚡</span></a>
       </li>
       <?php if ( function_exists('is_woocommerce') ) : ?>
+      <li class="nav-shop">
+        <a href="<?php echo esc_url( wc_get_page_permalink('shop') ); ?>" class="header-shop-link">Shop</a>
+      </li>
       <li class="nav-cart">
         <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">

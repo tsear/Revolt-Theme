@@ -81,24 +81,31 @@
       }
     }
     
+    // Highly specific selector to override Flowbite
+    button.cta-primary[type="button"],
     .cta-primary {
-      display: inline-flex;
+      display: inline-flex !important;
       align-items: center;
       gap: 0.75rem;
-      background: #FCB900;
-      color: #000;
+      background: #FCB900 !important;
+      color: #000 !important;
       text-decoration: none;
-      padding: 1rem 2rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1.1rem;
+      padding: 1rem 2rem !important;
+      border-radius: 8px !important;
+      border: 2px solid #000 !important;
+      font-weight: 600 !important;
+      font-size: 1.1rem !important;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(252, 185, 0, 0.3);
+      box-shadow: 0 4px 15px rgba(252, 185, 0, 0.3) !important;
+      cursor: pointer;
+      font-family: 'Fira Code', monospace !important;
       
       &:hover {
-        background: #e6a700;
+        background: #000 !important;
+        border-color: #000 !important;
+        color: #FCB900 !important;
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(252, 185, 0, 0.4);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
         
         .cta-arrow {
           transform: translateX(5px);
@@ -107,6 +114,13 @@
       
       .cta-icon {
         font-size: 1.2rem;
+        font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif;
+        font-weight: normal;
+      }
+      
+      .cta-text {
+        font-family: 'Fira Code', monospace;
+        font-weight: 600;
       }
       
       .cta-arrow {

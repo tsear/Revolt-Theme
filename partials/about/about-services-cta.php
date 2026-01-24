@@ -19,7 +19,6 @@
       
       <div class="cta-actions">
         <button type="button" class="cta-primary" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">
-          <span class="cta-icon">⚡</span>
           <span class="cta-text">Build Your Solution</span>
           <span class="cta-arrow">→</span>
         </button>
