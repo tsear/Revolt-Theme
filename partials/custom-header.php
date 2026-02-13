@@ -33,11 +33,16 @@
         <a href="#" class="header-build-btn" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">Build <span class="emoji-icon">⚡</span></a>
       </li>
       <?php if ( function_exists('is_woocommerce') ) : ?>
+      <?php 
+        $shop_permalink = wc_get_page_permalink('shop');
+        $shop_url = ( $shop_permalink && $shop_permalink !== home_url('/') ) ? $shop_permalink : home_url('/shop');
+        $cart_url = function_exists('wc_get_cart_url') ? wc_get_cart_url() : home_url('/cart');
+      ?>
       <li class="nav-shop">
-        <a href="<?php echo esc_url( wc_get_page_permalink('shop') ); ?>" class="header-shop-link">Shop</a>
+        <a href="<?php echo esc_url( $shop_url ); ?>" class="header-shop-link">Shop</a>
       </li>
       <li class="nav-cart">
-        <a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="header-cart-link">
+        <a href="<?php echo esc_url( $cart_url ); ?>" class="header-cart-link">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.4 5M17 13l1.4 5M9 21a1 1 0 100-2 1 1 0 000 2zm8 0a1 1 0 100-2 1 1 0 000 2z"/>
           </svg>

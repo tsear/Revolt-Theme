@@ -413,6 +413,44 @@ main .woocommerce-page {
     padding: 2rem 0;
 }
 
+/* ===========================
+   Theme Live Preview Button
+   =========================== */
+.revolt-theme-preview-cta {
+    .revolt-live-preview-btn {
+        position: relative;
+        overflow: hidden;
+        letter-spacing: 0.1em;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(252, 185, 0, 0.15), transparent);
+            transition: left 0.5s ease;
+        }
+
+        &:hover {
+            background: #FCB900 !important;
+            color: #1a1a2e !important;
+            border-color: #FCB900 !important;
+            box-shadow: 0 0 20px rgba(252, 185, 0, 0.4);
+            transform: translateY(-1px);
+
+            &::before {
+                left: 100%;
+            }
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
+    }
+}
+
 .revolt-product-single {
     background: #fff;
     border: 2px solid #000;

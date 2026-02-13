@@ -285,3 +285,209 @@ function revolt_register_menus() {
     ));
 }
 add_action('init', 'revolt_register_menus');
+
+// ─── WordPress Playground Theme Preview ─────────────────────────────────────────
+// Adds a "Live Preview" button to products tagged 'theme' using WordPress Playground.
+
+/**
+ * Add custom meta box for theme preview settings on WooCommerce products.
+ */
+function revolt_add_theme_preview_meta_box() {
+    add_meta_box(
+        'revolt_theme_preview',
+        '⚡ Theme Live Preview (WordPress Playground)',
+        'revolt_theme_preview_meta_box_html',
+        'product',
+        'side',
+        'default'
+    );
+}
+add_action( 'add_meta_boxes', 'revolt_add_theme_preview_meta_box' );
+
+/**
+ * Render the meta box HTML.
+ */
+function revolt_theme_preview_meta_box_html( $post ) {
+    wp_nonce_field( 'revolt_theme_preview_nonce', 'revolt_theme_preview_nonce_field' );
+
+    $theme_zip_url    = get_post_meta( $post->ID, '_revolt_theme_zip_url', true );
+    $demo_content_url = get_post_meta( $post->ID, '_revolt_demo_content_url', true );
+    $preview_php_ver  = get_post_meta( $post->ID, '_revolt_preview_php_version', true ) ?: '8.0';
+    $preview_wp_ver   = get_post_meta( $post->ID, '_revolt_preview_wp_version', true ) ?: 'latest';
+    $preview_landing  = get_post_meta( $post->ID, '_revolt_preview_landing_page', true ) ?: '/';
+
+    // Only show helpful note if product has 'theme' tag
+    $has_theme_tag = has_term( 'theme', 'product_tag', $post );
+    ?>
+    
+    <?php if ( ! $has_theme_tag ) : ?>
+        <p style="color: #b26200; background: #fff3cd; padding: 8px; border-radius: 4px; font-size: 12px;">
+            ⚠️ The "Live Preview" button only appears on products tagged <strong>"theme"</strong>. Add the tag to enable it.
+        </p>
+    <?php endif; ?>
+
+    <p>
+        <label for="revolt_theme_zip_url"><strong>Theme .zip URL</strong></label><br>
+        <input type="url" id="revolt_theme_zip_url" name="revolt_theme_zip_url" 
+               value="<?php echo esc_attr( $theme_zip_url ); ?>" 
+               style="width:100%;" placeholder="https://yoursite.com/themes/theme.zip">
+        <span style="font-size:11px;color:#666;">Publicly accessible URL to the theme zip file.</span>
+    </p>
+
+    <p>
+        <label for="revolt_demo_content_url"><strong>Demo Content .xml URL</strong> <em>(optional)</em></label><br>
+        <input type="url" id="revolt_demo_content_url" name="revolt_demo_content_url" 
+               value="<?php echo esc_attr( $demo_content_url ); ?>" 
+               style="width:100%;" placeholder="https://yoursite.com/demo/content.xml">
+        <span style="font-size:11px;color:#666;">WordPress export (WXR) file for demo content.</span>
+    </p>
+
+    <p>
+        <label for="revolt_preview_landing_page"><strong>Landing Page</strong></label><br>
+        <input type="text" id="revolt_preview_landing_page" name="revolt_preview_landing_page" 
+               value="<?php echo esc_attr( $preview_landing ); ?>" 
+               style="width:100%;" placeholder="/">
+        <span style="font-size:11px;color:#666;">The page to land on (e.g. / or /sample-page).</span>
+    </p>
+
+    <p>
+        <label for="revolt_preview_php_version"><strong>PHP Version</strong></label><br>
+        <select id="revolt_preview_php_version" name="revolt_preview_php_version" style="width:100%;">
+            <option value="7.4" <?php selected( $preview_php_ver, '7.4' ); ?>>7.4</option>
+            <option value="8.0" <?php selected( $preview_php_ver, '8.0' ); ?>>8.0</option>
+            <option value="8.2" <?php selected( $preview_php_ver, '8.2' ); ?>>8.2</option>
+            <option value="8.3" <?php selected( $preview_php_ver, '8.3' ); ?>>8.3</option>
+        </select>
+    </p>
+
+    <p>
+        <label for="revolt_preview_wp_version"><strong>WordPress Version</strong></label><br>
+        <select id="revolt_preview_wp_version" name="revolt_preview_wp_version" style="width:100%;">
+            <option value="latest" <?php selected( $preview_wp_ver, 'latest' ); ?>>Latest</option>
+            <option value="6.7" <?php selected( $preview_wp_ver, '6.7' ); ?>>6.7</option>
+            <option value="6.6" <?php selected( $preview_wp_ver, '6.6' ); ?>>6.6</option>
+            <option value="6.5" <?php selected( $preview_wp_ver, '6.5' ); ?>>6.5</option>
+        </select>
+    </p>
+    <?php
+}
+
+/**
+ * Save the meta box data.
+ */
+function revolt_save_theme_preview_meta( $post_id ) {
+    if ( ! isset( $_POST['revolt_theme_preview_nonce_field'] ) ) return;
+    if ( ! wp_verify_nonce( $_POST['revolt_theme_preview_nonce_field'], 'revolt_theme_preview_nonce' ) ) return;
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+    if ( ! current_user_can( 'edit_post', $post_id ) ) return;
+
+    $fields = array(
+        'revolt_theme_zip_url'        => '_revolt_theme_zip_url',
+        'revolt_demo_content_url'     => '_revolt_demo_content_url',
+        'revolt_preview_php_version'  => '_revolt_preview_php_version',
+        'revolt_preview_wp_version'   => '_revolt_preview_wp_version',
+        'revolt_preview_landing_page' => '_revolt_preview_landing_page',
+    );
+
+    foreach ( $fields as $field_name => $meta_key ) {
+        if ( isset( $_POST[ $field_name ] ) ) {
+            update_post_meta( $post_id, $meta_key, sanitize_text_field( $_POST[ $field_name ] ) );
+        }
+    }
+}
+add_action( 'save_post_product', 'revolt_save_theme_preview_meta' );
+
+/**
+ * Build the WordPress Playground blueprint URL for a product.
+ * Returns false if the product doesn't have a theme zip URL configured.
+ */
+function revolt_get_playground_url( $product_id ) {
+    $theme_zip_url    = get_post_meta( $product_id, '_revolt_theme_zip_url', true );
+    if ( empty( $theme_zip_url ) ) return false;
+
+    $demo_content_url = get_post_meta( $product_id, '_revolt_demo_content_url', true );
+    $php_version      = get_post_meta( $product_id, '_revolt_preview_php_version', true ) ?: '8.0';
+    $wp_version       = get_post_meta( $product_id, '_revolt_preview_wp_version', true ) ?: 'latest';
+    $landing_page     = get_post_meta( $product_id, '_revolt_preview_landing_page', true ) ?: '/';
+
+    // Build the blueprint
+    $blueprint = array(
+        'landingPage'       => $landing_page,
+        'preferredVersions' => array(
+            'php' => $php_version,
+            'wp'  => $wp_version,
+        ),
+        'steps' => array(),
+    );
+
+    // Step 1: Install the theme
+    $blueprint['steps'][] = array(
+        'step'         => 'installTheme',
+        'themeZipFile' => array(
+            'resource' => 'url',
+            'url'      => $theme_zip_url,
+        ),
+        'options' => array(
+            'activate' => true,
+        ),
+    );
+
+    // Step 2: Import demo content (if provided)
+    if ( ! empty( $demo_content_url ) ) {
+        $blueprint['steps'][] = array(
+            'step' => 'importWxr',
+            'file' => array(
+                'resource' => 'url',
+                'url'      => $demo_content_url,
+            ),
+        );
+    }
+
+    // Step 3: Set site options
+    $blueprint['steps'][] = array(
+        'step'    => 'setSiteOptions',
+        'options' => array(
+            'blogname' => get_the_title( $product_id ) . ' — Preview',
+        ),
+    );
+
+    // Encode blueprint into the Playground URL
+    $blueprint_json   = json_encode( $blueprint, JSON_UNESCAPED_SLASHES );
+    $blueprint_base64 = base64_encode( $blueprint_json );
+
+    return 'https://playground.wordpress.net/#' . $blueprint_base64;
+}
+
+/**
+ * Display the "Live Preview" button on single product pages — only for products tagged 'theme'.
+ */
+function revolt_display_theme_preview_button() {
+    global $product;
+    if ( ! $product ) return;
+
+    // Only show on products tagged 'theme'
+    if ( ! has_term( 'theme', 'product_tag', $product->get_id() ) ) return;
+
+    $playground_url = revolt_get_playground_url( $product->get_id() );
+    if ( ! $playground_url ) return;
+
+    ?>
+    <div class="revolt-theme-preview-cta tw-mt-4 tw-mb-4">
+        <a href="<?php echo esc_url( $playground_url ); ?>" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="revolt-live-preview-btn tw-inline-flex tw-items-center tw-justify-center tw-w-full tw-px-6 tw-py-3 tw-text-sm tw-font-bold tw-tracking-wider tw-uppercase tw-rounded-lg tw-transition-all tw-duration-300"
+           style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #FCB900; border: 1px solid #FCB900; text-decoration: none;">
+            <svg class="tw-w-5 tw-h-5 tw-mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            </svg>
+            Live Preview
+        </a>
+        <p class="tw-text-xs tw-text-gray-400 tw-mt-2 tw-text-center" style="font-family: 'Fira Code', monospace;">
+            ⚡ Opens a live WordPress demo in your browser — no install needed
+        </p>
+    </div>
+    <?php
+}
+add_action( 'woocommerce_single_product_summary', 'revolt_display_theme_preview_button', 35 );

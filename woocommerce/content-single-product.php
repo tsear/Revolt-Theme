@@ -154,6 +154,9 @@ $featured_image = $product->get_image_id();
                     <?php woocommerce_template_single_add_to_cart(); ?>
                 </div>
 
+                <!-- Theme Live Preview (only renders for products tagged 'theme') -->
+                <?php revolt_display_theme_preview_button(); ?>
+
                 <!-- Product Meta -->
                 <div class="tw-border-t tw-border-gray-200 tw-pt-6 tw-space-y-2 tw-text-sm">
                     <?php if ( $product->get_sku() ) : ?>
