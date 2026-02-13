@@ -413,6 +413,7 @@ function revolt_get_playground_url( $product_id ) {
     // Build the blueprint
     $blueprint = array(
         'landingPage'       => $landing_page,
+        'login'             => false,
         'preferredVersions' => array(
             'php' => $php_version,
             'wp'  => $wp_version,
@@ -449,6 +450,39 @@ function revolt_get_playground_url( $product_id ) {
         'options' => array(
             'blogname' => get_the_title( $product_id ) . ' — Preview',
         ),
+    );
+
+    // Step 4: Lock down admin — block wp-admin and wp-login, randomize admin password
+    $lockdown_plugin = '<?php ' . "\n"
+        . '/* Plugin Name: Preview Lockdown */' . "\n"
+        . 'add_action("init", function() {' . "\n"
+        . '    $request = $_SERVER["REQUEST_URI"] ?? "";' . "\n"
+        . '    if (strpos($request, "/wp-admin") !== false && strpos($request, "/wp-admin/admin-ajax.php") === false) {' . "\n"
+        . '        wp_redirect(home_url("/"));' . "\n"
+        . '        exit;' . "\n"
+        . '    }' . "\n"
+        . '    if (strpos($request, "wp-login.php") !== false) {' . "\n"
+        . '        wp_redirect(home_url("/"));' . "\n"
+        . '        exit;' . "\n"
+        . '    }' . "\n"
+        . '});' . "\n"
+        . 'add_filter("theme_action_links", "__return_empty_array");' . "\n"
+        . 'add_filter("show_admin_bar", "__return_false");' . "\n"
+        . 'add_filter("wp_headers", function($headers) {' . "\n"
+        . '    $headers["X-Revolt-Preview"] = "true";' . "\n"
+        . '    return $headers;' . "\n"
+        . '});';
+
+    $blueprint['steps'][] = array(
+        'step'     => 'writeFile',
+        'path'     => '/wordpress/wp-content/mu-plugins/revolt-preview-lockdown.php',
+        'data'     => $lockdown_plugin,
+    );
+
+    // Step 5: Randomize admin password so default creds don't work
+    $blueprint['steps'][] = array(
+        'step' => 'runPHP',
+        'code' => '<?php require_once "/wordpress/wp-load.php"; wp_set_password(wp_generate_password(32), 1); ?>',
     );
 
     // Encode blueprint into the Playground URL
