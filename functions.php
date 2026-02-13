@@ -286,6 +286,136 @@ function revolt_register_menus() {
 }
 add_action('init', 'revolt_register_menus');
 
+// ─── TEMPORARY: PayPal Manual Connection Tool ───────────────────────────────────
+// DELETE THIS ENTIRE SECTION after PayPal is connected.
+function revolt_paypal_manual_connect_page() {
+    add_management_page(
+        'PayPal Manual Connect',
+        '⚡ PayPal Connect',
+        'manage_options',
+        'revolt-paypal-connect',
+        'revolt_paypal_manual_connect_html'
+    );
+}
+add_action( 'admin_menu', 'revolt_paypal_manual_connect_page' );
+
+function revolt_paypal_manual_connect_html() {
+    if ( ! current_user_can( 'manage_options' ) ) return;
+
+    $message = '';
+
+    if ( isset( $_POST['revolt_paypal_save'] ) && check_admin_referer( 'revolt_paypal_connect_nonce' ) ) {
+        $client_id     = sanitize_text_field( $_POST['pp_client_id'] );
+        $client_secret = sanitize_text_field( $_POST['pp_client_secret'] );
+        $merchant_id   = sanitize_text_field( $_POST['pp_merchant_id'] );
+        $merchant_email = sanitize_email( $_POST['pp_merchant_email'] );
+
+        // Write to legacy settings (woocommerce_ppcp-gateway_settings)
+        $settings = get_option( 'woocommerce_ppcp-gateway_settings', array() );
+        $settings['client_id']              = $client_id;
+        $settings['client_secret']          = $client_secret;
+        $settings['merchant_id']            = $merchant_id;
+        $settings['merchant_email']         = $merchant_email;
+        $settings['client_id_production']   = $client_id;
+        $settings['client_secret_production'] = $client_secret;
+        $settings['merchant_id_production'] = $merchant_id;
+        $settings['merchant_email_production'] = $merchant_email;
+        $settings['enabled']                = 'yes';
+        $settings['sandbox_on']             = '';
+        update_option( 'woocommerce_ppcp-gateway_settings', $settings );
+
+        // Write to new settings model (woocommerce-ppcp-data-common)
+        $common = get_option( 'woocommerce-ppcp-data-common', array() );
+        $common['client_id']          = $client_id;
+        $common['client_secret']      = $client_secret;
+        $common['merchant_id']        = $merchant_id;
+        $common['merchant_email']     = $merchant_email;
+        $common['merchant_connected'] = true;
+        $common['sandbox_merchant']   = false;
+        update_option( 'woocommerce-ppcp-data-common', $common );
+
+        // Mark onboarding as completed
+        $onboarding = get_option( 'woocommerce-ppcp-data-onboarding', array() );
+        $onboarding['completed']  = true;
+        $onboarding['setup_done'] = true;
+        update_option( 'woocommerce-ppcp-data-onboarding', $onboarding );
+
+        // Clear any cached transients
+        delete_transient( 'ppcp_onboarding_state' );
+
+        $message = '✅ PayPal credentials saved. Go to WooCommerce → Settings → Payments to verify.';
+    }
+
+    // Read current values
+    $settings = get_option( 'woocommerce_ppcp-gateway_settings', array() );
+    $current_id     = $settings['client_id'] ?? '';
+    $current_secret = $settings['client_secret'] ?? '';
+    $current_mid    = $settings['merchant_id'] ?? '';
+    $current_email  = $settings['merchant_email'] ?? '';
+
+    ?>
+    <div class="wrap">
+        <h1>⚡ PayPal Manual Connection</h1>
+        <p>This tool bypasses the broken PayPal onboarding flow and writes credentials directly.</p>
+        <p><strong>⚠️ Delete this tool from functions.php after connecting.</strong></p>
+
+        <?php if ( $message ) : ?>
+            <div class="notice notice-success"><p><?php echo esc_html( $message ); ?></p></div>
+        <?php endif; ?>
+
+        <?php if ( $current_id ) : ?>
+            <div class="notice notice-info">
+                <p><strong>Current Client ID:</strong> <?php echo esc_html( substr( $current_id, 0, 20 ) . '...' ); ?></p>
+                <p><strong>Current Merchant ID:</strong> <?php echo esc_html( $current_mid ?: 'Not set' ); ?></p>
+                <p><strong>Current Email:</strong> <?php echo esc_html( $current_email ?: 'Not set' ); ?></p>
+            </div>
+        <?php endif; ?>
+
+        <form method="post">
+            <?php wp_nonce_field( 'revolt_paypal_connect_nonce' ); ?>
+            <table class="form-table">
+                <tr>
+                    <th><label for="pp_client_id">Client ID</label></th>
+                    <td>
+                        <input type="text" id="pp_client_id" name="pp_client_id" class="large-text" 
+                               value="<?php echo esc_attr( $current_id ); ?>" required>
+                        <p class="description">From <a href="https://developer.paypal.com/dashboard/applications/live" target="_blank">developer.paypal.com</a> → Apps & Credentials → Your App</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="pp_client_secret">Client Secret</label></th>
+                    <td>
+                        <input type="password" id="pp_client_secret" name="pp_client_secret" class="large-text" 
+                               value="<?php echo esc_attr( $current_secret ); ?>" required>
+                        <p class="description">Click "Show" next to the secret on the PayPal developer dashboard</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="pp_merchant_id">Merchant ID</label></th>
+                    <td>
+                        <input type="text" id="pp_merchant_id" name="pp_merchant_id" class="regular-text" 
+                               value="<?php echo esc_attr( $current_mid ); ?>" required>
+                        <p class="description">PayPal → Settings → Account Settings → Business information → PayPal Merchant ID (13 chars, uppercase)</p>
+                    </td>
+                </tr>
+                <tr>
+                    <th><label for="pp_merchant_email">PayPal Email</label></th>
+                    <td>
+                        <input type="email" id="pp_merchant_email" name="pp_merchant_email" class="regular-text" 
+                               value="<?php echo esc_attr( $current_email ); ?>" required>
+                        <p class="description">The email on your PayPal business account</p>
+                    </td>
+                </tr>
+            </table>
+            <p class="submit">
+                <input type="submit" name="revolt_paypal_save" class="button button-primary" value="Save PayPal Credentials">
+            </p>
+        </form>
+    </div>
+    <?php
+}
+// ─── END TEMPORARY PayPal Tool ──────────────────────────────────────────────────
+
 // ─── WordPress Playground Theme Preview ─────────────────────────────────────────
 // Adds a "Live Preview" button to products tagged 'theme' using WordPress Playground.
 
