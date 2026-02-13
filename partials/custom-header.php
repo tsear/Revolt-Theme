@@ -10,14 +10,6 @@
   <nav class="header-nav">
     <ul>
       <li class="dropdown">
-        <a href="<?php echo site_url('/about'); ?>" class="dropdown-toggle">About <span class="dropdown-arrow">▼</span></a>
-        <ul class="dropdown-menu">
-          <li><a href="<?php echo site_url('/our-process'); ?>">Our Process</a></li>
-          <li><a href="<?php echo site_url('/technology-stack'); ?>">Technology Stack</a></li>
-          <li><a href="<?php echo site_url('/development-environment'); ?>">Dev Environment</a></li>
-        </ul>
-      </li>
-      <li class="dropdown">
         <a href="<?php echo site_url('/services'); ?>" class="dropdown-toggle">Services <span class="dropdown-arrow">▼</span></a>
         <ul class="dropdown-menu">
           <li><a href="<?php echo site_url('/web-design'); ?>">Web Design</a></li>
@@ -28,6 +20,9 @@
           <li><a href="<?php echo site_url('/web-hosting'); ?>">Web Hosting</a></li>
           <li><a href="<?php echo site_url('/managed-services'); ?>">Managed Services</a></li>
         </ul>
+      </li>
+      <li>
+        <a href="<?php echo site_url('/blog'); ?>">Blog</a>
       </li>
       <li class="nav-cta">
         <a href="#" class="header-build-btn" data-modal-target="solution-builder-modal" data-modal-toggle="solution-builder-modal">Build <span class="emoji-icon">⚡</span></a>

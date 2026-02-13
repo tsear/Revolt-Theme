@@ -136,9 +136,64 @@ function simple_theme_enqueue_styles() {
         '1.0',
         true
     );
+
+    // ✅ Only for Blog page & single posts
+    if ( is_page('blog') || is_single() ) {
+        wp_enqueue_script(
+            'blog-filters',
+            get_template_directory_uri() . '/assets/js/blog-filters.js',
+            array(),
+            '1.0',
+            true
+        );
+    }
 }
 
 add_action('wp_enqueue_scripts', 'simple_theme_enqueue_styles');
+
+// ─── Blog Helpers ────────────────────────────────────────────────────────────────
+
+/**
+ * Calculate estimated read time for a post.
+ *
+ * @param int $post_id Post ID
+ * @return int Estimated minutes to read
+ */
+function revolt_get_read_time( $post_id = null ) {
+    if ( ! $post_id ) $post_id = get_the_ID();
+    $content    = get_post_field( 'post_content', $post_id );
+    $word_count = str_word_count( strip_tags( $content ) );
+    $read_time  = max( 1, ceil( $word_count / 250 ) );
+    return $read_time;
+}
+
+/**
+ * Ensure the Blog page template uses proper pagination via query vars.
+ */
+function revolt_blog_pagination_query_var( $vars ) {
+    $vars[] = 'paged';
+    return $vars;
+}
+add_filter( 'query_vars', 'revolt_blog_pagination_query_var' );
+
+/**
+ * Add custom excerpt length for blog cards.
+ */
+function revolt_custom_excerpt_length( $length ) {
+    if ( is_page('blog') ) {
+        return 25;
+    }
+    return $length;
+}
+add_filter( 'excerpt_length', 'revolt_custom_excerpt_length' );
+
+/**
+ * Custom excerpt more text.
+ */
+function revolt_excerpt_more( $more ) {
+    return '...';
+}
+add_filter( 'excerpt_more', 'revolt_excerpt_more' );
 
 // Fix WooCommerce services undefined error
 function revolt_fix_wc_services_error() {

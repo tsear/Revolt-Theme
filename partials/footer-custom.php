@@ -14,6 +14,7 @@
 
     <!-- Navigation -->
     <ul class="terminal-nav">
+      <li><a href="<?php echo site_url('/blog'); ?>">├── blog/</a></li>
       <li><a href="<?php echo site_url('/about'); ?>">├── about-us/</a></li>
       <li><a href="<?php echo site_url('/services'); ?>">├── services/</a></li>
       <li><a href="<?php echo site_url('/contact'); ?>">├── contact/</a></li>

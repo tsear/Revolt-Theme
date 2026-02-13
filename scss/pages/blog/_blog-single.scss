@@ -1,0 +1,439 @@
+/* ===================================
+   Blog Single Post
+   =================================== */
+
+.blog-single {
+  padding: 0 0 4rem;
+  font-family: 'Fira Code', monospace;
+}
+
+/* --- Single Post Hero --- */
+.blog-single__hero {
+  padding: 5rem 0 3rem;
+  text-align: center;
+
+  .container {
+    max-width: 800px;
+  }
+
+  .blog-single__breadcrumb {
+    font-size: 0.75rem;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+
+    a {
+      color: #FCB900;
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #000;
+      }
+    }
+
+    .breadcrumb__sep {
+      margin: 0 0.5rem;
+      color: #d1d5db;
+    }
+  }
+
+  .blog-single__category {
+    display: inline-block;
+    background: #FCB900;
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    transition: all 0.2s;
+
+    &:hover {
+      background: #000;
+      color: #FCB900;
+    }
+  }
+
+  .blog-single__title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #000;
+    line-height: 1.3;
+    margin-bottom: 1.5rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.75rem;
+    }
+  }
+
+  .blog-single__meta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    font-size: 0.8rem;
+    color: #6b7280;
+
+    .meta__author {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      img {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      span {
+        font-weight: 600;
+        color: #374151;
+      }
+    }
+
+    .meta__separator {
+      color: #d1d5db;
+    }
+  }
+}
+
+/* --- Featured Image --- */
+.blog-single__featured-image {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+  }
+}
+
+/* --- Post Content --- */
+.blog-single__content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  // Prose styles
+  .post-content {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: #1f2937;
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #000;
+      margin: 2.5rem 0 1rem;
+      font-family: 'Fira Code', monospace;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #111827;
+      margin: 2rem 0 0.75rem;
+      font-family: 'Fira Code', monospace;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #374151;
+      margin: 1.5rem 0 0.5rem;
+      font-family: 'Fira Code', monospace;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+    }
+
+    a {
+      color: #FCB900;
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 2px;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #000;
+      }
+    }
+
+    ul, ol {
+      margin: 1.5rem 0;
+      padding-left: 1.5rem;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    ul li {
+      list-style-type: '→ ';
+    }
+
+    blockquote {
+      margin: 2rem 0;
+      padding: 1.5rem 2rem;
+      border-left: 4px solid #FCB900;
+      background: #f8f8f8;
+      border-radius: 0 8px 8px 0;
+      font-style: italic;
+      color: #374151;
+
+      p:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    code {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9em;
+      background: #f3f4f6;
+      padding: 0.2rem 0.4rem;
+      border-radius: 3px;
+      color: #e63946;
+    }
+
+    pre {
+      margin: 2rem 0;
+      padding: 1.5rem;
+      background: #1e1e1e;
+      border-radius: 8px;
+      overflow-x: auto;
+
+      code {
+        background: none;
+        padding: 0;
+        color: #e0e0e0;
+        font-size: 0.85rem;
+        line-height: 1.6;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 2rem 0;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #e5e7eb;
+      margin: 3rem 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 0.9rem;
+
+      th, td {
+        padding: 0.75rem 1rem;
+        border: 1px solid #e5e7eb;
+        text-align: left;
+      }
+
+      th {
+        background: #f8f8f8;
+        font-weight: 700;
+        font-family: 'Fira Code', monospace;
+      }
+
+      tr:hover {
+        background: #fafafa;
+      }
+    }
+  }
+}
+
+/* --- Post Tags --- */
+.blog-single__tags {
+  max-width: 760px;
+  margin: 2rem auto 0;
+  padding: 2rem 2rem 0;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+
+  .tags__label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #6b7280;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .tags__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+
+    a {
+      font-size: 0.7rem;
+      color: #4b5563;
+      background: #f3f4f6;
+      padding: 0.2rem 0.5rem;
+      border-radius: 3px;
+      text-decoration: none;
+      font-family: 'Fira Code', monospace;
+      transition: all 0.2s;
+
+      &:hover {
+        background: #FCB900;
+        color: #000;
+      }
+    }
+  }
+}
+
+/* --- Author Box --- */
+.blog-single__author-box {
+  max-width: 760px;
+  margin: 3rem auto 0;
+  padding: 2rem;
+  background: #f8f8f8;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+
+  @media (max-width: 640px) {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .author-box__avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #FCB900;
+  }
+
+  .author-box__info {
+    .author-box__name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #111827;
+      margin-bottom: 0.25rem;
+    }
+
+    .author-box__role {
+      font-size: 0.75rem;
+      color: #FCB900;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+    }
+
+    .author-box__bio {
+      font-size: 0.85rem;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+  }
+}
+
+/* --- Post Navigation --- */
+.blog-single__nav {
+  max-width: 760px;
+  margin: 3rem auto 0;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+
+  .post-nav__link {
+    padding: 1.25rem;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+
+    &:hover {
+      border-color: #FCB900;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .post-nav__label {
+      font-size: 0.7rem;
+      color: #6b7280;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.35rem;
+      display: block;
+    }
+
+    .post-nav__title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #111827;
+      line-height: 1.4;
+      font-family: 'Fira Code', monospace;
+    }
+
+    &--next {
+      text-align: right;
+    }
+  }
+}
+
+/* --- Related Posts --- */
+.blog-single__related {
+  max-width: 1000px;
+  margin: 4rem auto 0;
+  padding: 0 2rem;
+
+  .related__header {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .related__directive {
+      font-size: 0.75rem;
+      color: #999;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.5rem;
+    }
+
+    .related__title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #000;
+    }
+  }
+
+  .related__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
